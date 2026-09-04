@@ -240,3 +240,44 @@
     position: static;
   }
 }
+
+@media (max-width: 575px) {
+  .heading span {
+    font-size: 10px;
+  }
+
+  .heading h2 {
+    font-size: 20px;
+  }
+
+  .balanceGrid span {
+    font-size: 11px;
+  }
+
+  .balanceGrid strong {
+    font-size: 15px;
+  }
+
+  .successState strong,
+  .insufficient strong,
+  .joinedState strong {
+    font-size: 13px;
+  }
+
+  .successState p,
+  .insufficient p,
+  .joinedState p {
+    font-size: 12px;
+  }
+
+  .joinButton,
+  .earnButton,
+  .disabledButton {
+    min-height: 48px;
+    font-size: 14px;
+  }
+
+  .security {
+    font-size: 11px;
+  }
+}

@@ -500,7 +500,8 @@
   }
 
   .description {
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .actions {

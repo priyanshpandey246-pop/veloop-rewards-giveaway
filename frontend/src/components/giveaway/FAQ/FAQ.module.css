@@ -160,4 +160,25 @@
   .section {
     padding-bottom: 55px;
   }
+   .intro > span {
+    font-size: 11px;
+  }
+
+  .intro h2 {
+    font-size: 29px;
+  }
+
+  .intro p {
+    font-size: 14px;
+  }
+
+  .question {
+    min-height: 64px;
+    font-size: 14px;
+  }
+
+  .answer p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
 }
