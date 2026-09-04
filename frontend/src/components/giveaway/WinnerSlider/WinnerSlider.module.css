@@ -1,0 +1,214 @@
+.section {
+  padding: 0 0 70px;
+}
+
+.slider {
+  min-height: 84px;
+
+  padding: 16px 19px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr auto;
+
+  align-items: center;
+
+  gap: 25px;
+
+  border: 1px solid var(--border);
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 18, 32, 0.95),
+      rgba(10, 11, 22, 0.97)
+    );
+}
+
+.label {
+  padding-right: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  border-right:
+    1px solid var(--border);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  color: #f5b750;
+
+  background:
+    rgba(245, 173, 61, 0.1);
+}
+
+.label small {
+  display: block;
+
+  color: #7b7788;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.label strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #ddd9e5;
+
+  font-size: 11px;
+}
+
+.message {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+}
+
+.message p {
+  margin: 0;
+
+  color: #9995a5;
+
+  font-size: 13px;
+
+  animation:
+    reveal 0.35s ease;
+}
+
+.message strong {
+  color: #d6b3ff;
+}
+
+.message b {
+  color: #f1eff5;
+  font-weight: 650;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--green);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(56, 199, 123, 0.08);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.controls button {
+  width: 32px;
+  height: 32px;
+
+  padding: 0;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  color: #a7a3b2;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.controls button:hover {
+  color: white;
+
+  border-color:
+    rgba(166, 94, 244, 0.3);
+}
+
+.controls span {
+  color: #6f6b7a;
+
+  font-size: 9px;
+}
+
+.disclaimer {
+  margin: 7px 3px 0;
+
+  color: #5f5c6c;
+
+  font-size: 8px;
+  text-align: right;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .slider {
+    grid-template-columns:
+      1fr auto;
+
+    gap: 14px;
+  }
+
+  .label {
+    border-right: 0;
+  }
+
+  .message {
+    grid-column: 1 / -1;
+    grid-row: 2;
+
+    min-height: 42px;
+
+    justify-content: flex-start;
+
+    border-top:
+      1px solid var(--border);
+
+    padding-top: 13px;
+  }
+
+  .controls {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .disclaimer {
+    text-align: left;
+  }
+}

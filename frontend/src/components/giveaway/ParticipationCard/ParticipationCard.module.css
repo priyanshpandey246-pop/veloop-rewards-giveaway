@@ -1,0 +1,242 @@
+.card {
+  position: sticky;
+  top: 95px;
+
+  padding: 22px;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(130, 55, 220, 0.08),
+      transparent 18rem
+    ),
+    linear-gradient(
+      145deg,
+      rgba(17, 19, 34, 0.98),
+      rgba(10, 11, 22, 0.98)
+    );
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.16);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.headingIcon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  color: #b779f4;
+
+  background:
+    rgba(137, 62, 218, 0.09);
+}
+
+.heading span {
+  color: #706b7b;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+}
+
+.heading h2 {
+  margin: 2px 0 0;
+
+  color: #eeebf2;
+
+  font-size: 16px;
+  font-weight: 720;
+}
+
+.balanceGrid {
+  margin-top: 19px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.balanceGrid > div {
+  padding: 13px;
+
+  border: 1px solid var(--border);
+  border-radius: 11px;
+
+  background:
+    rgba(255, 255, 255, 0.015);
+}
+
+.balanceGrid span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6f6b79;
+
+  font-size: 8px;
+}
+
+.balanceGrid strong {
+  color: #e4e0e9;
+  font-size: 13px;
+}
+
+.successState,
+.insufficient,
+.joinedState {
+  margin-top: 12px;
+  padding: 12px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  border-radius: 10px;
+}
+
+.successState {
+  border: 1px solid
+    rgba(56, 199, 123, 0.12);
+
+  color: #65ce94;
+
+  background:
+    rgba(56, 199, 123, 0.04);
+}
+
+.insufficient {
+  border: 1px solid
+    rgba(239, 99, 115, 0.12);
+
+  color: #e77886;
+
+  background:
+    rgba(239, 99, 115, 0.04);
+}
+
+.joinedState {
+  border: 1px solid
+    rgba(166, 99, 244, 0.14);
+
+  color: #b87df7;
+
+  background:
+    rgba(137, 62, 218, 0.05);
+}
+
+.successState svg,
+.insufficient svg,
+.joinedState svg {
+  flex-shrink: 0;
+}
+
+.successState strong,
+.insufficient strong,
+.joinedState strong {
+  display: block;
+
+  font-size: 10px;
+}
+
+.successState p,
+.insufficient p,
+.joinedState p {
+  margin: 3px 0 0;
+
+  color: #777382;
+
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.joinButton,
+.earnButton,
+.disabledButton {
+  width: 100%;
+  min-height: 46px;
+
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border-radius: 11px;
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.joinButton {
+  border: 1px solid
+    rgba(185, 120, 255, 0.3);
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8540d9,
+      #6129b4
+    );
+}
+
+.earnButton {
+  border: 1px solid
+    rgba(245, 173, 61, 0.16);
+
+  color: #dcb46d;
+
+  background:
+    rgba(245, 173, 61, 0.06);
+}
+
+.disabledButton {
+  cursor: default;
+
+  border: 1px solid
+    rgba(56, 199, 123, 0.13);
+
+  color: #69ce95;
+
+  background:
+    rgba(56, 199, 123, 0.045);
+}
+
+.security {
+  margin-top: 13px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+
+  color: #5f5b68;
+
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.security svg {
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+  .card {
+    position: static;
+  }
+}

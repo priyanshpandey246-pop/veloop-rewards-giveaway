@@ -1,0 +1,230 @@
+.fullPage {
+  min-height:
+    calc(100vh - 72px);
+
+  display: grid;
+  place-items: center;
+
+  padding: 30px;
+}
+
+.inline {
+  min-height: 300px;
+
+  display: grid;
+  place-items: center;
+}
+
+.loader {
+  width: min(100%, 330px);
+
+  text-align: center;
+}
+
+.reward {
+  position: relative;
+
+  width: 90px;
+  height: 90px;
+
+  margin: 0 auto 20px;
+
+  display: grid;
+  place-items: center;
+}
+
+.orbit {
+  position: absolute;
+
+  inset: 0;
+
+  border:
+    1px solid rgba(172, 100, 255, 0.17);
+
+  border-top-color:
+    rgba(172, 100, 255, 0.7);
+
+  border-radius: 50%;
+
+  animation:
+    rotate 3s linear infinite;
+}
+
+.gift {
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(169, 94, 247, 0.22);
+
+  border-radius: 17px;
+
+  color: #c68cf8;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139, 62, 218, 0.14),
+      rgba(95, 40, 175, 0.05)
+    );
+
+  animation:
+    giftPulse 2s ease-in-out infinite;
+}
+
+.sparkleOne,
+.sparkleTwo {
+  position: absolute;
+
+  color: var(--gold);
+
+  animation:
+    sparkle 1.7s ease-in-out infinite;
+}
+
+.sparkleOne {
+  top: 6px;
+  right: 2px;
+}
+
+.sparkleTwo {
+  bottom: 7px;
+  left: 1px;
+
+  animation-delay: 0.6s;
+}
+
+.brand {
+  color: #9560d5;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.loader h2 {
+  margin: 7px 0 0;
+
+  color: #eeebf2;
+
+  font-size: 19px;
+}
+
+.loader p {
+  min-height: 18px;
+
+  margin: 8px 0 0;
+
+  color: #777381;
+
+  font-size: 9px;
+
+  animation:
+    message 0.35s ease;
+}
+
+.progress {
+  width: 180px;
+  height: 3px;
+
+  margin: 17px auto 0;
+
+  overflow: hidden;
+
+  border-radius: 99px;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+}
+
+.progress span {
+  display: block;
+
+  width: 45%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7131c4,
+      #b366fa,
+      #db9635
+    );
+
+  animation:
+    progress 1.8s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes giftPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.75);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes progress {
+  from {
+    transform:
+      translateX(-130%);
+  }
+
+  to {
+    transform:
+      translateX(260%);
+  }
+}
+
+@keyframes message {
+  from {
+    opacity: 0;
+    transform:
+      translateY(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .orbit,
+  .gift,
+  .sparkleOne,
+  .sparkleTwo,
+  .progress span {
+    animation: none;
+  }
+}

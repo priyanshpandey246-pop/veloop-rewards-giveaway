@@ -1,0 +1,205 @@
+.section {
+  padding: 0 0 25px;
+}
+
+.card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 25px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr auto;
+
+  align-items: center;
+
+  gap: 18px;
+
+  border:
+    1px solid rgba(245, 173, 61, 0.17);
+
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle at 0% 50%,
+      rgba(245, 173, 61, 0.07),
+      transparent 22rem
+    ),
+    linear-gradient(
+      135deg,
+      rgba(20, 18, 29, 0.97),
+      rgba(11, 11, 22, 0.98)
+    );
+}
+
+.decoration {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 15px;
+
+  color: #f1b34e;
+
+  background:
+    rgba(245, 173, 61, 0.09);
+}
+
+.eyebrow {
+  color: #c0924d;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+}
+
+.content h2 {
+  margin: 4px 0 0;
+
+  color: #f4f0f5;
+
+  font-size: 20px;
+}
+
+.content > p {
+  margin: 6px 0 0;
+
+  color: #888391;
+
+  font-size: 10px;
+}
+
+.content > p strong {
+  color: #dcb36d;
+}
+
+.details {
+  margin-top: 15px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 18px;
+}
+
+.details > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #a171ca;
+}
+
+.details span {
+  display: flex;
+  flex-direction: column;
+}
+
+.details small {
+  color: #686471;
+
+  font-size: 7px;
+}
+
+.details strong {
+  margin-top: 2px;
+
+  color: #c3bec9;
+
+  font-size: 9px;
+}
+
+.action {
+  min-width: 165px;
+
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.status {
+  padding: 5px 7px;
+
+  border-radius: 7px;
+
+  color: #b897d7;
+
+  background:
+    rgba(137, 62, 218, 0.07);
+
+  font-size: 7px;
+  font-weight: 750;
+}
+
+.action button {
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  border:
+    1px solid rgba(245, 173, 61, 0.2);
+
+  border-radius: 10px;
+
+  color: #19120a;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3b553,
+      #da9231
+    );
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.completedMessage {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #70cf98;
+
+  font-size: 8px;
+}
+
+.expiredMessage {
+  color: #d87a85;
+
+  font-size: 8px;
+}
+
+@media (max-width: 767px) {
+  .card {
+    grid-template-columns:
+      auto 1fr;
+  }
+
+  .action {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    align-items: stretch;
+  }
+
+  .action button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,200 @@
+.section {
+  padding: 0 0 70px;
+}
+
+.wrapper {
+  padding: 30px;
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(245, 173, 61, 0.045),
+      transparent 25rem
+    ),
+    linear-gradient(
+      145deg,
+      rgba(16, 18, 32, 0.95),
+      rgba(9, 10, 21, 0.97)
+    );
+}
+
+.header {
+  margin-bottom: 25px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #a76ce9;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.header h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size:
+    clamp(1.7rem, 3vw, 2.25rem);
+
+  font-weight: 780;
+  letter-spacing: -0.04em;
+}
+
+.header p {
+  max-width: 570px;
+
+  margin: 9px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.notice {
+  max-width: 285px;
+
+  padding: 10px 12px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  border:
+    1px solid rgba(245, 173, 61, 0.1);
+
+  border-radius: 10px;
+
+  color: #9b8d75;
+
+  background:
+    rgba(245, 173, 61, 0.025);
+
+  font-size: 9px;
+  line-height: 1.55;
+}
+
+.notice svg {
+  flex-shrink: 0;
+
+  color: #d39b42;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.rule {
+  padding: 17px;
+
+  border: 1px solid var(--border);
+  border-radius: 13px;
+
+  background:
+    rgba(255, 255, 255, 0.014);
+}
+
+.ruleTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  color: #aa70ed;
+
+  background:
+    rgba(137, 62, 218, 0.075);
+}
+
+.ruleTop > span {
+  color: #4f4b5b;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.rule h3 {
+  margin: 13px 0 0;
+
+  color: #e7e4eb;
+
+  font-size: 12px;
+}
+
+.rule p {
+  margin: 6px 0 0;
+
+  color: #777382;
+
+  font-size: 9px;
+  line-height: 1.65;
+}
+
+.placeholder {
+  margin: 14px 2px 0;
+
+  color: #585563;
+
+  font-size: 8px;
+}
+
+@media (max-width: 991px) {
+  .grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .notice {
+    max-width: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding-bottom: 50px;
+  }
+
+  .wrapper {
+    padding: 22px 17px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

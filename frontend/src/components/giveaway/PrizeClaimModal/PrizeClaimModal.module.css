@@ -1,0 +1,377 @@
+.backdrop {
+  position: fixed;
+  z-index: 2100;
+
+  inset: 0;
+
+  padding: 20px;
+
+  display: grid;
+  place-items: center;
+
+  overflow-y: auto;
+
+  background:
+    rgba(3, 4, 10, 0.82);
+
+  backdrop-filter: blur(9px);
+}
+
+.modal {
+  position: relative;
+
+  width:
+    min(100%, 570px);
+
+  max-height:
+    calc(100vh - 40px);
+
+  overflow-y: auto;
+
+  padding: 27px;
+
+  border:
+    1px solid rgba(
+      164,
+      91,
+      246,
+      0.2
+    );
+
+  border-radius: 20px;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(
+        132,
+        55,
+        220,
+        0.11
+      ),
+      transparent 19rem
+    ),
+    #0e101d;
+
+  box-shadow:
+    0 30px 100px
+    rgba(0, 0, 0, 0.55);
+}
+
+.close {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 9px;
+
+  color: #807b8b;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+}
+
+.headerIcon {
+  width: 46px;
+  height: 46px;
+
+  margin-bottom: 14px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+
+  color: #efb04a;
+
+  background:
+    rgba(
+      245,
+      173,
+      61,
+      0.08
+    );
+}
+
+.header > span {
+  color: #9d65de;
+
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.header h2 {
+  margin: 5px 0 0;
+
+  color: white;
+
+  font-size: 21px;
+}
+
+.header p {
+  margin: 6px 0 0;
+
+  color: #85818f;
+
+  font-size: 9px;
+}
+
+.header p strong {
+  color: #dcb36d;
+}
+
+.fields {
+  margin-top: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 12px;
+}
+
+.fields label,
+.emailField {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  color: #aaa5b2;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.full {
+  grid-column:
+    1 / -1;
+}
+
+.fields input,
+.fields textarea,
+.emailField input {
+  width: 100%;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  color: #e7e3eb;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  font-size: 10px;
+}
+
+.fields input,
+.emailField input {
+  height: 42px;
+
+  padding: 0 11px;
+}
+
+.fields textarea {
+  padding: 11px;
+
+  resize: vertical;
+}
+
+.fields input:focus,
+.fields textarea:focus,
+.emailField input:focus {
+  border-color:
+    rgba(
+      166,
+      94,
+      246,
+      0.4
+    );
+}
+
+.emailField {
+  margin-top: 20px;
+}
+
+.emailField small {
+  color: #605c69;
+
+  font-size: 7px;
+}
+
+.error {
+  margin-top: 13px;
+  padding: 9px;
+
+  border:
+    1px solid rgba(
+      239,
+      99,
+      115,
+      0.13
+    );
+
+  border-radius: 8px;
+
+  color: #df7c87;
+
+  background:
+    rgba(
+      239,
+      99,
+      115,
+      0.04
+    );
+
+  font-size: 8px;
+}
+
+.note {
+  margin-top: 15px;
+  padding: 9px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 7px;
+
+  border-radius: 8px;
+
+  color: #777280;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.02
+    );
+
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.note svg {
+  flex-shrink: 0;
+
+  color: #9b61dc;
+}
+
+.actions {
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+    0.75fr 1.25fr;
+
+  gap: 9px;
+}
+
+.cancel,
+.submit {
+  min-height: 43px;
+
+  border-radius: 10px;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.cancel {
+  border:
+    1px solid var(--border);
+
+  color: #aaa6b2;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+}
+
+.submit {
+  border:
+    1px solid rgba(
+      182,
+      112,
+      255,
+      0.25
+    );
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8540d9,
+      #6129b4
+    );
+}
+
+.submit:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.55;
+}
+
+@media (max-width: 575px) {
+  .backdrop {
+    padding: 10px;
+  }
+
+  .modal {
+    max-height:
+      calc(100vh - 20px);
+
+    padding:
+      23px 17px;
+  }
+
+  .fields {
+    grid-template-columns:
+      1fr;
+  }
+
+  .full {
+    grid-column: auto;
+  }
+
+  .actions {
+    grid-template-columns:
+      1fr;
+  }
+}
