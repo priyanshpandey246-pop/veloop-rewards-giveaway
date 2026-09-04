@@ -37,3 +37,30 @@
     font-size: 14px;
     font-weight: 700;
 }
+
+@media (max-width: 575px) {
+  .timer {
+    gap: 7px;
+  }
+
+  .timer > div {
+    min-width: 43px;
+  }
+
+  .timer strong {
+    font-size: 23px;
+  }
+
+  .timer span {
+    margin-top: 7px;
+    font-size: 10px;
+  }
+
+  .timer b {
+    font-size: 20px;
+  }
+
+  .ended {
+    font-size: 14px;
+  }
+}

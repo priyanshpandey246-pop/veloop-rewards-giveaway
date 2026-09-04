@@ -354,24 +354,57 @@
   }
 
   .modal {
-    max-height:
-      calc(100vh - 20px);
+    max-height: calc(100vh - 20px);
+    padding: 23px 17px;
+  }
 
-    padding:
-      23px 17px;
+  .header > span {
+    font-size: 10px;
+  }
+
+  .header h2 {
+    font-size: 23px;
+  }
+
+  .header p {
+    font-size: 12px;
   }
 
   .fields {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .fields label,
+  .emailField {
+    font-size: 12px;
+  }
+
+  .fields input,
+  .fields textarea,
+  .emailField input {
+    font-size: 14px;
   }
 
   .full {
     grid-column: auto;
   }
 
+  .emailField small {
+    font-size: 11px;
+  }
+
+  .error,
+  .note {
+    font-size: 11px;
+  }
+
   .actions {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .cancel,
+  .submit {
+    min-height: 47px;
+    font-size: 13px;
   }
 }

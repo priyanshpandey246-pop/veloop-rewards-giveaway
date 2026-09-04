@@ -358,6 +358,10 @@
     padding-top: 20px;
   }
 
+  .back {
+    font-size: 13px;
+  }
+
   .hero {
     border-radius: 19px;
   }
@@ -376,8 +380,22 @@
   }
 
   .content {
-    padding:
-      5px 20px 30px;
+    padding: 5px 20px 30px;
+  }
+
+  .exclusive,
+  .status {
+    font-size: 10px;
+  }
+
+  .content h1 {
+    font-size: 40px;
+    line-height: 1.05;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .countdown {
@@ -385,8 +403,25 @@
     flex-direction: column;
   }
 
+  .countdownLabel {
+    font-size: 12px;
+  }
+
+  .endedNotice {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
   .meta {
     grid-template-columns: 1fr;
+  }
+
+  .meta span {
+    font-size: 11px;
+  }
+
+  .meta strong {
+    font-size: 13px;
   }
 
   .entryFee {
@@ -394,12 +429,17 @@
     flex-direction: column;
   }
 
-  .entryFee small {
-    text-align: left;
+  .entryFee span {
+    font-size: 11px;
   }
 
-  .description {
-  font-size: 15px;
-  line-height: 1.7;
-}
+  .entryFee strong {
+    font-size: 24px;
+  }
+
+  .entryFee small {
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: left;
+  }
 }

@@ -406,14 +406,103 @@
   }
 
   .howItWorks {
-    padding: 20px 17px;
+    padding: 22px 18px;
+  }
+
+  .sectionHeader span {
+    font-size: 10px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 27px;
+    line-height: 1.15;
+  }
+
+  .sectionHeader p {
+    font-size: 13px;
+    line-height: 1.6;
   }
 
   .steps {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .step {
+    padding: 17px;
+  }
+
+  .stepTop > span {
+    font-size: 10px;
+  }
+
+  .step h3 {
+    font-size: 15px;
+  }
+
+  .step p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .about {
+    padding: 19px;
+  }
+
+  .titleRow span {
+    font-size: 10px;
+  }
+
+  .titleRow h2 {
+    font-size: 20px;
+  }
+
+  .aboutContent {
+    grid-template-columns: 1fr;
+  }
+
+  .productInfo h3 {
+    font-size: 19px;
+  }
+
+  .productInfo > p {
+    font-size: 13px;
+    line-height: 1.65;
   }
 
   .facts {
     grid-template-columns: 1fr;
+  }
+
+  .facts span {
+    font-size: 10px;
+  }
+
+  .facts strong {
+    font-size: 12px;
+  }
+
+  .accordion > button {
+    min-height: 60px;
+    font-size: 14px;
+  }
+
+  .accordionContent ul {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .termBlock h4 {
+    font-size: 13px;
+  }
+
+  .termBlock p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .policyNotice {
+    font-size: 11px;
+    line-height: 1.6;
   }
 }
