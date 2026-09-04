@@ -126,6 +126,12 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    background: #080914;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   .nav {
     min-height: 64px;
   }
