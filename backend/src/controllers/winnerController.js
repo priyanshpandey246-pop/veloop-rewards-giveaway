@@ -98,3 +98,117 @@ export async function giveawayWinners(
     return next(error);
   }
 }
+
+export async function previousWinners(
+  req,
+  res,
+  next
+) {
+  try {
+    const winners =
+      await GiveawayWinner.find({
+        status: {
+          $ne: "DISQUALIFIED",
+        },
+      })
+        .sort({
+          selectedAt: -1,
+        })
+        .lean();
+
+    const giveawayIds = [
+      ...new Set(
+        winners.map(
+          (winner) =>
+            winner.giveawayId
+        )
+      ),
+    ];
+
+    const giveaways =
+      await Giveaway.find({
+        giveawayId: {
+          $in: giveawayIds,
+        },
+
+        status: {
+          $in: [
+            "ENDED",
+            "ARCHIVED",
+          ],
+        },
+      }).lean();
+
+    const giveawayMap =
+      new Map(
+        giveaways.map(
+          (giveaway) => [
+            giveaway.giveawayId,
+            giveaway,
+          ]
+        )
+      );
+
+    const data =
+      winners
+        .map((winner) => {
+          const giveaway =
+            giveawayMap.get(
+              winner.giveawayId
+            );
+
+          if (!giveaway) {
+            return null;
+          }
+
+          const prize =
+            giveaway.prizes.find(
+              (item) =>
+                item.prizeId ===
+                winner.prizeId
+            );
+
+          if (!prize) {
+            return null;
+          }
+
+          return {
+            id: winner._id,
+
+            user:
+              maskUserId(
+                winner.userId
+              ),
+
+            prize:
+              prize.name,
+
+            prizeId:
+              prize.prizeId,
+
+            category:
+              prize.position,
+
+            giveaway:
+              giveaway.title,
+
+            giveawayId:
+              giveaway.giveawayId,
+
+            date:
+              winner.selectedAt,
+
+            status:
+              winner.status,
+          };
+        })
+        .filter(Boolean);
+
+    return res.status(200).json({
+      success: true,
+      data,
+    });
+  } catch (error) {
+    return next(error);
+  }
+}

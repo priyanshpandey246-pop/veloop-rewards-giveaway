@@ -10,6 +10,10 @@ import {
 } from "../controllers/participationController.js";
 
 import {
+  requireIdempotencyKey,
+} from "../middleware/idempotencyMiddleware.js";
+
+import {
   participationLimiter,
 } from "../middleware/rateLimitMiddleware.js";
 const router = Router();
@@ -30,6 +34,14 @@ router.post(
   "/:giveawayId/join",
   participationLimiter,
   requireAuth,
+  joinCurrentGiveaway
+);
+
+router.post(
+  "/:giveawayId/join",
+  participationLimiter,
+  requireAuth,
+  requireIdempotencyKey,
   joinCurrentGiveaway
 );
 

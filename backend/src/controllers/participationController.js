@@ -1,7 +1,5 @@
 import Giveaway from "../models/Giveaway.js";
-import {
-  createDeviceHash,
-} from "../utils/deviceHash.js";
+
 import {
   getParticipationStatus,
   joinGiveaway,
@@ -12,8 +10,16 @@ import {
 } from "../utils/createId.js";
 
 import {
+  createDeviceHash,
+} from "../utils/deviceHash.js";
+
+import {
   createAuditLog,
 } from "../services/auditService.js";
+
+import {
+  recordFraudEvent,
+} from "../services/fraudService.js";
 
 export async function myGiveawayStatus(
   req,
@@ -76,12 +82,10 @@ export async function joinCurrentGiveaway(
     createRequestId();
 
   try {
-    const {
-  prizeId,
-} = req.body;
 
-const deviceHash =
-  createDeviceHash(req);
+    const {
+      prizeId,
+    } = req.body;
 
     if (
       !prizeId ||
@@ -89,11 +93,15 @@ const deviceHash =
     ) {
       return res.status(400).json({
         success: false,
-        code: "PRIZE_REQUIRED",
+        code:
+          "PRIZE_REQUIRED",
         message:
           "Please select a valid giveaway prize.",
       });
     }
+
+    const deviceHash =
+      createDeviceHash(req);
 
     const result =
       await joinGiveaway({
@@ -104,6 +112,7 @@ const deviceHash =
           req.params.giveawayId,
 
         prizeId,
+
         deviceHash,
       });
 
@@ -129,9 +138,15 @@ const deviceHash =
         "SUCCESS",
 
       requestId,
+
+      metadata: {
+        transactionId:
+          result.transaction
+            .transactionId,
+      },
     });
 
-    return res.status(201).json({
+    const responseBody = {
       success: true,
 
       message:
@@ -157,11 +172,32 @@ const deviceHash =
         balanceAfter:
           result.balance.after,
       },
-    });
+    };
+
+    if (
+      req.idempotencyRecord
+    ) {
+      req.idempotencyRecord.status =
+        "COMPLETED";
+
+      req.idempotencyRecord.responseStatus =
+        201;
+
+      req.idempotencyRecord.responseBody =
+        responseBody;
+
+      await req.idempotencyRecord.save();
+    }
+
+    return res
+      .status(201)
+      .json(responseBody);
   } catch (error) {
+
     await createAuditLog({
       userId:
-        req.user?.userId,
+        req.user?.userId ||
+        null,
 
       action:
         "JOIN_REJECTED",
@@ -170,7 +206,8 @@ const deviceHash =
         req.params.giveawayId,
 
       prizeId:
-        req.body?.prizeId,
+        req.body?.prizeId ||
+        null,
 
       result:
         "FAILED",
@@ -183,6 +220,63 @@ const deviceHash =
           "UNKNOWN_ERROR",
       },
     });
+
+    if (
+      error.code ===
+      "ALREADY_PARTICIPATING"
+    ) {
+      try {
+        await recordFraudEvent({
+          userId:
+            req.user?.userId ||
+            null,
+
+          giveawayId:
+            req.params
+              .giveawayId,
+
+          deviceHash:
+            createDeviceHash(req),
+
+          riskScore: 25,
+
+          reason:
+            "Repeated participation attempt",
+
+          signals: [
+            "DUPLICATE_PARTICIPATION",
+          ],
+
+          action:
+            "FLAGGED",
+
+          requestId,
+        });
+      } catch (fraudError) {
+        console.error(
+          "Fraud event logging failed:",
+          fraudError.message
+        );
+      }
+    }
+
+    if (
+      req.idempotencyRecord
+    ) {
+      try {
+        req.idempotencyRecord.status =
+          "FAILED";
+
+        await req.idempotencyRecord.save();
+      } catch (
+        idempotencyError
+      ) {
+        console.error(
+          "Idempotency update failed:",
+          idempotencyError.message
+        );
+      }
+    }
 
     return next(error);
   }

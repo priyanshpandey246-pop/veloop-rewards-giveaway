@@ -5,7 +5,7 @@ import winnerRoutes from "./routes/winnerRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import giveawayRoutes from "./routes/giveawayRoutes.js";
 import participationRoutes from "./routes/participationRoutes.js";
-
+import claimRoutes from "./routes/claimRoutes.js";
 import {
   errorHandler,
 } from "./middleware/errorMiddleware.js";
@@ -73,6 +73,11 @@ app.use(
 app.use(
   "/api/giveaways",
   winnerRoutes
+);
+
+app.use(
+  "/api/giveaways",
+  claimRoutes
 );
 
 app.use((req, res) => {

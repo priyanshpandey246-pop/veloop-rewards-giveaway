@@ -79,13 +79,7 @@ function JoinConfirmationModal({
 
     setJoining(true);
 
-    // Temporary API simulation.
-    // Real backend request will replace this.
-    await new Promise((resolve) => {
-      setTimeout(resolve, 1200);
-    });
-
-    onConfirm();
+    await onConfirm();
 
     setAccepted(false);
     setJoining(false);
