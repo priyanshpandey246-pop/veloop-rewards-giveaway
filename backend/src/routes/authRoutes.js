@@ -14,11 +14,6 @@ const router = Router();
 
 router.post(
   "/demo-session",
-  createDemoSession
-);
-
-router.post(
-  "/demo-session",
   authLimiter,
   createDemoSession
 );
