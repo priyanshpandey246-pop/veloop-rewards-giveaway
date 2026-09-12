@@ -67,17 +67,17 @@ app.use(
 
 app.use(
   "/api/giveaways",
-  giveawayRoutes
-);
-
-app.use(
-  "/api/giveaways",
   winnerRoutes
 );
 
 app.use(
   "/api/giveaways",
   claimRoutes
+);
+
+app.use(
+  "/api/giveaways",
+  giveawayRoutes
 );
 
 app.use((req, res) => {
