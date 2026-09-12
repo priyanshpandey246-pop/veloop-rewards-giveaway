@@ -6,13 +6,31 @@ import {
 } from "lucide-react";
 
 import Countdown from "../Countdown/Countdown";
+
 import styles from "./GiveawayStats.module.css";
 
-function GiveawayStats() {
-  // Temporary frontend date.
-  // Backend integration ke baad API se aayegi.
-  const giveawayEndDate =
-    "2026-09-05T23:59:59+05:30";
+function GiveawayStats({
+  giveaway,
+}) {
+  const prizeCount =
+    giveaway?.prizes?.length ??
+    0;
+
+  const participants =
+    giveaway?.participantsCount ??
+    0;
+
+  const totalWinnerSlots =
+    giveaway?.prizes?.reduce(
+      (total, prize) =>
+        total +
+        (prize.winnerCount || 0),
+      0
+    ) ?? 0;
+
+  const isActive =
+    giveaway?.status ===
+    "ACTIVE";
 
   return (
     <section
@@ -20,8 +38,16 @@ function GiveawayStats() {
       aria-label="Giveaway statistics"
     >
       <div className="container">
-        <div className={styles.stats}>
-          <div className={styles.item}>
+        <div
+          className={
+            styles.stats
+          }
+        >
+          <div
+            className={
+              styles.item
+            }
+          >
             <div
               className={`${styles.icon} ${styles.purple}`}
             >
@@ -29,20 +55,41 @@ function GiveawayStats() {
             </div>
 
             <div>
-              <span className={styles.label}>
-                Total Giveaways
+              <span
+                className={
+                  styles.label
+                }
+              >
+                Available Prizes
               </span>
 
-              <div className={styles.valueRow}>
-                <strong>24</strong>
-                <small>Active</small>
+              <div
+                className={
+                  styles.valueRow
+                }
+              >
+                <strong>
+                  {prizeCount}
+                </strong>
+
+                <small>
+                  Rewards
+                </small>
               </div>
             </div>
           </div>
 
-          <div className={styles.divider} />
+          <div
+            className={
+              styles.divider
+            }
+          />
 
-          <div className={styles.item}>
+          <div
+            className={
+              styles.item
+            }
+          >
             <div
               className={`${styles.icon} ${styles.blue}`}
             >
@@ -50,39 +97,83 @@ function GiveawayStats() {
             </div>
 
             <div>
-              <span className={styles.label}>
+              <span
+                className={
+                  styles.label
+                }
+              >
                 Participants
               </span>
 
-              <div className={styles.valueRow}>
-                <strong>8.5K+</strong>
-                <small>Users</small>
+              <div
+                className={
+                  styles.valueRow
+                }
+              >
+                <strong>
+                  {participants.toLocaleString(
+                    "en-IN"
+                  )}
+                </strong>
+
+                <small>
+                  Entries
+                </small>
               </div>
             </div>
           </div>
 
-          <div className={styles.divider} />
+          <div
+            className={
+              styles.divider
+            }
+          />
 
-          <div className={styles.item}>
+          <div
+            className={
+              styles.item
+            }
+          >
             <div
               className={`${styles.icon} ${styles.green}`}
             >
-              <Trophy size={21} />
+              <Trophy
+                size={21}
+              />
             </div>
 
             <div>
-              <span className={styles.label}>
-                Prizes Won
+              <span
+                className={
+                  styles.label
+                }
+              >
+                Winner Slots
               </span>
 
-              <div className={styles.valueRow}>
-                <strong>1.2K+</strong>
-                <small>Rewards</small>
+              <div
+                className={
+                  styles.valueRow
+                }
+              >
+                <strong>
+                  {
+                    totalWinnerSlots
+                  }
+                </strong>
+
+                <small>
+                  Configured
+                </small>
               </div>
             </div>
           </div>
 
-          <div className={styles.divider} />
+          <div
+            className={
+              styles.divider
+            }
+          />
 
           <div
             className={`${styles.item} ${styles.countdownItem}`}
@@ -90,25 +181,44 @@ function GiveawayStats() {
             <div
               className={`${styles.icon} ${styles.gold}`}
             >
-              <Clock3 size={21} />
+              <Clock3
+                size={21}
+              />
             </div>
 
             <div>
-              <span className={styles.label}>
-                Giveaway Ends In
+              <span
+                className={
+                  styles.label
+                }
+              >
+                {isActive
+                  ? "Giveaway Ends In"
+                  : "Giveaway Status"}
               </span>
 
-              <Countdown
-                endDate={giveawayEndDate}
-              />
+              {isActive ? (
+                <Countdown
+                  endDate={
+                    giveaway.endAt
+                  }
+                />
+              ) : (
+                <div
+                  className={
+                    styles.valueRow
+                  }
+                >
+                  <strong>
+                    {
+                      giveaway.status
+                    }
+                  </strong>
+                </div>
+              )}
             </div>
           </div>
         </div>
-
-        <p className={styles.demoNotice}>
-          Demonstration statistics for frontend
-          development.
-        </p>
       </div>
     </section>
   );

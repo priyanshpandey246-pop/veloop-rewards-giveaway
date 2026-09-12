@@ -114,9 +114,15 @@ function GiveawayHome() {
       <Navbar />
 
       <main>
-        <GiveawayHero />
+        <GiveawayHero
+  status={giveaway.status}
+/>
 
-        <GiveawayStats />
+<GiveawayStats
+  giveaway={giveaway}
+/>
+
+       
 
         <FeaturedGiveaways
           giveaways={
@@ -126,7 +132,11 @@ function GiveawayHome() {
 
         <HowToParticipate />
 
-        <WinnerSlider />
+        <WinnerSlider
+  winners={
+    winnerData.previousWinners
+  }
+/>
 
         {myWinner && (
           <WinnerClaim

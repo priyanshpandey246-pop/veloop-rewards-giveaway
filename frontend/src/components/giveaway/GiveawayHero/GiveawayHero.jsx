@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import {
   ArrowRight,
   Gift,
@@ -11,10 +12,14 @@ import giveawayTicket from "../../../assets/giveaway/giveaway-ticket.png";
 
 import styles from "./GiveawayHero.module.css";
 
-function GiveawayHero() {
+function GiveawayHero({
+  status = "UPCOMING",
+}) {
   const goToGiveaways = () => {
     document
-      .getElementById("featured-giveaways")
+      .getElementById(
+        "featured-giveaways"
+      )
       ?.scrollIntoView({
         behavior: "smooth",
       });
@@ -22,10 +27,19 @@ function GiveawayHero() {
 
   const goToHowItWorks = () => {
     document
-      .getElementById("how-it-works")
+      .getElementById(
+        "how-it-works"
+      )
       ?.scrollIntoView({
         behavior: "smooth",
       });
+  };
+
+  const statusText = {
+    ACTIVE: "Giveaway Live",
+    ENDED: "Giveaway Ended",
+    UPCOMING: "Coming Soon",
+    ARCHIVED: "Giveaway Completed",
   };
 
   return (
@@ -41,9 +55,15 @@ function GiveawayHero() {
       />
 
       <div className="container position-relative">
-        <div className={styles.heroCard}>
+        <div
+          className={
+            styles.heroCard
+          }
+        >
           <motion.div
-            className={styles.content}
+            className={
+              styles.content
+            }
             initial={{
               opacity: 0,
               y: 20,
@@ -56,7 +76,11 @@ function GiveawayHero() {
               duration: 0.55,
             }}
           >
-            <div className={styles.eyebrow}>
+            <div
+              className={
+                styles.eyebrow
+              }
+            >
               <Gift size={15} />
 
               <span>
@@ -64,53 +88,91 @@ function GiveawayHero() {
               </span>
             </div>
 
-            <h1 className={styles.title}>
+            <h1
+              className={
+                styles.title
+              }
+            >
               Premium rewards.
               <span>
                 Real excitement.
               </span>
             </h1>
 
-            <p className={styles.description}>
-              Complete eligible activities, earn entries
-              and participate for a chance to win premium
-              rewards from VELOOP Rewards.
+            <p
+              className={
+                styles.description
+              }
+            >
+              Complete eligible
+              activities, earn entries
+              and participate for a
+              chance to win premium
+              rewards from VELOOP
+              Rewards.
             </p>
 
-            <div className={styles.actions}>
+            <div
+              className={
+                styles.actions
+              }
+            >
               <button
                 type="button"
-                className={styles.primaryButton}
-                onClick={goToGiveaways}
+                className={
+                  styles.primaryButton
+                }
+                onClick={
+                  goToGiveaways
+                }
               >
                 Explore Giveaways
-                <ArrowRight size={18} />
+                <ArrowRight
+                  size={18}
+                />
               </button>
 
               <button
                 type="button"
-                className={styles.secondaryButton}
-                onClick={goToHowItWorks}
+                className={
+                  styles.secondaryButton
+                }
+                onClick={
+                  goToHowItWorks
+                }
               >
                 How It Works
               </button>
             </div>
 
-            <div className={styles.trustRow}>
+            <div
+              className={
+                styles.trustRow
+              }
+            >
               <div>
-                <ShieldCheck size={17} />
+                <ShieldCheck
+                  size={17}
+                />
+
                 <span>
-                  Transparent participation
+                  Transparent
+                  participation
                 </span>
               </div>
 
               <span
-                className={styles.divider}
+                className={
+                  styles.divider
+                }
                 aria-hidden="true"
               />
 
               <div>
-                <Sparkles size={17} />
+                <Sparkles
+                  size={17}
+                />
+
                 <span>
                   Premium rewards
                 </span>
@@ -119,7 +181,9 @@ function GiveawayHero() {
           </motion.div>
 
           <motion.div
-            className={styles.visual}
+            className={
+              styles.visual
+            }
             initial={{
               opacity: 0,
               scale: 0.94,
@@ -134,14 +198,18 @@ function GiveawayHero() {
             }}
           >
             <div
-              className={styles.productGlow}
+              className={
+                styles.productGlow
+              }
               aria-hidden="true"
             />
 
             <motion.img
               src={heroGift}
               alt="Purple and gold reward gift box"
-              className={styles.gift}
+              className={
+                styles.gift
+              }
               animate={{
                 y: [0, -8, 0],
               }}
@@ -153,13 +221,21 @@ function GiveawayHero() {
             />
 
             <motion.img
-              src={giveawayTicket}
+              src={
+                giveawayTicket
+              }
               alt=""
               aria-hidden="true"
-              className={styles.ticket}
+              className={
+                styles.ticket
+              }
               animate={{
                 y: [0, 5, 0],
-                rotate: [-7, -4, -7],
+                rotate: [
+                  -7,
+                  -4,
+                  -7,
+                ],
               }}
               transition={{
                 duration: 4.5,
@@ -168,9 +244,15 @@ function GiveawayHero() {
               }}
             />
 
-            <div className={styles.statusCard}>
+            <div
+              className={
+                styles.statusCard
+              }
+            >
               <span
-                className={styles.liveDot}
+                className={
+                  styles.liveDot
+                }
                 aria-hidden="true"
               />
 
@@ -180,7 +262,10 @@ function GiveawayHero() {
                 </small>
 
                 <strong>
-                  Giveaway Live
+                  {statusText[
+                    status
+                  ] ||
+                    status}
                 </strong>
               </div>
             </div>

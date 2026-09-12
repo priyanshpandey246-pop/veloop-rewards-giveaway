@@ -1,13 +1,57 @@
 import Giveaway from "../models/Giveaway.js";
 
+async function syncGiveawayLifecycle() {
+  const now = new Date();
+
+  await Giveaway.updateMany(
+    {
+      status: "UPCOMING",
+      startAt: {
+        $lte: now,
+      },
+      endAt: {
+        $gte: now,
+      },
+    },
+    {
+      $set: {
+        status: "ACTIVE",
+      },
+    }
+  );
+
+  await Giveaway.updateMany(
+    {
+      status: {
+        $in: [
+          "UPCOMING",
+          "ACTIVE",
+        ],
+      },
+      endAt: {
+        $lt: now,
+      },
+    },
+    {
+      $set: {
+        status: "ENDED",
+      },
+    }
+  );
+}
+
 async function getCurrentGiveaway() {
+  await syncGiveawayLifecycle();
+
   const now = new Date();
 
   return Giveaway.findOne({
     status: "ACTIVE",
+
     startAt: {
       $lte: now,
     },
+
     endAt: {
       $gte: now,
     },
@@ -17,18 +61,23 @@ async function getCurrentGiveaway() {
 async function getGiveawayByIdentifier(
   identifier
 ) {
+  await syncGiveawayLifecycle();
+
   const normalizedIdentifier =
     identifier.toLowerCase();
 
   return Giveaway.findOne({
     $or: [
       {
-        giveawayId: identifier,
+        giveawayId:
+          identifier,
       },
+
       {
         slug:
           normalizedIdentifier,
       },
+
       {
         "prizes.slug":
           normalizedIdentifier,
@@ -38,24 +87,15 @@ async function getGiveawayByIdentifier(
 }
 
 async function getPreviousGiveaways() {
-  const now = new Date();
+  await syncGiveawayLifecycle();
 
   return Giveaway.find({
-    $or: [
-      {
-        status: {
-          $in: [
-            "ENDED",
-            "ARCHIVED",
-          ],
-        },
-      },
-      {
-        endAt: {
-          $lt: now,
-        },
-      },
-    ],
+    status: {
+      $in: [
+        "ENDED",
+        "ARCHIVED",
+      ],
+    },
   })
     .sort({
       endAt: -1,

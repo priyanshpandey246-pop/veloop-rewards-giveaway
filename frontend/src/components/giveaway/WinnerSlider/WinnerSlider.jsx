@@ -11,82 +11,95 @@ import {
 
 import styles from "./WinnerSlider.module.css";
 
-const announcements = [
-  {
-    id: 1,
-    user: "VE****21",
-    prize: "iPhone 15 Pro",
-  },
-  {
-    id: 2,
-    user: "VE****83",
-    prize: "Apple Watch",
-  },
-  {
-    id: 3,
-    user: "VE****54",
-    prize: "AirPods Pro",
-  },
-  {
-    id: 4,
-    user: "VE****92",
-    prize: "₹2,000 Amazon Voucher",
-  },
-];
-
-function WinnerSlider() {
-  const [activeIndex, setActiveIndex] =
-    useState(0);
+function WinnerSlider({
+  winners = [],
+}) {
+  const [
+    activeIndex,
+    setActiveIndex,
+  ] = useState(0);
 
   const [paused, setPaused] =
     useState(false);
 
+  const count =
+    winners.length;
+
   const next = () => {
+    if (!count) {
+      return;
+    }
+
     setActiveIndex(
       (current) =>
         (current + 1) %
-        announcements.length
+        count
     );
   };
 
   const previous = () => {
+    if (!count) {
+      return;
+    }
+
     setActiveIndex(
       (current) =>
         current === 0
-          ? announcements.length - 1
+          ? count - 1
           : current - 1
     );
   };
 
   useEffect(() => {
-    if (paused) {
+    if (
+      paused ||
+      count <= 1
+    ) {
       return undefined;
     }
 
     const interval =
-      window.setInterval(() => {
-        setActiveIndex(
-          (current) =>
-            (current + 1) %
-            announcements.length
-        );
-      }, 5000);
+      window.setInterval(
+        () => {
+          setActiveIndex(
+            (current) =>
+              (current + 1) %
+              count
+          );
+        },
+        5000
+      );
 
     return () =>
-      window.clearInterval(interval);
-  }, [paused]);
+      window.clearInterval(
+        interval
+      );
+  }, [paused, count]);
+
+  if (!count) {
+    return null;
+  }
+
+  const safeIndex =
+    activeIndex < count
+      ? activeIndex
+      : 0;
 
   const winner =
-    announcements[activeIndex];
+    winners[safeIndex];
 
   return (
     <section
-      className={styles.section}
+      className={
+        styles.section
+      }
       aria-label="Previous winner announcements"
     >
       <div className="container">
         <div
-          className={styles.slider}
+          className={
+            styles.slider
+          }
           onMouseEnter={() =>
             setPaused(true)
           }
@@ -94,9 +107,19 @@ function WinnerSlider() {
             setPaused(false)
           }
         >
-          <div className={styles.label}>
-            <span className={styles.icon}>
-              <Trophy size={17} />
+          <div
+            className={
+              styles.label
+            }
+          >
+            <span
+              className={
+                styles.icon
+              }
+            >
+              <Trophy
+                size={17}
+              />
             </span>
 
             <div>
@@ -111,10 +134,16 @@ function WinnerSlider() {
           </div>
 
           <div
-            className={styles.message}
+            className={
+              styles.message
+            }
             aria-live="polite"
           >
-            <span className={styles.dot} />
+            <span
+              className={
+                styles.dot
+              }
+            />
 
             <p key={winner.id}>
               <strong>
@@ -127,18 +156,26 @@ function WinnerSlider() {
             </p>
           </div>
 
-          <div className={styles.controls}>
+          <div
+            className={
+              styles.controls
+            }
+          >
             <button
               type="button"
-              onClick={previous}
+              onClick={
+                previous
+              }
               aria-label="Previous winner"
             >
-              <ChevronLeft size={17} />
+              <ChevronLeft
+                size={17}
+              />
             </button>
 
             <span>
-              {activeIndex + 1}/
-              {announcements.length}
+              {safeIndex + 1}/
+              {count}
             </span>
 
             <button
@@ -146,15 +183,12 @@ function WinnerSlider() {
               onClick={next}
               aria-label="Next winner"
             >
-              <ChevronRight size={17} />
+              <ChevronRight
+                size={17}
+              />
             </button>
           </div>
         </div>
-
-        <p className={styles.disclaimer}>
-          Demonstration winner data shown for
-          frontend development.
-        </p>
       </div>
     </section>
   );
