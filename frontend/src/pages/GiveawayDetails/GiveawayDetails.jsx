@@ -53,17 +53,25 @@ function GiveawayDetails() {
   const [joined, setJoined] =
     useState(false);
 
-  const [authLoading, setAuthLoading] =
-    useState(true);
+  const [
+    authLoading,
+    setAuthLoading,
+  ] = useState(true);
 
-  const [authError, setAuthError] =
-    useState("");
+  const [
+    authError,
+    setAuthError,
+  ] = useState("");
 
-  const [modalOpen, setModalOpen] =
-    useState(false);
+  const [
+    modalOpen,
+    setModalOpen,
+  ] = useState(false);
 
-  const [joinError, setJoinError] =
-    useState("");
+  const [
+    joinError,
+    setJoinError,
+  ] = useState("");
 
   const giveawayId =
     giveaway?.giveawayId;
@@ -81,7 +89,9 @@ function GiveawayDetails() {
         const session =
           await createDemoSession();
 
-        setUser(session.user);
+        setUser(
+          session.user
+        );
 
         const statusResponse =
           await getMyStatus(
@@ -97,7 +107,9 @@ function GiveawayDetails() {
           statusResponse.data
             .balances
         );
-      } catch (requestError) {
+      } catch (
+        requestError
+      ) {
         console.error(
           "User status loading failed:",
           requestError
@@ -110,7 +122,9 @@ function GiveawayDetails() {
           )
         );
       } finally {
-        setAuthLoading(false);
+        setAuthLoading(
+          false
+        );
       }
     }, [giveawayId]);
 
@@ -125,7 +139,9 @@ function GiveawayDetails() {
       }, 0);
 
     return () => {
-      clearTimeout(timerId);
+      clearTimeout(
+        timerId
+      );
     };
   }, [
     giveawayId,
@@ -136,6 +152,7 @@ function GiveawayDetails() {
     return (
       <>
         <Navbar />
+
         <GiveawayLoader />
       </>
     );
@@ -149,8 +166,12 @@ function GiveawayDetails() {
         <StateMessage
           type="error"
           title="Unable to load giveaway"
-          description={error}
-          onRetry={retry}
+          description={
+            error
+          }
+          onRetry={
+            retry
+          }
         />
 
         <Footer />
@@ -177,6 +198,7 @@ function GiveawayDetails() {
     return (
       <>
         <Navbar />
+
         <GiveawayLoader />
       </>
     );
@@ -190,7 +212,9 @@ function GiveawayDetails() {
         <StateMessage
           type="error"
           title="Unable to load account"
-          description={authError}
+          description={
+            authError
+          }
           onRetry={
             loadUserStatus
           }
@@ -229,11 +253,17 @@ function GiveawayDetails() {
         );
 
         setJoined(true);
-        setModalOpen(false);
-      } catch (requestError) {
+
+        setModalOpen(
+          false
+        );
+      } catch (
+        requestError
+      ) {
         const code =
           requestError
-            ?.response?.data
+            ?.response
+            ?.data
             ?.code;
 
         if (
@@ -241,7 +271,10 @@ function GiveawayDetails() {
           "ALREADY_PARTICIPATING"
         ) {
           setJoined(true);
-          setModalOpen(false);
+
+          setModalOpen(
+            false
+          );
 
           await loadUserStatus();
 
@@ -263,7 +296,9 @@ function GiveawayDetails() {
 
       <main>
         <GiveawayDetailHero
-          giveaway={giveaway}
+          giveaway={
+            giveaway
+          }
         />
 
         <section className="container pb-4">
@@ -271,8 +306,10 @@ function GiveawayDetails() {
             <div className="col-lg-8">
               <div
                 style={{
-                  height: "100%",
-                  padding: "26px",
+                  height:
+                    "100%",
+                  padding:
+                    "26px",
                   border:
                     "1px solid var(--border)",
                   borderRadius:
@@ -304,7 +341,8 @@ function GiveawayDetails() {
                       "25px",
                   }}
                 >
-                  Review your participation
+                  Review your
+                  participation
                 </h2>
 
                 <p
@@ -337,7 +375,8 @@ function GiveawayDetails() {
                   . Review the prize,
                   balance and giveaway
                   terms before
-                  confirming your entry.
+                  confirming your
+                  entry.
                 </p>
 
                 {user && (
@@ -352,7 +391,9 @@ function GiveawayDetails() {
                     }}
                   >
                     Signed in as{" "}
-                    {user.displayName}
+                    {
+                      user.displayName
+                    }
                   </p>
                 )}
 
@@ -376,7 +417,9 @@ function GiveawayDetails() {
                     }}
                     role="alert"
                   >
-                    {joinError}
+                    {
+                      joinError
+                    }
                   </div>
                 )}
               </div>
@@ -384,13 +427,20 @@ function GiveawayDetails() {
 
             <div className="col-lg-4">
               <ParticipationCard
-                giveaway={giveaway}
+                giveaway={
+                  giveaway
+                }
                 balance={
                   currentBalance
                 }
-                hasJoined={joined}
+                hasJoined={
+                  joined
+                }
                 onJoin={() => {
-                  setJoinError("");
+                  setJoinError(
+                    ""
+                  );
+
                   setModalOpen(
                     true
                   );
@@ -401,21 +451,32 @@ function GiveawayDetails() {
         </section>
 
         <IndividualGiveawayInfo
-          giveaway={giveaway}
+          giveaway={
+            giveaway
+          }
         />
       </main>
 
       <Footer />
 
       <JoinConfirmationModal
-        giveaway={giveaway}
+        giveaway={
+          giveaway
+        }
         balance={
           currentBalance
         }
-        isOpen={modalOpen}
+        isOpen={
+          modalOpen
+        }
         onClose={() => {
-          setJoinError("");
-          setModalOpen(false);
+          setJoinError(
+            ""
+          );
+
+          setModalOpen(
+            false
+          );
         }}
         onConfirm={
           handleConfirmJoin
