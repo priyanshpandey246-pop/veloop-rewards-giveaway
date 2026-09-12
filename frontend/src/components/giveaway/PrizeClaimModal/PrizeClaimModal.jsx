@@ -10,6 +10,14 @@ import {
   useState,
 } from "react";
 
+import {
+  submitPrizeClaim,
+} from "../../../services/giveawayApi.js";
+
+import {
+  getApiError,
+} from "../../../utils/getApiError.js";
+
 import styles from "./PrizeClaimModal.module.css";
 
 const initialPhysicalForm = {
@@ -28,21 +36,29 @@ function PrizeClaimModal({
   onClose,
   onSubmitted,
 }) {
-  const [physicalForm, setPhysicalForm] =
-    useState(initialPhysicalForm);
+  const [
+    physicalForm,
+    setPhysicalForm,
+  ] = useState(
+    initialPhysicalForm
+  );
 
   const [email, setEmail] =
     useState("");
 
-  const [submitting, setSubmitting] =
-    useState(false);
+  const [
+    submitting,
+    setSubmitting,
+  ] = useState(false);
 
   const [error, setError] =
     useState("");
 
   const isPhysical =
-    giveaway.prizeType ===
-    "PHYSICAL";
+    winner?.claimType ===
+      "SHIPPING" ||
+    giveaway?.prizeType ===
+      "PHYSICAL";
 
   useEffect(() => {
     if (!isOpen) {
@@ -158,30 +174,69 @@ function PrizeClaimModal({
       validate();
 
     if (validationError) {
-      setError(validationError);
+      setError(
+        validationError
+      );
+
       return;
     }
 
     setError("");
     setSubmitting(true);
 
-    // Temporary API simulation.
-    await new Promise(
-      (resolve) =>
-        setTimeout(
-          resolve,
-          1200
+    try {
+      const claimData =
+        isPhysical
+          ? physicalForm
+          : {
+              email:
+                email.trim(),
+            };
+
+      const response =
+        await submitPrizeClaim(
+          winner.giveawayId,
+          claimData
+        );
+
+      onSubmitted(
+        response.data
+      );
+
+      setPhysicalForm(
+        initialPhysicalForm
+      );
+
+      setEmail("");
+    } catch (requestError) {
+      console.error(
+        "Claim submission failed:",
+        requestError
+      );
+
+      setError(
+        getApiError(
+          requestError,
+          "Your prize claim could not be submitted."
         )
-    );
-
-    onSubmitted();
-
-    setSubmitting(false);
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
     <div
       className={styles.backdrop}
+      onMouseDown={(event) => {
+        if (
+          event.target ===
+            event.currentTarget &&
+          !submitting
+        ) {
+          onClose();
+        }
+      }}
     >
       <div
         className={styles.modal}
@@ -199,7 +254,11 @@ function PrizeClaimModal({
           <X size={17} />
         </button>
 
-        <div className={styles.header}>
+        <div
+          className={
+            styles.header
+          }
+        >
           <div
             className={
               styles.headerIcon
@@ -232,7 +291,9 @@ function PrizeClaimModal({
         </div>
 
         <form
-          onSubmit={handleSubmit}
+          onSubmit={
+            handleSubmit
+          }
         >
           {isPhysical ? (
             <div
@@ -257,6 +318,7 @@ function PrizeClaimModal({
                     updatePhysical
                   }
                   placeholder="Enter full name"
+                  autoComplete="name"
                 />
               </label>
 
@@ -273,6 +335,7 @@ function PrizeClaimModal({
                     updatePhysical
                   }
                   placeholder="Enter phone number"
+                  autoComplete="tel"
                 />
               </label>
 
@@ -291,6 +354,7 @@ function PrizeClaimModal({
                     updatePhysical
                   }
                   placeholder="6-digit PIN"
+                  autoComplete="postal-code"
                 />
               </label>
 
@@ -311,6 +375,7 @@ function PrizeClaimModal({
                     updatePhysical
                   }
                   placeholder="Enter delivery address"
+                  autoComplete="street-address"
                 />
               </label>
 
@@ -327,6 +392,7 @@ function PrizeClaimModal({
                     updatePhysical
                   }
                   placeholder="City"
+                  autoComplete="address-level2"
                 />
               </label>
 
@@ -343,6 +409,7 @@ function PrizeClaimModal({
                     updatePhysical
                   }
                   placeholder="State"
+                  autoComplete="address-level1"
                 />
               </label>
             </div>
@@ -357,13 +424,16 @@ function PrizeClaimModal({
               <input
                 type="email"
                 value={email}
-                onChange={(event) =>
+                onChange={(
+                  event
+                ) =>
                   setEmail(
                     event.target
                       .value
                   )
                 }
                 placeholder="Enter email for your gift card"
+                autoComplete="email"
               />
 
               <small>
@@ -385,7 +455,11 @@ function PrizeClaimModal({
             </div>
           )}
 
-          <div className={styles.note}>
+          <div
+            className={
+              styles.note
+            }
+          >
             <MapPin size={14} />
 
             <span>
@@ -405,8 +479,12 @@ function PrizeClaimModal({
               className={
                 styles.cancel
               }
-              onClick={onClose}
-              disabled={submitting}
+              onClick={
+                onClose
+              }
+              disabled={
+                submitting
+              }
             >
               Cancel
             </button>

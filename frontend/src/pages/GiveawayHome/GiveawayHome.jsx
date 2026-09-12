@@ -1,37 +1,61 @@
+import {
+  useState,
+} from "react";
+
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer/Footer";
+
 import GiveawayHero from "../../components/giveaway/GiveawayHero/GiveawayHero";
 import GiveawayStats from "../../components/giveaway/GiveawayStats/GiveawayStats";
 import FeaturedGiveaways from "../../components/giveaway/FeaturedGiveaways/FeaturedGiveaways";
 import HowToParticipate from "../../components/giveaway/HowToParticipate/HowToParticipate";
 import WinnerSlider from "../../components/giveaway/WinnerSlider/WinnerSlider";
 import WinnersTabs from "../../components/giveaway/WinnersTabs/WinnersTabs";
+import WinnerClaim from "../../components/giveaway/WinnerClaim/WinnerClaim";
+import PrizeClaimModal from "../../components/giveaway/PrizeClaimModal/PrizeClaimModal";
 import TrustSection from "../../components/giveaway/TrustSection/TrustSection";
 import GiveawayRules from "../../components/giveaway/GiveawayRules/GiveawayRules";
 import FAQ from "../../components/giveaway/FAQ/FAQ";
 import GiveawayLoader from "../../components/giveaway/GiveawayLoader/GiveawayLoader";
 import StateMessage from "../../components/giveaway/StateMessage/StateMessage";
+
 import useCurrentGiveaway from "../../hooks/useCurrentGiveaway";
-import {mapBackendPrizes,} from "../../utils/mapGiveawayData.js";
 import useWinnerData from "../../hooks/useWinnerData.js";
+import useMyWinnerStatus from "../../hooks/useMyWinnerStatus.js";
+
+import {
+  mapBackendPrizes,
+} from "../../utils/mapGiveawayData.js";
 
 function GiveawayHome() {
   const {
-     giveaway,
+    giveaway,
     loading,
     error,
     retry,
   } = useCurrentGiveaway();
 
   const winnerData =
-  useWinnerData(
-    giveaway?.giveawayId
-  );
+    useWinnerData(
+      giveaway?.giveawayId
+    );
+
+  const {
+    winner: myWinner,
+    setWinner: setMyWinner,
+  } = useMyWinnerStatus();
+
+  const [
+    claimModalOpen,
+    setClaimModalOpen,
+  ] = useState(false);
 
   const mappedGiveaways =
-  mapBackendPrizes(giveaway);
+    mapBackendPrizes(
+      giveaway
+    );
 
-   if (loading) {
+  if (loading) {
     return (
       <>
         <Navbar />
@@ -48,7 +72,9 @@ function GiveawayHome() {
         <StateMessage
           type="error"
           title="Unable to load giveaway"
-          description={error}
+          description={
+            error
+          }
           onRetry={retry}
         />
 
@@ -71,6 +97,18 @@ function GiveawayHome() {
       </>
     );
   }
+
+  const winnerGiveaway =
+    myWinner
+      ? {
+          name:
+            myWinner.giveawayName,
+
+          prizeType:
+            myWinner.prizeType,
+        }
+      : null;
+
   return (
     <>
       <Navbar />
@@ -80,28 +118,49 @@ function GiveawayHome() {
 
         <GiveawayStats />
 
-        <FeaturedGiveaways 
-        giveaways={mappedGiveaways} />
+        <FeaturedGiveaways
+          giveaways={
+            mappedGiveaways
+          }
+        />
 
         <HowToParticipate />
 
         <WinnerSlider />
 
+        {myWinner && (
+          <WinnerClaim
+            giveaway={
+              winnerGiveaway
+            }
+            winner={
+              myWinner
+            }
+            onClaim={() =>
+              setClaimModalOpen(
+                true
+              )
+            }
+          />
+        )}
+
         <WinnersTabs
-  status={giveaway.status}
-  currentWinners={
-    winnerData.currentWinners
-  }
-  previousWinners={
-    winnerData.previousWinners
-  }
-  loading={
-    winnerData.loading
-  }
-  error={
-    winnerData.error
-  }
-/>
+          status={
+            giveaway.status
+          }
+          currentWinners={
+            winnerData.currentWinners
+          }
+          previousWinners={
+            winnerData.previousWinners
+          }
+          loading={
+            winnerData.loading
+          }
+          error={
+            winnerData.error
+          }
+        />
 
         <TrustSection />
 
@@ -111,6 +170,43 @@ function GiveawayHome() {
 
         <Footer />
       </main>
+
+      {myWinner && (
+        <PrizeClaimModal
+          giveaway={
+            winnerGiveaway
+          }
+          winner={
+            myWinner
+          }
+          isOpen={
+            claimModalOpen
+          }
+          onClose={() =>
+            setClaimModalOpen(
+              false
+            )
+          }
+          onSubmitted={(
+            claim
+          ) => {
+            setMyWinner(
+              (current) => ({
+                ...current,
+
+                claimStatus:
+                  claim.status,
+
+                claim,
+              })
+            );
+
+            setClaimModalOpen(
+              false
+            );
+          }}
+        />
+      )}
     </>
   );
 }

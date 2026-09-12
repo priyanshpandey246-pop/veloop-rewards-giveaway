@@ -1,6 +1,6 @@
 import Giveaway from "../models/Giveaway.js";
-
 import GiveawayWinner from "../models/GiveawayWinner.js";
+import PrizeClaim from "../models/PrizeClaim.js";
 
 function maskUserId(userId) {
   if (!userId) {
@@ -45,9 +45,7 @@ export async function giveawayWinners(
     ) {
       return res.status(200).json({
         success: true,
-
         data: [],
-
         message:
           "Winners will be announced after the giveaway ends.",
       });
@@ -59,8 +57,7 @@ export async function giveawayWinners(
           giveaway.giveawayId,
 
         status: {
-          $ne:
-            "DISQUALIFIED",
+          $ne: "DISQUALIFIED",
         },
       })
         .sort({
@@ -71,8 +68,7 @@ export async function giveawayWinners(
     const publicWinners =
       winners.map(
         (winner) => ({
-          id:
-            winner._id,
+          id: winner._id,
 
           user:
             maskUserId(
@@ -207,6 +203,154 @@ export async function previousWinners(
     return res.status(200).json({
       success: true,
       data,
+    });
+  } catch (error) {
+    return next(error);
+  }
+}
+
+export async function myWinnerStatus(
+  req,
+  res,
+  next
+) {
+  try {
+    const winner =
+      await GiveawayWinner.findOne({
+        userId:
+          req.user.userId,
+
+        status: {
+          $ne: "DISQUALIFIED",
+        },
+      })
+        .sort({
+          selectedAt: -1,
+        })
+        .lean();
+
+    if (!winner) {
+      return res.status(200).json({
+        success: true,
+        data: null,
+      });
+    }
+
+    const giveaway =
+      await Giveaway.findOne({
+        giveawayId:
+          winner.giveawayId,
+      }).lean();
+
+    if (!giveaway) {
+      return res.status(200).json({
+        success: true,
+        data: null,
+      });
+    }
+
+    const prize =
+      giveaway.prizes.find(
+        (item) =>
+          item.prizeId ===
+          winner.prizeId
+      );
+
+    if (!prize) {
+      return res.status(200).json({
+        success: true,
+        data: null,
+      });
+    }
+
+    const claim =
+      await PrizeClaim.findOne({
+        winnerId:
+          winner._id,
+      })
+        .select(
+          "claimId status submittedAt processedAt"
+        )
+        .lean();
+
+    const claimPeriodDays =
+      giveaway
+        .participationSettings
+        ?.claimPeriodDays ?? 7;
+
+    const claimDeadline =
+      new Date(
+        new Date(
+          winner.selectedAt
+        ).getTime() +
+          claimPeriodDays *
+            24 *
+            60 *
+            60 *
+            1000
+      );
+
+    let claimStatus =
+      claim?.status ||
+      "NOT_SUBMITTED";
+
+    if (
+      !claim &&
+      Date.now() >
+        claimDeadline.getTime()
+    ) {
+      claimStatus =
+        "EXPIRED";
+    }
+
+    return res.status(200).json({
+      success: true,
+
+      data: {
+        giveawayId:
+          giveaway.giveawayId,
+
+        giveawayName:
+          giveaway.title,
+
+        prizeId:
+          prize.prizeId,
+
+        prizeName:
+          prize.name,
+
+        prizeType:
+          prize.prizeType,
+
+        claimType:
+          prize.claimType,
+
+        winnerStatus:
+          winner.status,
+
+        selectedAt:
+          winner.selectedAt,
+
+        claimDeadline,
+
+        claimStatus,
+
+        claim: claim
+          ? {
+              claimId:
+                claim.claimId,
+
+              status:
+                claim.status,
+
+              submittedAt:
+                claim.submittedAt,
+
+              processedAt:
+                claim.processedAt,
+            }
+          : null,
+      },
     });
   } catch (error) {
     return next(error);

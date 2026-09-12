@@ -9,6 +9,15 @@ export async function getCurrentGiveaway() {
   return response.data;
 }
 
+export async function getMyWinnerStatus() {
+  const response =
+    await api.get(
+      "/giveaways/my-winner-status"
+    );
+
+  return response.data;
+}
+
 export async function getGiveaway(
   identifier
 ) {

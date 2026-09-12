@@ -144,7 +144,7 @@ export async function submitPrizeClaim({
     );
   }
 
-  if (
+    if (
     ![
       "ENDED",
       "ARCHIVED",
@@ -153,6 +153,34 @@ export async function submitPrizeClaim({
     throw serviceError(
       "Claims are not currently available.",
       "CLAIM_NOT_ALLOWED",
+      409
+    );
+  }
+
+  const claimPeriodDays =
+    giveaway
+      .participationSettings
+      ?.claimPeriodDays ?? 7;
+
+  const claimDeadline =
+    new Date(
+      new Date(
+        winner.selectedAt
+      ).getTime() +
+        claimPeriodDays *
+          24 *
+          60 *
+          60 *
+          1000
+    );
+
+  if (
+    Date.now() >
+    claimDeadline.getTime()
+  ) {
+    throw serviceError(
+      "The prize claim window has expired.",
+      "CLAIM_WINDOW_EXPIRED",
       409
     );
   }
