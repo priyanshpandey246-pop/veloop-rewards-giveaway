@@ -66,24 +66,53 @@ async function getGiveawayByIdentifier(
   const normalizedIdentifier =
     identifier.toLowerCase();
 
+  const exactEvent =
+    await Giveaway.findOne({
+      $or: [
+        {
+          giveawayId:
+            identifier,
+        },
+        {
+          slug:
+            normalizedIdentifier,
+        },
+      ],
+    }).lean();
+
+  if (exactEvent) {
+    return exactEvent;
+  }
+
+  const prizeGiveaway =
+    await Giveaway.findOne({
+      "prizes.slug":
+        normalizedIdentifier,
+
+      status: {
+        $in: [
+          "ACTIVE",
+          "UPCOMING",
+        ],
+      },
+    })
+      .sort({
+        startAt: -1,
+      })
+      .lean();
+
+  if (prizeGiveaway) {
+    return prizeGiveaway;
+  }
+
   return Giveaway.findOne({
-    $or: [
-      {
-        giveawayId:
-          identifier,
-      },
-
-      {
-        slug:
-          normalizedIdentifier,
-      },
-
-      {
-        "prizes.slug":
-          normalizedIdentifier,
-      },
-    ],
-  }).lean();
+    "prizes.slug":
+      normalizedIdentifier,
+  })
+    .sort({
+      startAt: -1,
+    })
+    .lean();
 }
 
 async function getPreviousGiveaways() {
