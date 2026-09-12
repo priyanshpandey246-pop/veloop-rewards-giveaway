@@ -9,6 +9,7 @@ import claimRoutes from "./routes/claimRoutes.js";
 import {
   errorHandler,
 } from "./middleware/errorMiddleware.js";
+import adminGiveawayRoutes from "./routes/adminGiveawayRoutes.js";
 
 const app = express();
 app.set("trust proxy", 1);
@@ -78,6 +79,11 @@ app.use(
 app.use(
   "/api/giveaways",
   giveawayRoutes
+);
+
+app.use(
+  "/api/admin",
+  adminGiveawayRoutes
 );
 
 app.use((req, res) => {
