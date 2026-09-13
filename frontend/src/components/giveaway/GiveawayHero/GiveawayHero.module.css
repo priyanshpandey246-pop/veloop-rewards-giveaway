@@ -627,3 +627,23 @@
     bottom: 7%;
   }
 }
+
+@media (max-width: 768px) {
+  .hero,
+  .visual,
+  .art,
+  .imageWrap {
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .hero::before,
+  .hero::after,
+  .visual::before,
+  .visual::after {
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
