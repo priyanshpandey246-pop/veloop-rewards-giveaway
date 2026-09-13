@@ -39,10 +39,10 @@
   inset: 0;
 
   border:
-    1px solid rgba(172, 100, 255, 0.17);
+    1px solid rgba(122, 184, 173, 0.17);
 
   border-top-color:
-    rgba(172, 100, 255, 0.7);
+    rgba(122, 184, 173, 0.7);
 
   border-radius: 50%;
 
@@ -62,7 +62,7 @@
 
   border-radius: 17px;
 
-  color: #c68cf8;
+  color: #8fc2b9;
 
   background:
     linear-gradient(
@@ -98,9 +98,9 @@
 }
 
 .brand {
-  color: #9560d5;
+  color: #679e95;
 
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.14em;
 }
@@ -120,7 +120,7 @@
 
   color: #777381;
 
-  font-size: 9px;
+  font-size: 12px;
 
   animation:
     message 0.35s ease;
@@ -152,7 +152,7 @@
     linear-gradient(
       90deg,
       #7131c4,
-      #b366fa,
+      #78b3a9,
       #db9635
     );
 
@@ -228,3 +228,6 @@
     animation: none;
   }
 }
+
+
+

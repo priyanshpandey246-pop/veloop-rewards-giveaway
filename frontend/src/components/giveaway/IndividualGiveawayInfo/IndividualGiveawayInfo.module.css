@@ -1,9 +1,9 @@
 .section {
-  padding: 0 0 75px;
+  padding: 24px 0 104px;
 }
 
 .howItWorks {
-  padding: 28px;
+  padding: 36px;
 
   border: 1px solid var(--border);
   border-radius: 19px;
@@ -11,21 +11,21 @@
   background:
     linear-gradient(
       145deg,
-      rgba(16, 18, 32, 0.94),
-      rgba(9, 10, 21, 0.96)
+      rgba(24, 33, 42, 0.96),
+      rgba(15, 20, 26, 0.98)
     );
 }
 
 .sectionHeader span {
-  color: #a76ce9;
+  color: #7ab8ad;
 
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
 
 .sectionHeader h2 {
-  margin: 7px 0 0;
+  margin: 12px 0 0;
 
   color: white;
 
@@ -37,28 +37,28 @@
 }
 
 .sectionHeader p {
-  margin: 7px 0 0;
+  margin: 12px 0 0;
 
   color: var(--text-secondary);
 
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .steps {
-  margin-top: 25px;
+  margin-top: 36px;
 
   display: grid;
 
   grid-template-columns:
     repeat(7, minmax(0, 1fr));
 
-  gap: 8px;
+  gap: 12px;
 }
 
 .step {
   min-width: 0;
 
-  padding: 13px;
+  padding: 17px;
 
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -82,16 +82,16 @@
 
   border-radius: 10px;
 
-  color: #ad72ef;
+  color: #7ab8ad;
 
   background:
-    rgba(138, 62, 218, 0.08);
+    rgba(95, 159, 148, 0.07);
 }
 
 .stepTop > span {
-  color: #4f4b59;
+  color: #9aa6af;
 
-  font-size: 7px;
+  font-size: 12px;
   font-weight: 800;
 }
 
@@ -100,7 +100,7 @@
 
   color: #dedbe3;
 
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.3;
 }
 
@@ -109,12 +109,12 @@
 
   color: #706c7a;
 
-  font-size: 8px;
+  font-size: 11px;
   line-height: 1.55;
 }
 
 .infoGrid {
-  margin-top: 18px;
+  margin-top: 26px;
 
   display: grid;
 
@@ -122,7 +122,7 @@
     minmax(0, 1.05fr)
     minmax(340px, 0.95fr);
 
-  gap: 18px;
+  gap: 24px;
 }
 
 .about,
@@ -135,13 +135,13 @@
 }
 
 .about {
-  padding: 22px;
+  padding: 28px;
 }
 
 .titleRow {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
 }
 
 .titleIcon {
@@ -153,10 +153,10 @@
 
   border-radius: 11px;
 
-  color: #b476f1;
+  color: #7ab8ad;
 
   background:
-    rgba(138, 62, 218, 0.08);
+    rgba(95, 159, 148, 0.07);
 }
 
 .titleRow span {
@@ -164,7 +164,7 @@
 
   color: #6e6978;
 
-  font-size: 7px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.1em;
 }
@@ -178,12 +178,12 @@
 }
 
 .aboutContent {
-  margin-top: 20px;
+  margin-top: 28px;
 
   display: grid;
   grid-template-columns: 180px 1fr;
 
-  gap: 20px;
+  gap: 26px;
   align-items: center;
 }
 
@@ -198,7 +198,7 @@
   background:
     radial-gradient(
       circle,
-      rgba(126, 51, 210, 0.1),
+      rgba(95, 159, 148, 0.08),
       transparent 67%
     );
 }
@@ -219,25 +219,25 @@
 }
 
 .productInfo > p {
-  margin: 7px 0 0;
+  margin: 12px 0 0;
 
   color: #7b7786;
 
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.6;
 }
 
 .facts {
-  margin-top: 14px;
+  margin-top: 20px;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 7px;
+  gap: 10px;
 }
 
 .facts > div {
-  padding: 9px;
+  padding: 12px;
 
   border: 1px solid var(--border);
   border-radius: 9px;
@@ -248,7 +248,7 @@
 
   color: #666270;
 
-  font-size: 7px;
+  font-size: 12px;
 }
 
 .facts strong {
@@ -258,13 +258,13 @@
 
   color: #c8c4cf;
 
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .accordions {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 .accordion {
@@ -287,7 +287,7 @@
 
   background: transparent;
 
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
 
   text-align: left;
@@ -296,11 +296,11 @@
 .accordion > button > span {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
 .accordion > button svg {
-  color: #9a62da;
+  color: #679e95;
 
   transition:
     transform 0.2s ease;
@@ -325,7 +325,7 @@
 
   color: #797583;
 
-  font-size: 8px;
+  font-size: 11px;
   line-height: 1.8;
 }
 
@@ -334,7 +334,7 @@
 }
 
 .accordionContent strong {
-  color: #bf99ed;
+  color: #8fc2b9;
 }
 
 .termBlock {
@@ -346,7 +346,7 @@
 
   color: #bbb7c2;
 
-  font-size: 9px;
+  font-size: 11px;
 }
 
 .termBlock p {
@@ -354,13 +354,13 @@
 
   color: #716d7b;
 
-  font-size: 8px;
+  font-size: 11px;
   line-height: 1.6;
 }
 
 .policyNotice {
-  margin-top: 14px;
-  padding: 9px;
+  margin-top: 20px;
+  padding: 12px;
 
   border:
     1px solid rgba(245, 173, 61, 0.1);
@@ -372,7 +372,7 @@
   background:
     rgba(245, 173, 61, 0.025);
 
-  font-size: 7px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
@@ -410,7 +410,7 @@
   }
 
   .sectionHeader span {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .sectionHeader h2 {
@@ -433,7 +433,7 @@
   }
 
   .stepTop > span {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .step h3 {
@@ -450,7 +450,7 @@
   }
 
   .titleRow span {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .titleRow h2 {
@@ -475,7 +475,7 @@
   }
 
   .facts span {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .facts strong {
@@ -506,3 +506,12 @@
     line-height: 1.6;
   }
 }
+
+
+
+
+
+
+
+
+

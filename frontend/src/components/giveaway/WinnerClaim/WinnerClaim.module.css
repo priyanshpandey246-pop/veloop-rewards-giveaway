@@ -31,8 +31,8 @@
     ),
     linear-gradient(
       135deg,
-      rgba(20, 18, 29, 0.97),
-      rgba(11, 11, 22, 0.98)
+      rgba(24, 33, 42, 0.97),
+      rgba(15, 20, 26, 0.99)
     );
 }
 
@@ -54,7 +54,7 @@
 .eyebrow {
   color: #c0924d;
 
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.11em;
 }
@@ -70,9 +70,9 @@
 .content > p {
   margin: 6px 0 0;
 
-  color: #888391;
+  color: #9aa6af;
 
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .content > p strong {
@@ -93,7 +93,7 @@
   align-items: center;
   gap: 7px;
 
-  color: #a171ca;
+  color: #72aa9f;
 }
 
 .details span {
@@ -102,17 +102,17 @@
 }
 
 .details small {
-  color: #686471;
+  color: #7f8a94;
 
-  font-size: 7px;
+  font-size: 11px;
 }
 
 .details strong {
   margin-top: 2px;
 
-  color: #c3bec9;
+  color: #c5ccd2;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .action {
@@ -130,12 +130,12 @@
 
   border-radius: 7px;
 
-  color: #b897d7;
+  color: #8fc2b9;
 
   background:
-    rgba(137, 62, 218, 0.07);
+    rgba(95, 159, 148, 0.07);
 
-  font-size: 7px;
+  font-size: 11px;
   font-weight: 750;
 }
 
@@ -158,7 +158,7 @@
       #da9231
     );
 
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 800;
 }
 
@@ -170,13 +170,13 @@
 
   color: #70cf98;
 
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .expiredMessage {
   color: #d87a85;
 
-  font-size: 8px;
+  font-size: 11px;
 }
 
 @media (max-width: 767px) {
@@ -203,3 +203,7 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+
+

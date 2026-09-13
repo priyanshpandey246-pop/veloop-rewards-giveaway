@@ -115,3 +115,5 @@ function PrizeCard({ giveaway, index }) {
 }
 
 export default PrizeCard;
+
+

@@ -20,7 +20,7 @@
     display: block;
     margin-top: 6px;
     color: var(--text-muted);
-    font-size: 8px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.08em;
 }
@@ -53,7 +53,7 @@
 
   .timer span {
     margin-top: 7px;
-    font-size: 10px;
+    font-size: 13px;
   }
 
   .timer b {
@@ -64,3 +64,6 @@
     font-size: 14px;
   }
 }
+
+
+

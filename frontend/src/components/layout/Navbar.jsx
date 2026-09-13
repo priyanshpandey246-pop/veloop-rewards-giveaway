@@ -153,7 +153,7 @@ function Navbar() {
                 width: "260px",
                 padding: "18px",
                 border:
-                  "1px solid rgba(167,108,233,.22)",
+                  "1px solid rgba(122,184,173,.20)",
                 borderRadius:
                   "14px",
                 background:
@@ -205,7 +205,7 @@ function Navbar() {
                   marginBottom:
                     "7px",
                   color:
-                    "#a76ce9",
+                    "#7ab8ad",
                   fontSize:
                     "10px",
                   fontWeight:
@@ -264,7 +264,7 @@ function Navbar() {
                   color:
                     "#d8b8ff",
                   background:
-                    "rgba(167,108,233,.08)",
+                    "rgba(95,159,148,.07)",
                   fontSize:
                     "11px",
                   fontWeight:
@@ -286,3 +286,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+

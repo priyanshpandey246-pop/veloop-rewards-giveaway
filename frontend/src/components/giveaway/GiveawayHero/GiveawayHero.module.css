@@ -1,14 +1,11 @@
 .hero {
   position: relative;
-
-  padding: 48px 0 34px;
-
+  padding: 76px 0 70px;
   overflow: hidden;
 }
 
 .hero::before {
   content: "";
-
   position: absolute;
   inset: 0;
 
@@ -16,22 +13,22 @@
 
   background-image:
     linear-gradient(
-      rgba(255, 255, 255, 0.015) 1px,
+      rgba(255, 255, 255, 0.01) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.015) 1px,
+      rgba(255, 255, 255, 0.01) 1px,
       transparent 1px
     );
 
-  background-size: 56px 56px;
+  background-size: 64px 64px;
 
   mask-image:
     linear-gradient(
       to bottom,
       black,
-      transparent 95%
+      transparent 92%
     );
 }
 
@@ -43,27 +40,27 @@
 
   pointer-events: none;
 
-  filter: blur(20px);
+  filter: blur(48px);
 }
 
 .glowLeft {
-  top: -170px;
-  left: -190px;
+  top: -180px;
+  left: -180px;
 
-  width: 450px;
-  height: 450px;
+  width: 460px;
+  height: 460px;
 
   background:
     radial-gradient(
       circle,
-      rgba(132, 55, 226, 0.16),
-      transparent 68%
+      rgba(79, 145, 134, 0.09),
+      transparent 70%
     );
 }
 
 .glowRight {
-  top: -120px;
-  right: -180px;
+  top: -130px;
+  right: -190px;
 
   width: 520px;
   height: 520px;
@@ -71,59 +68,64 @@
   background:
     radial-gradient(
       circle,
-      rgba(96, 49, 193, 0.15),
-      transparent 68%
+      rgba(83, 122, 137, 0.065),
+      transparent 70%
     );
 }
 
 .heroCard {
   position: relative;
 
-  min-height: 500px;
+  min-height: 550px;
 
   display: grid;
+
   grid-template-columns:
-    minmax(0, 1.05fr)
-    minmax(400px, 0.95fr);
+    minmax(0, 1.08fr)
+    minmax(400px, 0.92fr);
 
   align-items: center;
 
   overflow: hidden;
 
-  border: 1px solid var(--border);
-  border-radius: 28px;
+  border:
+    1px solid var(--border);
+
+  border-radius: 30px;
 
   background:
     radial-gradient(
       circle at 82% 42%,
-      rgba(127, 54, 222, 0.15),
-      transparent 33%
+      rgba(72, 134, 124, 0.075),
+      transparent 38%
     ),
     linear-gradient(
       135deg,
-      rgba(16, 18, 33, 0.97),
-      rgba(7, 8, 18, 0.99)
+      rgba(24, 32, 40, 0.97),
+      rgba(14, 20, 26, 0.99)
     );
 
   box-shadow:
-    0 25px 80px rgba(0, 0, 0, 0.25);
+    0 28px 75px
+    rgba(0, 0, 0, 0.18);
 }
 
 .heroCard::before {
   content: "";
 
   position: absolute;
-  top: 0;
-  left: 8%;
 
-  width: 300px;
+  top: 0;
+  left: 10%;
+
+  width: 280px;
   height: 1px;
 
   background:
     linear-gradient(
       90deg,
       transparent,
-      rgba(171, 98, 255, 0.65),
+      rgba(122, 184, 173, 0.32),
       transparent
     );
 }
@@ -132,91 +134,112 @@
   position: relative;
   z-index: 5;
 
-  padding: 65px 20px 65px 62px;
+  padding:
+    78px 34px
+    78px 72px;
 }
 
 .eyebrow {
   width: fit-content;
 
-  margin-bottom: 24px;
-  padding: 8px 13px;
+  margin-bottom: 30px;
+
+  padding:
+    9px 14px;
 
   display: flex;
   align-items: center;
-  gap: 8px;
+
+  gap: 9px;
 
   border:
-    1px solid rgba(166, 89, 255, 0.25);
+    1px solid
+    rgba(122, 184, 173, 0.2);
 
   border-radius: 999px;
 
-  color: #c38cff;
+  color: #82bdb3;
 
   background:
-    rgba(134, 61, 221, 0.08);
+    rgba(95, 159, 148, 0.065);
 
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.1em;
+
+  letter-spacing:
+    0.1em;
 }
 
 .title {
-  max-width: 670px;
+  max-width: 680px;
 
   margin: 0;
 
-  color: #fff;
+  color:
+    var(--text-primary);
 
   font-size:
-    clamp(3rem, 5vw, 5.1rem);
+    clamp(
+      2.9rem,
+      4.7vw,
+      4.8rem
+    );
 
   font-weight: 800;
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+
+  line-height: 1.04;
+
+  letter-spacing:
+    -0.05em;
 }
 
 .title span {
   display: block;
 
-  padding-bottom: 7px;
+  padding-bottom: 8px;
 
   color: transparent;
 
   background:
     linear-gradient(
       90deg,
-      #b478ff 0%,
-      #914ae9 55%,
-      #f0a846 100%
+      #7ab8ad 0%,
+      #63a397 56%,
+      #d2a45f 100%
     );
 
   background-clip: text;
-  -webkit-background-clip: text;
+
+  -webkit-background-clip:
+    text;
 }
 
 .description {
-  max-width: 580px;
+  max-width: 570px;
 
-  margin: 25px 0 0;
+  margin: 34px 0 0;
 
-  color: var(--text-secondary);
+  color:
+    var(--text-secondary);
 
   font-size: 15px;
-  line-height: 1.75;
+
+  line-height: 1.85;
 }
 
 .actions {
-  margin-top: 31px;
+  margin-top: 40px;
 
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+
+  gap: 14px;
 }
 
 .primaryButton,
 .secondaryButton {
-  min-height: 50px;
+  min-height: 52px;
 
   border-radius: 13px;
 
@@ -230,61 +253,80 @@
 }
 
 .primaryButton {
-  padding: 0 21px;
+  padding: 0 23px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   gap: 10px;
 
   border:
-    1px solid rgba(192, 139, 255, 0.32);
+    1px solid
+    rgba(122, 184, 173, 0.27);
 
-  color: white;
+  color: #f4f4ef;
 
   background:
     linear-gradient(
       135deg,
-      #8744dd,
-      #6029bb
+      #5d9f94,
+      #477e76
     );
 
   box-shadow:
-    0 13px 35px rgba(101, 39, 185, 0.22);
+    0 12px 30px
+    rgba(44, 91, 83, 0.15);
 }
 
 .primaryButton:hover {
-  transform: translateY(-2px);
+  transform:
+    translateY(-2px);
+
+  background:
+    linear-gradient(
+      135deg,
+      #69aa9f,
+      #518a81
+    );
 }
 
 .secondaryButton {
-  padding: 0 20px;
+  padding: 0 22px;
 
-  border: 1px solid var(--border);
+  border:
+    1px solid
+    var(--border);
 
-  color: #d1ced9;
+  color:
+    var(--text-secondary);
 
   background:
     rgba(255, 255, 255, 0.025);
 }
 
 .secondaryButton:hover {
+  color:
+    var(--text-primary);
+
   border-color:
-    rgba(255, 255, 255, 0.17);
+    rgba(122, 184, 173, 0.14);
 
   background:
-    rgba(255, 255, 255, 0.045);
+    rgba(95, 159, 148, 0.04);
 }
 
 .trustRow {
-  margin-top: 26px;
+  margin-top: 36px;
 
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 14px;
 
-  color: #898797;
+  gap: 17px;
+
+  color:
+    var(--text-muted);
 
   font-size: 12px;
 }
@@ -292,11 +334,12 @@
 .trustRow > div {
   display: flex;
   align-items: center;
-  gap: 7px;
+
+  gap: 8px;
 }
 
 .trustRow svg {
-  color: #ac72f1;
+  color: #75afa5;
 }
 
 .divider {
@@ -304,13 +347,13 @@
   height: 15px;
 
   background:
-    rgba(255, 255, 255, 0.11);
+    rgba(255, 255, 255, 0.08);
 }
 
 .visual {
   position: relative;
 
-  min-height: 500px;
+  min-height: 550px;
 
   display: flex;
   align-items: center;
@@ -320,17 +363,17 @@
 .productGlow {
   position: absolute;
 
-  width: 370px;
-  height: 370px;
+  width: 390px;
+  height: 390px;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(124, 44, 221, 0.24),
-      rgba(86, 35, 168, 0.08) 45%,
-      transparent 70%
+      rgba(84, 145, 135, 0.12),
+      rgba(67, 111, 108, 0.04) 48%,
+      transparent 72%
     );
 }
 
@@ -338,14 +381,17 @@
   position: relative;
   z-index: 2;
 
-  width: min(410px, 73%);
+  width:
+    min(410px, 73%);
+
   max-height: 410px;
 
   object-fit: contain;
 
   filter:
     drop-shadow(
-      0 25px 35px rgba(74, 23, 139, 0.2)
+      0 25px 35px
+      rgba(0, 0, 0, 0.2)
     );
 }
 
@@ -353,14 +399,15 @@
   position: absolute;
   z-index: 4;
 
-  right: 2%;
+  right: 3%;
   bottom: 7%;
 
-  width: 205px;
+  width: 195px;
 
   filter:
     drop-shadow(
-      0 18px 28px rgba(0, 0, 0, 0.3)
+      0 18px 28px
+      rgba(0, 0, 0, 0.22)
     );
 }
 
@@ -368,45 +415,54 @@
   position: absolute;
   z-index: 5;
 
-  left: 5%;
+  left: 6%;
   bottom: 10%;
 
-  min-width: 165px;
+  min-width: 170px;
 
-  padding: 11px 14px;
+  padding:
+    13px 15px;
 
   display: flex;
   align-items: center;
-  gap: 11px;
+
+  gap: 12px;
 
   border:
-    1px solid rgba(255, 255, 255, 0.1);
+    1px solid
+    var(--border);
 
   border-radius: 14px;
 
   background:
-    rgba(10, 11, 23, 0.8);
+    rgba(17, 25, 31, 0.86);
 
-  backdrop-filter: blur(14px);
+  backdrop-filter:
+    blur(14px);
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.24);
+    0 15px 35px
+    rgba(0, 0, 0, 0.16);
 }
 
 .statusCard small {
   display: block;
 
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 
-  color: #777586;
+  color:
+    var(--text-muted);
 
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.07em;
+
+  letter-spacing:
+    0.07em;
 }
 
 .statusCard strong {
-  color: #efedf4;
+  color:
+    var(--text-primary);
 
   font-size: 12px;
   font-weight: 700;
@@ -420,44 +476,51 @@
 
   border-radius: 50%;
 
-  background: var(--green);
+  background:
+    var(--green);
 
   box-shadow:
     0 0 0 5px
-    rgba(56, 199, 123, 0.1);
+    rgba(103, 173, 132, 0.08);
 }
 
-@media (max-width: 1199px) {
+@media (
+  max-width: 1199px
+) {
   .heroCard {
     grid-template-columns:
       1.08fr 0.92fr;
   }
 
   .content {
-    padding-left: 44px;
+    padding-left: 52px;
   }
 
   .ticket {
-    width: 170px;
+    width: 165px;
   }
 }
 
-@media (max-width: 991px) {
+@media (
+  max-width: 991px
+) {
   .hero {
-    padding-top: 30px;
+    padding:
+      50px 0 58px;
   }
 
   .heroCard {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .content {
     padding:
-      50px 40px 10px;
+      58px 46px 20px;
   }
 
   .visual {
-    min-height: 390px;
+    min-height: 410px;
   }
 
   .gift {
@@ -467,7 +530,7 @@
   .ticket {
     right: 13%;
 
-    width: 175px;
+    width: 170px;
   }
 
   .statusCard {
@@ -475,37 +538,52 @@
   }
 }
 
-@media (max-width: 575px) {
+@media (
+  max-width: 575px
+) {
   .hero {
     padding:
-      20px 0 28px;
+      32px 0 46px;
   }
 
   .heroCard {
-    border-radius: 20px;
+    border-radius: 22px;
   }
 
   .content {
     padding:
-      34px 21px 0;
+      42px 24px 8px;
   }
 
   .eyebrow {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .title {
     font-size:
-      clamp(2.6rem, 14vw, 3.5rem);
+      clamp(
+        2.45rem,
+        13vw,
+        3.35rem
+      );
+
+    line-height: 1.06;
   }
 
   .description {
-    font-size: 15px;
-    line-height: 1.7;
+    margin-top: 26px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
   }
 
   .actions {
+    margin-top: 31px;
+
     align-items: stretch;
+
+    gap: 12px;
   }
 
   .primaryButton,
@@ -518,27 +596,34 @@
   }
 
   .trustRow {
-    align-items: flex-start;
-    flex-direction: column;
+    margin-top: 29px;
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap: 12px;
   }
 
   .visual {
-    min-height: 330px;
+    min-height: 350px;
   }
 
   .gift {
-    width: 280px;
+    width: 275px;
   }
 
   .ticket {
     right: 1%;
     bottom: 5%;
 
-    width: 130px;
+    width: 125px;
   }
 
   .statusCard {
-    left: 4%;
+    left: 5%;
     bottom: 7%;
   }
 }

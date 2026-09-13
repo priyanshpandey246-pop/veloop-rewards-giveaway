@@ -233,3 +233,5 @@ function ParticipationCard({
 }
 
 export default ParticipationCard;
+
+

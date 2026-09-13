@@ -321,7 +321,7 @@ function GiveawayDetails() {
                 <span
                   style={{
                     color:
-                      "#a76ce9",
+                      "#7ab8ad",
                     fontSize:
                       "10px",
                     fontWeight:
@@ -487,3 +487,5 @@ function GiveawayDetails() {
 }
 
 export default GiveawayDetails;
+
+

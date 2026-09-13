@@ -12,7 +12,7 @@
   overflow-y: auto;
 
   background:
-    rgba(3, 4, 10, 0.82);
+    rgba(7, 11, 15, 0.84);
 
   backdrop-filter: blur(9px);
 }
@@ -53,7 +53,7 @@
       ),
       transparent 19rem
     ),
-    #0e101d;
+    #131a22;
 
   box-shadow:
     0 30px 100px
@@ -79,7 +79,7 @@
 
   border-radius: 9px;
 
-  color: #807b8b;
+  color: #9aa6af;
 
   background:
     rgba(
@@ -113,9 +113,9 @@
 }
 
 .header > span {
-  color: #9d65de;
+  color: #679e95;
 
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.12em;
 }
@@ -131,9 +131,9 @@
 .header p {
   margin: 6px 0 0;
 
-  color: #85818f;
+  color: #9aa6af;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .header p strong {
@@ -158,9 +158,9 @@
 
   gap: 6px;
 
-  color: #aaa5b2;
+  color: #aeb7bf;
 
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -181,7 +181,7 @@
 
   outline: none;
 
-  color: #e7e3eb;
+  color: #f2f1ec;
 
   background:
     rgba(
@@ -191,7 +191,7 @@
       0.025
     );
 
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .fields input,
@@ -224,9 +224,9 @@
 }
 
 .emailField small {
-  color: #605c69;
+  color: #7f8a94;
 
-  font-size: 7px;
+  font-size: 11px;
 }
 
 .error {
@@ -253,7 +253,7 @@
       0.04
     );
 
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .note {
@@ -267,7 +267,7 @@
 
   border-radius: 8px;
 
-  color: #777280;
+  color: #8f9aa3;
 
   background:
     rgba(
@@ -277,14 +277,14 @@
       0.02
     );
 
-  font-size: 8px;
+  font-size: 11px;
   line-height: 1.5;
 }
 
 .note svg {
   flex-shrink: 0;
 
-  color: #9b61dc;
+  color: #679e95;
 }
 
 .actions {
@@ -304,7 +304,7 @@
 
   border-radius: 10px;
 
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -312,7 +312,7 @@
   border:
     1px solid var(--border);
 
-  color: #aaa6b2;
+  color: #aeb7bf;
 
   background:
     rgba(
@@ -337,8 +337,8 @@
   background:
     linear-gradient(
       135deg,
-      #8540d9,
-      #6129b4
+      #477e76,
+      #477e76
     );
 }
 
@@ -359,7 +359,7 @@
   }
 
   .header > span {
-    font-size: 10px;
+    font-size: 13px;
   }
 
   .header h2 {
@@ -408,3 +408,7 @@
     font-size: 13px;
   }
 }
+
+
+
+
