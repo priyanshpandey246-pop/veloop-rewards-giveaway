@@ -647,6 +647,163 @@
   }
 }
 
+/* Light winners & announcements theme */
+.section {
+  color: #182334;
+}
+
+.tabs,
+.panel,
+.content {
+  border-color: #dce4ec;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f1f6fc 0%,
+      #f8fafc 55%,
+      #fff9ee 100%
+    );
+
+  box-shadow:
+    0 12px 32px
+    rgba(31, 49, 72, 0.06);
+}
+
+.section h2,
+.section h3,
+.section strong {
+  color: #182334;
+}
+
+.section p {
+  color: #5f6d7c;
+}
+
+.section button {
+  color: #536477;
+}
+
+.section button:hover {
+  color: #245394;
+}
+
+/* Strong active winner colors */
+.section [class*="active"] {
+  color: #17613f !important;
+}
+
+.section [class*="active"] svg {
+  color: #17613f !important;
+}
+
+.section [class*="winner"] {
+  color: #24523f;
+}
+
+.section [class*="winner"] svg {
+  color: #17613f;
+}
+
+/* Final high-contrast light winners theme */
+.section {
+  color: #14233a;
+}
+
+.section h2,
+.section h3,
+.section h4,
+.section strong {
+  color: #10233f !important;
+}
+
+.section p,
+.section small {
+  color: #435b73 !important;
+}
+
+/* All regular icons */
+.section svg {
+  color: #245f8f;
+  stroke-width: 2.2;
+}
+
+/* Tabs */
+.section button {
+  color: #294761 !important;
+  font-weight: 700;
+}
+
+.section button svg {
+  color: #245f8f !important;
+}
+
+.section button[class*="active"],
+.section [class*="active"] {
+  color: #175d46 !important;
+  font-weight: 700;
+}
+
+.section button[class*="active"] svg,
+.section [class*="active"] svg {
+  color: #175d46 !important;
+}
+
+/* Live giveaway */
+.section [class*="live"] {
+  color: #17613f !important;
+  font-weight: 800;
+}
+
+.section [class*="live"] svg {
+  color: #17613f !important;
+}
+
+/* Winner information */
+.section [class*="winner"] {
+  color: #1c3f63;
+}
+
+.section [class*="winner"] strong {
+  color: #10233f !important;
+}
+
+/* Verified / claimed states */
+.section [class*="verified"],
+.section [class*="claimed"],
+.section [class*="status"] {
+  color: #17613f !important;
+  font-weight: 800;
+}
+
+/* Dates and metadata */
+.section [class*="meta"],
+.section [class*="date"] {
+  color: #425d76 !important;
+}
+
+.section [class*="meta"] svg,
+.section [class*="date"] svg {
+  color: #28766a !important;
+}
+
+/* Reward/trophy accents */
+.section [class*="reward"] {
+  color: #8a5a0c !important;
+}
+
+.section [class*="reward"] svg {
+  color: #9a650f !important;
+}
+
+/* Announcement information */
+.section [class*="announcement"] {
+  color: #805713 !important;
+}
+
+.section [class*="announcement"] svg {
+  color: #9a650f !important;
+}
 
 
 

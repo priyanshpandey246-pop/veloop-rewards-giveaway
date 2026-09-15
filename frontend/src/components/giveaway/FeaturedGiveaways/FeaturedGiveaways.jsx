@@ -10,6 +10,21 @@ import styles from "./FeaturedGiveaways.module.css";
 function FeaturedGiveaways({
   giveaways = [],
 }) {
+  const renderCards = (suffix = "") =>
+    giveaways.map((giveaway, index) => (
+      <div
+        className={styles.cardWrap}
+        key={`${
+          giveaway.prizeId || giveaway.id
+        }-${suffix}-${index}`}
+      >
+        <PrizeCard
+          giveaway={giveaway}
+          index={index}
+        />
+      </div>
+    ));
+
   return (
     <section
       id="featured-giveaways"
@@ -43,26 +58,26 @@ function FeaturedGiveaways({
             </span>
           </div>
         </div>
-
-        <div className={styles.grid}>
-          {giveaways.map(
-            (giveaway, index) => (
-              <PrizeCard
-                key={
-                  giveaway.prizeId ||
-                  giveaway.id
-                }
-                giveaway={giveaway}
-                index={index}
-              />
-            )
-          )}
-        </div>
       </div>
+
+      {giveaways.length > 0 && (
+        <div className={styles.carousel}>
+          <div className={styles.track}>
+            <div className={styles.group}>
+              {renderCards("first")}
+            </div>
+
+            <div
+              className={styles.group}
+              aria-hidden="true"
+            >
+              {renderCards("duplicate")}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
 
 export default FeaturedGiveaways;
-
-

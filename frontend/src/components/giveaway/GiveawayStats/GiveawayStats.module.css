@@ -313,6 +313,163 @@
   }
 }
 
+/* Light statistics panel */
+.stats {
+  border-color: #dce4ec;
+
+  background: #f8f5ed;
+
+  box-shadow:
+    0 12px 32px
+    rgba(31, 49, 72, 0.07);
+}
+
+.label {
+  color: #657384;
+}
+
+.valueRow strong {
+  color: #182334;
+}
+
+.valueRow small {
+  color: #2f66b3;
+}
+
+.purple {
+  color: #2f66b3;
+  background: #edf4fd;
+}
+
+.blue {
+  color: #4f7fba;
+  background: #eef5fc;
+}
+
+.green {
+  color: #3f8a68;
+  background: #edf8f2;
+}
+
+.gold {
+  color: #b77b1e;
+  background: #fff6e5;
+}
+
+@media (max-width: 575px) {
+  .stats {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .item {
+    border-color: #dce4ec;
+    background: #f8fbfe;
+
+    box-shadow:
+      0 7px 22px
+      rgba(31, 49, 72, 0.06);
+  }
+}
+
+.stats {
+  border-color: #c5d8e9;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dcebf8,
+      #eef5fb
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(35, 75, 115, 0.09);
+}
+
+.label {
+  color: #536a80;
+}
+
+.valueRow strong {
+  color: #14233a;
+}
+
+.valueRow small {
+  color: #2367b5;
+}
+
+@media (max-width: 575px) {
+  .stats {
+    background: transparent;
+  }
+
+  .item {
+    border-color: #c5d8e9;
+
+    background:
+      linear-gradient(
+        135deg,
+        #e2effa,
+        #f5f9fc
+      );
+  }
+}
+
+/* Strong contrast for light stats */
+.stats {
+  color: #14233a;
+}
+
+.label {
+  color: #415a73 !important;
+  font-weight: 600;
+}
+
+.valueRow strong {
+  color: #10233f !important;
+}
+
+.valueRow small {
+  color: #245fa8 !important;
+  font-weight: 700;
+}
+
+.stats svg {
+  stroke-width: 2.2;
+}
+
+.purple {
+  color: #1f62ad !important;
+  background: #e4effc;
+}
+
+.blue {
+  color: #2769b5 !important;
+  background: #e4effc;
+}
+
+.green {
+  color: #247552 !important;
+  background: #e5f5ed;
+}
+
+.gold {
+  color: #a96e12 !important;
+  background: #fff0cc;
+}
+
+.countdownItem {
+  color: #14233a;
+}
+
+.countdownItem * {
+  color: #203954;
+}
+
+.countdownItem strong {
+  color: #10233f !important;
+}
 
 
 

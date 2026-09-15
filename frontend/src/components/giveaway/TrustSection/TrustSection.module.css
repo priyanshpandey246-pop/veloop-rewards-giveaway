@@ -189,5 +189,51 @@
   }
 }
 
+/* High contrast trust section */
+.section {
+  color: #14233a;
+}
+
+.section h2,
+.section h3,
+.section h4,
+.section strong {
+  color: #10233f !important;
+}
+
+/* Description text */
+.section p {
+  color: #3f5871 !important;
+  font-weight: 500;
+}
+
+/* Eyebrow */
+.section [class*="eyebrow"] {
+  color: #1f62ad !important;
+  font-weight: 800;
+}
+
+/* Icons */
+.section svg {
+  color: #176b61 !important;
+  stroke-width: 2.3;
+}
+
+/* Icon containers */
+.section [class*="icon"] {
+  color: #176b61 !important;
+  background: #dcefeb;
+  border-color: #bcdcd5;
+}
+
+/* Individual trust cards */
+.section [class*="card"] {
+  border-color: #bfd3e5;
+}
+
+.section [class*="card"] p {
+  color: #405a72 !important;
+}
+
 
 

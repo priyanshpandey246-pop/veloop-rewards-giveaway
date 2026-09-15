@@ -1,15 +1,15 @@
 .section {
-  padding:
-    96px 0 112px;
+  padding: 96px 0 112px;
+
+  overflow: hidden;
 }
 
 .header {
-  margin-bottom: 38px;
+  margin-bottom: 42px;
 
   display: flex;
   align-items: flex-end;
-  justify-content:
-    space-between;
+  justify-content: space-between;
 
   gap: 36px;
 }
@@ -22,33 +22,28 @@
 
   gap: 8px;
 
-  color:
-    var(--purple-light);
+  color: var(--purple-light);
 
   font-size: 13px;
   font-weight: 800;
 
-  letter-spacing:
-    0.11em;
+  letter-spacing: 0.11em;
 }
 
 .header h2 {
   margin: 0;
 
-  color:
-    var(--text-primary);
+  color: var(--text-primary);
 
-  font-size:
-    clamp(
-      1.9rem,
-      3vw,
-      2.5rem
-    );
+  font-size: clamp(
+    1.9rem,
+    3vw,
+    2.5rem
+  );
 
   font-weight: 780;
 
-  letter-spacing:
-    -0.035em;
+  letter-spacing: -0.035em;
 }
 
 .header p {
@@ -56,11 +51,9 @@
 
   margin: 14px 0 0;
 
-  color:
-    var(--text-secondary);
+  color: var(--text-secondary);
 
   font-size: 14px;
-
   line-height: 1.75;
 }
 
@@ -74,8 +67,7 @@
 
   gap: 10px;
 
-  border:
-    1px solid
+  border: 1px solid
     rgba(101, 185, 138, 0.12);
 
   border-radius: 12px;
@@ -86,68 +78,114 @@
     rgba(101, 185, 138, 0.035);
 
   font-size: 13px;
-
   line-height: 1.6;
 }
 
 .notice svg {
   flex-shrink: 0;
 
-  color:
-    var(--green);
+  color: var(--green);
 }
 
-.grid {
-  display: grid;
+/* Auto horizontal carousel */
 
-  grid-template-columns:
-    repeat(
-      3,
-      minmax(0, 1fr)
-    );
+.carousel {
+  width: 100%;
+
+  overflow: hidden;
+
+  padding: 4px 0 18px;
+}
+
+.track {
+  width: max-content;
+
+  display: flex;
+
+  animation:
+    giveawayScroll 38s linear infinite;
+
+  will-change: transform;
+}
+
+.group {
+  display: flex;
 
   gap: 28px;
+
+  padding-right: 28px;
 }
 
-@media (
-  max-width: 991px
-) {
-  .section {
-    padding:
-      70px 0 86px;
+.cardWrap {
+  width: min(
+    390px,
+    calc(100vw - 48px)
+  );
+
+  flex: 0 0 auto;
+}
+
+/* Pause so user can interact with cards */
+
+.carousel:hover .track {
+  animation-play-state: paused;
+}
+
+.carousel:focus-within .track {
+  animation-play-state: paused;
+}
+
+@keyframes giveawayScroll {
+  from {
+    transform: translateX(0);
   }
 
-  .grid {
-    grid-template-columns:
-      repeat(
-        2,
-        minmax(0, 1fr)
-      );
+  to {
+    transform: translateX(-50%);
+  }
+}
 
-    gap: 24px;
+/* Tablet */
+
+@media (max-width: 991px) {
+  .section {
+    padding: 70px 0 86px;
   }
 
   .header {
-    align-items:
-      flex-start;
+    align-items: flex-start;
+    flex-direction: column;
 
-    flex-direction:
-      column;
+    margin-bottom: 34px;
+  }
 
-    margin-bottom: 32px;
+  .group {
+    gap: 22px;
+
+    padding-right: 22px;
+  }
+
+  .cardWrap {
+    width: min(
+      360px,
+      calc(100vw - 44px)
+    );
+  }
+
+  .track {
+    animation-duration: 34s;
   }
 }
 
-@media (
-  max-width: 575px
-) {
+/* Mobile */
+
+@media (max-width: 575px) {
   .section {
-    padding:
-      58px 0 76px;
+    padding: 58px 0 76px;
   }
 
   .header {
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 
     gap: 22px;
   }
@@ -156,7 +194,6 @@
     margin-top: 12px;
 
     font-size: 13px;
-
     line-height: 1.75;
   }
 
@@ -164,40 +201,74 @@
     max-width: none;
   }
 
-  .grid {
-    display: flex;
-
-    margin-right:
-      calc(
-        var(--bs-gutter-x) *
-        -0.5
-      );
-
-    padding-right: 22px;
-    padding-bottom: 12px;
-
-    gap: 18px;
-
+  .carousel {
     overflow-x: auto;
 
-    scroll-snap-type:
-      x mandatory;
+    padding-bottom: 14px;
 
     scrollbar-width: none;
+
+    -webkit-overflow-scrolling:
+      touch;
   }
 
-  .grid::-webkit-scrollbar {
+  .carousel::-webkit-scrollbar {
     display: none;
   }
 
-  .grid > * {
-    min-width: 84vw;
+  .track {
+    animation-duration: 32s;
+  }
 
-    scroll-snap-align:
-      start;
+  .group {
+    gap: 18px;
+
+    padding-right: 18px;
+  }
+
+  .cardWrap {
+    width: 84vw;
   }
 }
 
 
 
+@media (
+  prefers-reduced-motion:
+    reduce
+) {
+  .track {
+    animation: none;
+  }
 
+  .carousel {
+    overflow-x: auto;
+  }
+}
+
+/* Readable light-theme content */
+.header h2 {
+  color: #14233a;
+}
+
+.header p {
+  color: #425b73;
+}
+
+.eyebrow {
+  color: #2366ad;
+}
+
+.notice {
+  color: #3f655d;
+
+  border-color: #b9d7ce;
+
+  background: #e5f3ef;
+
+  font-weight: 500;
+}
+
+.notice svg {
+  color: #24795a;
+}

@@ -147,5 +147,156 @@
   }
 }
 
+/* Premium light footer */
+.footer {
+  border-top: 1px solid #b9cadb;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d9e7f3 0%,
+      #e5eef6 55%,
+      #edf2f5 100%
+    );
+
+  color: #14233a;
+}
+
+.footer h1,
+.footer h2,
+.footer h3,
+.footer h4,
+.footer strong {
+  color: #14233a !important;
+}
+
+.footer p,
+.footer span,
+.footer small {
+  color: #405970;
+}
+
+.footer a {
+  color: #294e70;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  color: #174f8b;
+}
+
+.footer svg {
+  color: #176b61 !important;
+  stroke-width: 2.2;
+}
+
+.footer [class*="logo"] {
+  color: #14233a;
+}
+
+.footer [class*="reward"] {
+  color: #9a650f !important;
+}
+
+/* Footer separators */
+.footer hr,
+.footer [class*="divider"] {
+  border-color: #aec3d5;
+  background: #aec3d5;
+}
+
+/* Final medium-tone footer */
+.footer {
+  border-top: 1px solid #8faabd;
+
+  background:
+    linear-gradient(
+      135deg,
+      #b7ccdc 0%,
+      #c3d4e1 55%,
+      #cfdae4 100%
+    );
+
+  color: #10283e;
+}
+
+.footer h1,
+.footer h2,
+.footer h3,
+.footer strong {
+  color: #10283e !important;
+}
+
+.footer p,
+.footer span,
+.footer small {
+  color: #314e65;
+}
+
+.footer a {
+  color: #173f61;
+  font-weight: 700;
+}
+
+.footer a:hover {
+  color: #0d3457;
+}
+
+.footer svg {
+  color: #145f57 !important;
+}
+
+/* Final VELOOP footer palette */
+.footer {
+  color: #ffffff;
+
+  border-top: 1px solid rgba(203, 213, 225, 0.1);
+
+  background: #0b1120;
+}
+
+.footer h1,
+.footer h2,
+.footer h3,
+.footer h4,
+.footer strong {
+  color: #ffffff !important;
+}
+
+.footer p,
+.footer span,
+.footer small {
+  color: #cbd5e1;
+}
+
+.footer a {
+  color: #cbd5e1;
+
+  font-weight: 600;
+}
+
+.footer a:hover {
+  color: #14b8a6;
+}
+
+.footer svg {
+  color: #14b8a6 !important;
+}
+
+.footer [class*="logo"] {
+  color: #ffffff;
+}
+
+.footer [class*="reward"] {
+  color: #d4a64a !important;
+}
+
+.footer hr,
+.footer [class*="divider"] {
+  border-color: rgba(203, 213, 225, 0.14);
+
+  background: rgba(203, 213, 225, 0.14);
+}
+
 
 

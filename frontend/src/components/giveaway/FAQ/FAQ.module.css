@@ -243,6 +243,57 @@
   }
 }
 
+/* Final high-contrast FAQ */
+.section {
+  color: #14233a;
+}
+
+.section h1,
+.section h2,
+.section h3,
+.section h4,
+.section strong {
+  color: #10233f !important;
+}
+
+/* Main intro + answers */
+.section p {
+  color: #3f5871 !important;
+  font-weight: 500;
+}
+
+/* Eyebrow */
+.section [class*="eyebrow"] {
+  color: #1e63ad !important;
+  font-weight: 800;
+}
+
+/* FAQ questions */
+.section button {
+  color: #14233a !important;
+  font-weight: 700;
+}
+
+/* Question mark / arrows */
+.section svg {
+  color: #28677a !important;
+  stroke-width: 2.3;
+}
+
+/* Answer content */
+.section [class*="answer"] {
+  color: #3d566f !important;
+}
+
+.section [class*="answer"] p {
+  color: #3d566f !important;
+}
+
+/* FAQ rows */
+.section [class*="item"] {
+  border-color: #bfd1e1;
+}
+
 
 
 

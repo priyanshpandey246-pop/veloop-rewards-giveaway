@@ -631,3 +631,115 @@
   }
 }
 
+/* =====================================================
+   FINAL GIVEAWAY DETAIL THEME
+   Shared across every giveaway detail page
+   ===================================================== */
+
+.section {
+  color: #f8fafc;
+}
+
+/* Main premium dark giveaway hero */
+.hero {
+  color: #f8fafc;
+
+  border-color: #334155;
+
+  background:
+    radial-gradient(
+      circle at 82% 30%,
+      rgba(20, 184, 166, 0.12),
+      transparent 30rem
+    ),
+    linear-gradient(
+      135deg,
+      #0f172a 0%,
+      #111827 58%,
+      #0b1120 100%
+    );
+
+  box-shadow:
+    0 20px 50px
+    rgba(15, 23, 42, 0.18);
+}
+
+/* Main text */
+.hero h1,
+.hero h2,
+.hero h3,
+.hero strong {
+  color: #ffffff !important;
+}
+
+.hero p {
+  color: #cbd5e1 !important;
+}
+
+/* Icons */
+.hero svg {
+  color: #2dd4bf;
+}
+
+/* Important labels */
+.hero [class*="label"],
+.hero [class*="eyebrow"] {
+  color: #2dd4bf !important;
+}
+
+/* Metadata */
+.hero [class*="meta"] {
+  color: #cbd5e1 !important;
+}
+
+.hero [class*="meta"] strong {
+  color: #ffffff !important;
+}
+
+/* Entry fee */
+.hero [class*="fee"] {
+  color: #f8fafc !important;
+
+  border-color: #334155;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+}
+
+.hero [class*="fee"] strong {
+  color: #ffffff !important;
+}
+
+/* Countdown */
+.hero [class*="countdown"] {
+  color: #f8fafc;
+
+  border-color: #334155;
+
+  background: #111827;
+}
+
+.hero [class*="countdown"] strong,
+.hero [class*="countdown"] [class*="value"] {
+  color: #ffffff !important;
+}
+
+.hero [class*="countdown"] span,
+.hero [class*="countdown"] small {
+  color: #cbd5e1 !important;
+}
+
+/* Status */
+.hero [class*="active"],
+.hero [class*="live"] {
+  color: #2dd4bf !important;
+}
+
+/* Back navigation */
+.back {
+  color: #334155;
+}
+
+.back:hover {
+  color: #0f172a;
+}

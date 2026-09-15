@@ -255,5 +255,76 @@
   }
 }
 
+/* Light reward spotlight */
+.slider {
+  border: 1px solid #dce4ec;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff8ea 0%,
+      #f7f9fb 48%,
+      #edf4fb 100%
+    );
+
+  box-shadow:
+    0 10px 28px
+    rgba(31, 49, 72, 0.065);
+}
+
+.slider h2,
+.slider h3,
+.slider strong {
+  color: #182334;
+}
+
+.slider p,
+.slider span {
+  color: #5f6d7c;
+}
+
+.slider svg {
+  color: #b77b1e;
+}
+
+/* Strong contrast winner spotlight */
+.slider,
+.wrapper {
+  color: #14233a;
+}
+
+.slider h2,
+.slider h3,
+.slider strong,
+.wrapper h2,
+.wrapper h3,
+.wrapper strong {
+  color: #14233a !important;
+}
+
+.slider p,
+.slider span,
+.wrapper p,
+.wrapper span {
+  color: #3f566e;
+}
+
+.slider svg,
+.wrapper svg {
+  color: #a96c0e !important;
+  stroke-width: 2.2;
+}
+
+.slider [class*="winner"],
+.wrapper [class*="winner"] {
+  color: #17385c !important;
+}
+
+.slider button,
+.wrapper button {
+  color: #8a5a0c !important;
+  border-color: #c9d7e5;
+  background: #f5f9fd;
+}
 
 

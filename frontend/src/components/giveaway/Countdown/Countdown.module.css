@@ -65,5 +65,32 @@
   }
 }
 
+/* Light theme readable countdown */
+.countdown {
+  color: #14233a;
+}
+
+.item,
+.timeItem {
+  color: #14233a;
+}
+
+.value,
+.number,
+.item strong,
+.timeItem strong {
+  color: #10233f !important;
+}
+
+.label,
+.item span,
+.timeItem span {
+  color: #53677e !important;
+}
+
+.separator {
+  color: #2f4663 !important;
+}
+
 
 

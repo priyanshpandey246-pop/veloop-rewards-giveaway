@@ -507,6 +507,139 @@
   }
 }
 
+/* =====================================================
+   GIVEAWAY DETAIL INFORMATION THEME
+   ===================================================== */
+
+/* Strong dark How It Works section */
+.howItWorks {
+  color: #f8fafc;
+
+  border: 1px solid #334155;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #111827
+    );
+
+  box-shadow:
+    0 16px 38px
+    rgba(15, 23, 42, 0.12);
+}
+
+.howItWorks h1,
+.howItWorks h2,
+.howItWorks h3,
+.howItWorks h4,
+.howItWorks strong {
+  color: #ffffff !important;
+}
+
+.howItWorks p,
+.howItWorks span {
+  color: #cbd5e1;
+}
+
+.howItWorks svg {
+  color: #2dd4bf !important;
+}
+
+/* Section eyebrow */
+.howItWorks [class*="eyebrow"] {
+  color: #2dd4bf !important;
+}
+
+/* Individual steps */
+.howItWorks [class*="step"] {
+  color: #f8fafc;
+
+  border-color: #475569;
+
+  background: #111827;
+}
+
+.howItWorks [class*="step"] h3,
+.howItWorks [class*="step"] strong {
+  color: #ffffff !important;
+}
+
+.howItWorks [class*="step"] p {
+  color: #cbd5e1 !important;
+}
+
+.howItWorks [class*="step"] svg,
+.howItWorks [class*="number"] {
+  color: #2dd4bf !important;
+}
+
+/* ---------------------------------------------
+   Light prize / information areas
+   --------------------------------------------- */
+
+.about,
+.details,
+.information {
+  color: #0f172a;
+
+  border-color: #cbd5e1;
+
+  background: #f8fafc;
+}
+
+.about h2,
+.about h3,
+.details h2,
+.details h3,
+.information h2,
+.information h3,
+.about strong,
+.details strong,
+.information strong {
+  color: #0f172a !important;
+}
+
+.about p,
+.details p,
+.information p {
+  color: #475569 !important;
+}
+
+.about svg,
+.details svg,
+.information svg {
+  color: #0f766e !important;
+}
+
+/* Accordions / information cards */
+.section [class*="accordion"],
+.section [class*="infoCard"],
+.section [class*="detailCard"] {
+  color: #0f172a;
+
+  border-color: #cbd5e1;
+
+  background: #ffffff;
+}
+
+.section [class*="accordion"] h3,
+.section [class*="infoCard"] h3,
+.section [class*="detailCard"] h3 {
+  color: #0f172a !important;
+}
+
+.section [class*="accordion"] p,
+.section [class*="infoCard"] p,
+.section [class*="detailCard"] p {
+  color: #475569 !important;
+}
+
+.section [class*="accordion"] svg,
+.section [class*="infoCard"] svg,
+.section [class*="detailCard"] svg {
+  color: #0f766e !important;
+}
 
 
 
