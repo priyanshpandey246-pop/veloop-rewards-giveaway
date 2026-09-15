@@ -641,6 +641,159 @@
   color: #0f766e !important;
 }
 
+/* Final readable light information / terms panels */
+.section [class*="accordion"],
+.section [class*="information"],
+.section [class*="terms"] {
+  color: #0f172a;
+}
+
+/* Accordion headings */
+.section [class*="accordion"] h1,
+.section [class*="accordion"] h2,
+.section [class*="accordion"] h3,
+.section [class*="accordion"] strong,
+.section [class*="information"] strong,
+.section [class*="terms"] strong {
+  color: #0f172a !important;
+}
+
+/* Body text and lists */
+.section [class*="accordion"] p,
+.section [class*="accordion"] li,
+.section [class*="information"] p,
+.section [class*="information"] li,
+.section [class*="terms"] p,
+.section [class*="terms"] li {
+  color: #334155 !important;
+}
+
+/* Labels: Eligibility, Entry Requirement etc. */
+.section [class*="accordion"] label,
+.section [class*="accordion"] small,
+.section [class*="terms"] label,
+.section [class*="terms"] small {
+  color: #475569 !important;
+  font-weight: 600;
+}
+
+/* Icons */
+.section [class*="accordion"] svg,
+.section [class*="information"] svg,
+.section [class*="terms"] svg {
+  color: #0f766e !important;
+  stroke-width: 2.3;
+}
+
+/* Teal highlighted values */
+.section [class*="accordion"] em,
+.section [class*="information"] em {
+  color: #0f766e !important;
+}
+
+/* Accordion arrows */
+.section button svg {
+  color: #0f766e !important;
+}
+/* Final high-contrast accordions */
+.accordion {
+  color: #0f172a;
+
+  border-color: #cbd5e1;
+
+  background: #ffffff;
+}
+
+/* Important Information / Terms & Conditions heading */
+.accordion > button {
+  color: #0f172a !important;
+
+  background: #f8fafc;
+
+  font-weight: 700;
+}
+
+/* Heading text */
+.accordion > button span {
+  color: #0f172a !important;
+}
+
+/* Heading icons + arrows */
+.accordion > button svg {
+  color: #0f766e !important;
+  stroke-width: 2.3;
+}
+
+/* Expanded content */
+.accordion p,
+.accordion li {
+  color: #334155 !important;
+}
+
+/* Any small labels inside */
+.accordion small,
+.accordion label {
+  color: #475569 !important;
+}
+
+/* Important highlighted values */
+.accordion strong {
+  color: #0f172a !important;
+}
+
+/* Links / teal values */
+.accordion a {
+  color: #0f766e !important;
+}
+
+/* FORCE LIGHT ACCORDION READABILITY */
+.section .accordions .accordion {
+  color: #0f172a !important;
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+
+.section .accordions .accordion > button {
+  color: #0f172a !important;
+  background: #f8fafc !important;
+}
+
+.section .accordions .accordion > button span {
+  color: #0f172a !important;
+  font-weight: 750 !important;
+}
+
+.section .accordions .accordion > button span svg,
+.section .accordions .accordion > button > svg {
+  color: #0f766e !important;
+  stroke: #0f766e !important;
+}
+
+/* Everything inside opened accordion */
+.section .accordions .accordion > div,
+.section .accordions .accordion > div p,
+.section .accordions .accordion > div li,
+.section .accordions .accordion > div span {
+  color: #334155 !important;
+}
+
+/* Important highlighted values */
+.section .accordions .accordion > div strong {
+  color: #0f766e !important;
+}
+
+/* Terms labels */
+.section .accordions .accordion > div dt,
+.section .accordions .accordion > div label {
+  color: #334155 !important;
+  font-weight: 700 !important;
+}
+
+/* Terms descriptions */
+.section .accordions .accordion > div dd {
+  color: #475569 !important;
+}
+
 
 
 
