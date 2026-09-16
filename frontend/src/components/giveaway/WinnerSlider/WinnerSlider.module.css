@@ -1,6 +1,5 @@
 .section {
-  padding:
-    30px 0 92px;
+  padding: 30px 0 88px;
 }
 
 .slider {
@@ -17,17 +16,21 @@
 
   gap: 30px;
 
-  border:
-    1px solid var(--border);
-
+  border: 1px solid #293548;
   border-radius: 18px;
+
+  color: #f1f5f9;
 
   background:
     linear-gradient(
       135deg,
-      rgba(24, 32, 41, 0.95),
-      rgba(16, 22, 29, 0.97)
+      #151d28,
+      #101720
     );
+
+  box-shadow:
+    0 12px 32px
+    rgba(0, 0, 0, 0.16);
 }
 
 .label {
@@ -39,7 +42,7 @@
   gap: 13px;
 
   border-right:
-    1px solid var(--border);
+    1px solid #293548;
 }
 
 .icon {
@@ -51,23 +54,25 @@
 
   border-radius: 12px;
 
-  color: var(--gold);
+  color: #d9a441;
 
   background:
-    rgba(210, 164, 95, 0.085);
+    rgba(217, 164, 65, 0.1);
+}
+
+.icon svg {
+  color: #d9a441;
 }
 
 .label small {
   display: block;
 
-  color:
-    var(--text-muted);
+  color: #9aa8b7;
 
   font-size: 11px;
   font-weight: 800;
 
-  letter-spacing:
-    0.1em;
+  letter-spacing: 0.1em;
 }
 
 .label strong {
@@ -75,10 +80,9 @@
 
   margin-top: 4px;
 
-  color:
-    var(--text-primary);
+  color: #f1f5f9;
 
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .message {
@@ -94,8 +98,7 @@
 .message p {
   margin: 0;
 
-  color:
-    var(--text-secondary);
+  color: #a8b3c2;
 
   font-size: 13px;
 
@@ -104,12 +107,11 @@
 }
 
 .message strong {
-  color: #83bcb2;
+  color: #72c4b9;
 }
 
 .message b {
-  color:
-    var(--text-primary);
+  color: #f1f5f9;
 
   font-weight: 650;
 }
@@ -122,12 +124,11 @@
 
   border-radius: 50%;
 
-  background:
-    var(--green);
+  background: #59a979;
 
   box-shadow:
     0 0 0 5px
-    rgba(103, 173, 132, 0.07);
+    rgba(89, 169, 121, 0.08);
 }
 
 .controls {
@@ -146,33 +147,27 @@
   display: grid;
   place-items: center;
 
-  border:
-    1px solid
-    var(--border);
-
+  border: 1px solid #344256;
   border-radius: 9px;
 
-  color:
-    var(--text-secondary);
+  color: #d9a441;
 
-  background:
-    rgba(255, 255, 255, 0.025);
+  background: #17212d;
+
+  cursor: pointer;
 }
 
 .controls button:hover {
-  color:
-    var(--text-primary);
+  color: #f0bd5d;
 
   border-color:
-    rgba(122, 184, 173, 0.24);
+    rgba(217, 164, 65, 0.35);
 
-  background:
-    rgba(95, 159, 148, 0.05);
+  background: #1b2734;
 }
 
 .controls span {
-  color:
-    var(--text-muted);
+  color: #8f9dad;
 
   font-size: 12px;
 }
@@ -180,8 +175,7 @@
 .disclaimer {
   margin: 9px 3px 0;
 
-  color:
-    var(--text-muted);
+  color: #7f8d9c;
 
   font-size: 11px;
 
@@ -204,12 +198,9 @@
   }
 }
 
-@media (
-  max-width: 767px
-) {
+@media (max-width: 767px) {
   .section {
-    padding:
-      22px 0 72px;
+    padding: 22px 0 70px;
   }
 
   .slider {
@@ -241,8 +232,7 @@
     padding-top: 15px;
 
     border-top:
-      1px solid
-      var(--border);
+      1px solid #293548;
   }
 
   .controls {
@@ -254,77 +244,3 @@
     text-align: left;
   }
 }
-
-/* Light reward spotlight */
-.slider {
-  border: 1px solid #dce4ec;
-
-  background:
-    linear-gradient(
-      135deg,
-      #fff8ea 0%,
-      #f7f9fb 48%,
-      #edf4fb 100%
-    );
-
-  box-shadow:
-    0 10px 28px
-    rgba(31, 49, 72, 0.065);
-}
-
-.slider h2,
-.slider h3,
-.slider strong {
-  color: #182334;
-}
-
-.slider p,
-.slider span {
-  color: #5f6d7c;
-}
-
-.slider svg {
-  color: #b77b1e;
-}
-
-/* Strong contrast winner spotlight */
-.slider,
-.wrapper {
-  color: #14233a;
-}
-
-.slider h2,
-.slider h3,
-.slider strong,
-.wrapper h2,
-.wrapper h3,
-.wrapper strong {
-  color: #14233a !important;
-}
-
-.slider p,
-.slider span,
-.wrapper p,
-.wrapper span {
-  color: #3f566e;
-}
-
-.slider svg,
-.wrapper svg {
-  color: #a96c0e !important;
-  stroke-width: 2.2;
-}
-
-.slider [class*="winner"],
-.wrapper [class*="winner"] {
-  color: #17385c !important;
-}
-
-.slider button,
-.wrapper button {
-  color: #8a5a0c !important;
-  border-color: #c9d7e5;
-  background: #f5f9fd;
-}
-
-

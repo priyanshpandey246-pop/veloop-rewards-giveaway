@@ -298,5 +298,41 @@
   background: rgba(203, 213, 225, 0.14);
 }
 
+/* FINAL DARK PLATFORM FOOTER */
+.footer {
+  color: #f1f5f9;
+  border-top-color: #293548;
+  background: #0b1018;
+}
+
+.footer h1,
+.footer h2,
+.footer h3,
+.footer strong {
+  color: #f1f5f9 !important;
+}
+
+.footer p,
+.footer span,
+.footer small {
+  color: #a8b3c2;
+}
+
+.footer a {
+  color: #aeb9c6;
+}
+
+.footer a:hover {
+  color: #58b5a9;
+}
+
+.footer svg {
+  color: #58b5a9 !important;
+}
+
+.footer [class*="reward"] {
+  color: #d9a441 !important;
+}
+
 
 

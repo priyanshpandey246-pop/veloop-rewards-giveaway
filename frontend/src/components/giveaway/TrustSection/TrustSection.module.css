@@ -1,6 +1,5 @@
 .section {
-  padding:
-    34px 0 94px;
+  padding: 34px 0 92px;
 }
 
 .heading {
@@ -13,21 +12,18 @@
 }
 
 .heading > span {
-  color:
-    var(--purple-light);
+  color: #58b5a9;
 
   font-size: 13px;
   font-weight: 800;
 
-  letter-spacing:
-    0.13em;
+  letter-spacing: 0.13em;
 }
 
 .heading h2 {
   margin: 11px 0 0;
 
-  color:
-    var(--text-primary);
+  color: #f2f5f7;
 
   font-size:
     clamp(
@@ -45,8 +41,7 @@
 .heading p {
   margin: 14px 0 0;
 
-  color:
-    var(--text-secondary);
+  color: #a8b3c2;
 
   font-size: 13px;
 
@@ -68,19 +63,14 @@
 .card {
   padding: 25px;
 
-  border:
-    1px solid
-    var(--border);
-
+  border: 1px solid #293548;
   border-radius: 16px;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.016
-    );
+  background: #141d29;
+
+  box-shadow:
+    0 8px 24px
+    rgba(0, 0, 0, 0.1);
 
   transition:
     transform 0.2s ease,
@@ -89,24 +79,12 @@
 }
 
 .card:hover {
-  transform:
-    translateY(-3px);
+  transform: translateY(-3px);
 
   border-color:
-    rgba(
-      122,
-      184,
-      173,
-      0.16
-    );
+    rgba(88, 181, 169, 0.28);
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.022
-    );
+  background: #172330;
 }
 
 .icon {
@@ -116,26 +94,30 @@
   display: grid;
   place-items: center;
 
+  border:
+    1px solid
+    rgba(88, 181, 169, 0.17);
+
   border-radius: 12px;
 
-  color: #7db6ac;
+  color: #58b5a9;
 
   background:
-    rgba(
-      95,
-      159,
-      148,
-      0.075
-    );
+    rgba(42, 157, 143, 0.09);
+}
+
+.icon svg {
+  color: #58b5a9;
+
+  stroke-width: 2.2;
 }
 
 .card h3 {
   margin: 18px 0 0;
 
-  color:
-    var(--text-primary);
+  color: #f1f5f9;
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-weight: 700;
 }
@@ -143,17 +125,14 @@
 .card p {
   margin: 9px 0 0;
 
-  color:
-    var(--text-muted);
+  color: #9eabb9;
 
   font-size: 13px;
 
   line-height: 1.75;
 }
 
-@media (
-  max-width: 991px
-) {
+@media (max-width: 991px) {
   .grid {
     grid-template-columns:
       repeat(
@@ -165,21 +144,19 @@
   }
 }
 
-@media (
-  max-width: 575px
-) {
+@media (max-width: 575px) {
   .section {
-    padding:
-      26px 0 72px;
+    padding: 26px 0 70px;
   }
 
   .heading {
     margin-bottom: 30px;
+
+    text-align: left;
   }
 
   .grid {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     gap: 15px;
   }
@@ -188,52 +165,3 @@
     padding: 22px;
   }
 }
-
-/* High contrast trust section */
-.section {
-  color: #14233a;
-}
-
-.section h2,
-.section h3,
-.section h4,
-.section strong {
-  color: #10233f !important;
-}
-
-/* Description text */
-.section p {
-  color: #3f5871 !important;
-  font-weight: 500;
-}
-
-/* Eyebrow */
-.section [class*="eyebrow"] {
-  color: #1f62ad !important;
-  font-weight: 800;
-}
-
-/* Icons */
-.section svg {
-  color: #176b61 !important;
-  stroke-width: 2.3;
-}
-
-/* Icon containers */
-.section [class*="icon"] {
-  color: #176b61 !important;
-  background: #dcefeb;
-  border-color: #bcdcd5;
-}
-
-/* Individual trust cards */
-.section [class*="card"] {
-  border-color: #bfd3e5;
-}
-
-.section [class*="card"] p {
-  color: #405a72 !important;
-}
-
-
-

@@ -1,47 +1,59 @@
 .section {
-  padding: 24px 0 104px;
+  padding: 24px 0 96px;
 }
 
 .howItWorks {
   padding: 36px;
 
-  border: 1px solid var(--border);
+  border: 1px solid #293548;
   border-radius: 19px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(24, 33, 42, 0.96),
-      rgba(15, 20, 26, 0.98)
+      #111923,
+      #0d151f
     );
+
+  box-shadow:
+    0 14px 34px
+    rgba(0, 0, 0, 0.15);
 }
 
 .sectionHeader span {
-  color: #7ab8ad;
+  color: #58b5a9;
 
   font-size: 11px;
   font-weight: 800;
+
   letter-spacing: 0.12em;
 }
 
 .sectionHeader h2 {
   margin: 12px 0 0;
 
-  color: white;
+  color: #f2f5f7;
 
   font-size:
-    clamp(1.6rem, 3vw, 2.05rem);
+    clamp(
+      1.6rem,
+      3vw,
+      2.05rem
+    );
 
   font-weight: 760;
+
   letter-spacing: -0.035em;
 }
 
 .sectionHeader p {
   margin: 12px 0 0;
 
-  color: var(--text-secondary);
+  color: #a8b3c2;
 
   font-size: 12px;
+
+  line-height: 1.7;
 }
 
 .steps {
@@ -50,7 +62,10 @@
   display: grid;
 
   grid-template-columns:
-    repeat(7, minmax(0, 1fr));
+    repeat(
+      7,
+      minmax(0, 1fr)
+    );
 
   gap: 12px;
 }
@@ -60,11 +75,10 @@
 
   padding: 17px;
 
-  border: 1px solid var(--border);
+  border: 1px solid #293548;
   border-radius: 12px;
 
-  background:
-    rgba(255, 255, 255, 0.013);
+  background: #151f2b;
 }
 
 .stepTop {
@@ -80,16 +94,24 @@
   display: grid;
   place-items: center;
 
+  border:
+    1px solid
+    rgba(88, 181, 169, 0.17);
+
   border-radius: 10px;
 
-  color: #7ab8ad;
+  color: #58b5a9;
 
   background:
-    rgba(95, 159, 148, 0.07);
+    rgba(42, 157, 143, 0.09);
+}
+
+.stepIcon svg {
+  color: #58b5a9;
 }
 
 .stepTop > span {
-  color: #9aa6af;
+  color: #72a5d1;
 
   font-size: 12px;
   font-weight: 800;
@@ -98,18 +120,20 @@
 .step h3 {
   margin: 11px 0 0;
 
-  color: #dedbe3;
+  color: #e7edf2;
 
   font-size: 12px;
-  line-height: 1.3;
+
+  line-height: 1.35;
 }
 
 .step p {
-  margin: 5px 0 0;
+  margin: 6px 0 0;
 
-  color: #706c7a;
+  color: #97a5b4;
 
   font-size: 11px;
+
   line-height: 1.55;
 }
 
@@ -127,11 +151,11 @@
 
 .about,
 .accordion {
-  border: 1px solid var(--border);
+  border: 1px solid #293548;
+
   border-radius: 17px;
 
-  background:
-    rgba(255, 255, 255, 0.014);
+  background: #141d28;
 }
 
 .about {
@@ -141,6 +165,7 @@
 .titleRow {
   display: flex;
   align-items: center;
+
   gap: 14px;
 }
 
@@ -151,28 +176,37 @@
   display: grid;
   place-items: center;
 
+  border:
+    1px solid
+    rgba(88, 181, 169, 0.17);
+
   border-radius: 11px;
 
-  color: #7ab8ad;
+  color: #58b5a9;
 
   background:
-    rgba(95, 159, 148, 0.07);
+    rgba(42, 157, 143, 0.09);
+}
+
+.titleIcon svg {
+  color: #58b5a9;
 }
 
 .titleRow span {
   display: block;
 
-  color: #6e6978;
+  color: #8f9dad;
 
   font-size: 12px;
   font-weight: 800;
+
   letter-spacing: 0.1em;
 }
 
 .titleRow h2 {
   margin: 3px 0 0;
 
-  color: #ece8f0;
+  color: #f1f5f9;
 
   font-size: 15px;
 }
@@ -181,9 +215,12 @@
   margin-top: 28px;
 
   display: grid;
-  grid-template-columns: 180px 1fr;
+
+  grid-template-columns:
+    180px 1fr;
 
   gap: 26px;
+
   align-items: center;
 }
 
@@ -193,14 +230,17 @@
   display: grid;
   place-items: center;
 
+  border: 1px solid #263344;
+
   border-radius: 13px;
 
   background:
     radial-gradient(
       circle,
-      rgba(95, 159, 148, 0.08),
+      rgba(86, 135, 182, 0.1),
       transparent 67%
-    );
+    ),
+    #111923;
 }
 
 .product img {
@@ -213,7 +253,7 @@
 .productInfo h3 {
   margin: 0;
 
-  color: white;
+  color: #f2f5f7;
 
   font-size: 16px;
 }
@@ -221,17 +261,20 @@
 .productInfo > p {
   margin: 12px 0 0;
 
-  color: #7b7786;
+  color: #9eabb9;
 
-  font-size: 11px;
-  line-height: 1.6;
+  font-size: 12px;
+
+  line-height: 1.65;
 }
 
 .facts {
   margin-top: 20px;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
 
   gap: 10px;
 }
@@ -239,14 +282,17 @@
 .facts > div {
   padding: 12px;
 
-  border: 1px solid var(--border);
+  border: 1px solid #293548;
+
   border-radius: 9px;
+
+  background: #111923;
 }
 
 .facts span {
   display: block;
 
-  color: #666270;
+  color: #8f9dad;
 
   font-size: 12px;
 }
@@ -254,9 +300,9 @@
 .facts strong {
   display: block;
 
-  margin-top: 3px;
+  margin-top: 4px;
 
-  color: #c8c4cf;
+  color: #dce4eb;
 
   font-size: 11px;
 }
@@ -264,6 +310,7 @@
 .accordions {
   display: flex;
   flex-direction: column;
+
   gap: 14px;
 }
 
@@ -283,27 +330,36 @@
 
   border: 0;
 
-  color: #d9d5de;
+  color: #e1e7ed;
 
-  background: transparent;
+  background: #141d28;
 
   font-size: 12px;
   font-weight: 700;
 
   text-align: left;
+
+  cursor: pointer;
 }
 
 .accordion > button > span {
   display: flex;
   align-items: center;
+
   gap: 12px;
+
+  color: #e1e7ed;
 }
 
 .accordion > button svg {
-  color: #679e95;
+  color: #58b5a9;
 
   transition:
     transform 0.2s ease;
+}
+
+.accordion > button:hover {
+  background: #17222e;
 }
 
 .accordion > button .rotated {
@@ -314,8 +370,9 @@
   padding:
     0 17px 17px;
 
-  border-top:
-    1px solid var(--border);
+  border-top: 1px solid #293548;
+
+  background: #111923;
 }
 
 .accordionContent ul {
@@ -323,9 +380,10 @@
 
   padding-left: 17px;
 
-  color: #797583;
+  color: #9eabb9;
 
   font-size: 11px;
+
   line-height: 1.8;
 }
 
@@ -334,7 +392,7 @@
 }
 
 .accordionContent strong {
-  color: #8fc2b9;
+  color: #72c4b9;
 }
 
 .termBlock {
@@ -344,7 +402,7 @@
 .termBlock h4 {
   margin: 0;
 
-  color: #bbb7c2;
+  color: #cbd4dc;
 
   font-size: 11px;
 }
@@ -352,34 +410,41 @@
 .termBlock p {
   margin: 4px 0 0;
 
-  color: #716d7b;
+  color: #929fae;
 
   font-size: 11px;
-  line-height: 1.6;
+
+  line-height: 1.65;
 }
 
 .policyNotice {
   margin-top: 20px;
+
   padding: 12px;
 
   border:
-    1px solid rgba(245, 173, 61, 0.1);
+    1px solid
+    rgba(217, 164, 65, 0.2);
 
   border-radius: 8px;
 
-  color: #99876b;
+  color: #c8ac76;
 
   background:
-    rgba(245, 173, 61, 0.025);
+    rgba(217, 164, 65, 0.07);
 
   font-size: 12px;
-  line-height: 1.5;
+
+  line-height: 1.55;
 }
 
 @media (max-width: 1199px) {
   .steps {
     grid-template-columns:
-      repeat(4, minmax(0, 1fr));
+      repeat(
+        4,
+        minmax(0, 1fr)
+      );
   }
 }
 
@@ -392,7 +457,10 @@
 @media (max-width: 767px) {
   .steps {
     grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
   }
 
   .aboutContent {
@@ -415,25 +483,24 @@
 
   .sectionHeader h2 {
     font-size: 27px;
+
     line-height: 1.15;
   }
 
   .sectionHeader p {
     font-size: 13px;
-    line-height: 1.6;
+
+    line-height: 1.65;
   }
 
   .steps {
     grid-template-columns: 1fr;
+
     gap: 12px;
   }
 
   .step {
     padding: 17px;
-  }
-
-  .stepTop > span {
-    font-size: 12px;
   }
 
   .step h3 {
@@ -442,15 +509,12 @@
 
   .step p {
     font-size: 12px;
+
     line-height: 1.6;
   }
 
   .about {
     padding: 19px;
-  }
-
-  .titleRow span {
-    font-size: 12px;
   }
 
   .titleRow h2 {
@@ -467,15 +531,10 @@
 
   .productInfo > p {
     font-size: 13px;
-    line-height: 1.65;
   }
 
   .facts {
     grid-template-columns: 1fr;
-  }
-
-  .facts span {
-    font-size: 12px;
   }
 
   .facts strong {
@@ -484,11 +543,13 @@
 
   .accordion > button {
     min-height: 60px;
+
     font-size: 14px;
   }
 
   .accordionContent ul {
     font-size: 12px;
+
     line-height: 1.75;
   }
 
@@ -498,306 +559,9 @@
 
   .termBlock p {
     font-size: 12px;
-    line-height: 1.65;
   }
 
   .policyNotice {
     font-size: 11px;
-    line-height: 1.6;
   }
 }
-
-/* =====================================================
-   GIVEAWAY DETAIL INFORMATION THEME
-   ===================================================== */
-
-/* Strong dark How It Works section */
-.howItWorks {
-  color: #f8fafc;
-
-  border: 1px solid #334155;
-
-  background:
-    linear-gradient(
-      135deg,
-      #0f172a,
-      #111827
-    );
-
-  box-shadow:
-    0 16px 38px
-    rgba(15, 23, 42, 0.12);
-}
-
-.howItWorks h1,
-.howItWorks h2,
-.howItWorks h3,
-.howItWorks h4,
-.howItWorks strong {
-  color: #ffffff !important;
-}
-
-.howItWorks p,
-.howItWorks span {
-  color: #cbd5e1;
-}
-
-.howItWorks svg {
-  color: #2dd4bf !important;
-}
-
-/* Section eyebrow */
-.howItWorks [class*="eyebrow"] {
-  color: #2dd4bf !important;
-}
-
-/* Individual steps */
-.howItWorks [class*="step"] {
-  color: #f8fafc;
-
-  border-color: #475569;
-
-  background: #111827;
-}
-
-.howItWorks [class*="step"] h3,
-.howItWorks [class*="step"] strong {
-  color: #ffffff !important;
-}
-
-.howItWorks [class*="step"] p {
-  color: #cbd5e1 !important;
-}
-
-.howItWorks [class*="step"] svg,
-.howItWorks [class*="number"] {
-  color: #2dd4bf !important;
-}
-
-/* ---------------------------------------------
-   Light prize / information areas
-   --------------------------------------------- */
-
-.about,
-.details,
-.information {
-  color: #0f172a;
-
-  border-color: #cbd5e1;
-
-  background: #f8fafc;
-}
-
-.about h2,
-.about h3,
-.details h2,
-.details h3,
-.information h2,
-.information h3,
-.about strong,
-.details strong,
-.information strong {
-  color: #0f172a !important;
-}
-
-.about p,
-.details p,
-.information p {
-  color: #475569 !important;
-}
-
-.about svg,
-.details svg,
-.information svg {
-  color: #0f766e !important;
-}
-
-/* Accordions / information cards */
-.section [class*="accordion"],
-.section [class*="infoCard"],
-.section [class*="detailCard"] {
-  color: #0f172a;
-
-  border-color: #cbd5e1;
-
-  background: #ffffff;
-}
-
-.section [class*="accordion"] h3,
-.section [class*="infoCard"] h3,
-.section [class*="detailCard"] h3 {
-  color: #0f172a !important;
-}
-
-.section [class*="accordion"] p,
-.section [class*="infoCard"] p,
-.section [class*="detailCard"] p {
-  color: #475569 !important;
-}
-
-.section [class*="accordion"] svg,
-.section [class*="infoCard"] svg,
-.section [class*="detailCard"] svg {
-  color: #0f766e !important;
-}
-
-/* Final readable light information / terms panels */
-.section [class*="accordion"],
-.section [class*="information"],
-.section [class*="terms"] {
-  color: #0f172a;
-}
-
-/* Accordion headings */
-.section [class*="accordion"] h1,
-.section [class*="accordion"] h2,
-.section [class*="accordion"] h3,
-.section [class*="accordion"] strong,
-.section [class*="information"] strong,
-.section [class*="terms"] strong {
-  color: #0f172a !important;
-}
-
-/* Body text and lists */
-.section [class*="accordion"] p,
-.section [class*="accordion"] li,
-.section [class*="information"] p,
-.section [class*="information"] li,
-.section [class*="terms"] p,
-.section [class*="terms"] li {
-  color: #334155 !important;
-}
-
-/* Labels: Eligibility, Entry Requirement etc. */
-.section [class*="accordion"] label,
-.section [class*="accordion"] small,
-.section [class*="terms"] label,
-.section [class*="terms"] small {
-  color: #475569 !important;
-  font-weight: 600;
-}
-
-/* Icons */
-.section [class*="accordion"] svg,
-.section [class*="information"] svg,
-.section [class*="terms"] svg {
-  color: #0f766e !important;
-  stroke-width: 2.3;
-}
-
-/* Teal highlighted values */
-.section [class*="accordion"] em,
-.section [class*="information"] em {
-  color: #0f766e !important;
-}
-
-/* Accordion arrows */
-.section button svg {
-  color: #0f766e !important;
-}
-/* Final high-contrast accordions */
-.accordion {
-  color: #0f172a;
-
-  border-color: #cbd5e1;
-
-  background: #ffffff;
-}
-
-/* Important Information / Terms & Conditions heading */
-.accordion > button {
-  color: #0f172a !important;
-
-  background: #f8fafc;
-
-  font-weight: 700;
-}
-
-/* Heading text */
-.accordion > button span {
-  color: #0f172a !important;
-}
-
-/* Heading icons + arrows */
-.accordion > button svg {
-  color: #0f766e !important;
-  stroke-width: 2.3;
-}
-
-/* Expanded content */
-.accordion p,
-.accordion li {
-  color: #334155 !important;
-}
-
-/* Any small labels inside */
-.accordion small,
-.accordion label {
-  color: #475569 !important;
-}
-
-/* Important highlighted values */
-.accordion strong {
-  color: #0f172a !important;
-}
-
-/* Links / teal values */
-.accordion a {
-  color: #0f766e !important;
-}
-
-/* FORCE LIGHT ACCORDION READABILITY */
-.section .accordions .accordion {
-  color: #0f172a !important;
-  background: #ffffff !important;
-  border-color: #cbd5e1 !important;
-}
-
-.section .accordions .accordion > button {
-  color: #0f172a !important;
-  background: #f8fafc !important;
-}
-
-.section .accordions .accordion > button span {
-  color: #0f172a !important;
-  font-weight: 750 !important;
-}
-
-.section .accordions .accordion > button span svg,
-.section .accordions .accordion > button > svg {
-  color: #0f766e !important;
-  stroke: #0f766e !important;
-}
-
-/* Everything inside opened accordion */
-.section .accordions .accordion > div,
-.section .accordions .accordion > div p,
-.section .accordions .accordion > div li,
-.section .accordions .accordion > div span {
-  color: #334155 !important;
-}
-
-/* Important highlighted values */
-.section .accordions .accordion > div strong {
-  color: #0f766e !important;
-}
-
-/* Terms labels */
-.section .accordions .accordion > div dt,
-.section .accordions .accordion > div label {
-  color: #334155 !important;
-  font-weight: 700 !important;
-}
-
-/* Terms descriptions */
-.section .accordions .accordion > div dd {
-  color: #475569 !important;
-}
-
-
-
-
-
-
-
-

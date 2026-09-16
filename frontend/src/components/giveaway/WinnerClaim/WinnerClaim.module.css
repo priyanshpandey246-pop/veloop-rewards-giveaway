@@ -1,5 +1,5 @@
 .section {
-  padding: 0 0 25px;
+  padding: 0 0 28px;
 }
 
 .card {
@@ -7,7 +7,7 @@
 
   overflow: hidden;
 
-  padding: 25px;
+  padding: 26px;
 
   display: grid;
 
@@ -16,24 +16,32 @@
 
   align-items: center;
 
-  gap: 18px;
+  gap: 20px;
 
   border:
-    1px solid rgba(245, 173, 61, 0.17);
+    1px solid
+    rgba(217, 164, 65, 0.25);
 
   border-radius: 18px;
+
+  color: #f1f5f9;
 
   background:
     radial-gradient(
       circle at 0% 50%,
-      rgba(245, 173, 61, 0.07),
+      rgba(217, 164, 65, 0.07),
       transparent 22rem
     ),
     linear-gradient(
       135deg,
-      rgba(24, 33, 42, 0.97),
-      rgba(15, 20, 26, 0.99)
+      #171c24,
+      #141b24 58%,
+      #12201c
     );
+
+  box-shadow:
+    0 14px 34px
+    rgba(0, 0, 0, 0.18);
 }
 
 .decoration {
@@ -45,55 +53,69 @@
 
   border-radius: 15px;
 
-  color: #f1b34e;
+  color: #dda94c;
 
   background:
-    rgba(245, 173, 61, 0.09);
+    rgba(217, 164, 65, 0.1);
+}
+
+.decoration svg {
+  color: #dda94c;
 }
 
 .eyebrow {
-  color: #c0924d;
+  color: #d0a04d;
 
   font-size: 11px;
   font-weight: 800;
+
   letter-spacing: 0.11em;
 }
 
 .content h2 {
-  margin: 4px 0 0;
+  margin: 5px 0 0;
 
-  color: #f4f0f5;
+  color: #f2f5f7;
 
   font-size: 20px;
+
+  line-height: 1.3;
 }
 
 .content > p {
-  margin: 6px 0 0;
+  margin: 7px 0 0;
 
-  color: #9aa6af;
+  color: #a8b3c2;
 
   font-size: 13px;
+
+  line-height: 1.65;
 }
 
 .content > p strong {
-  color: #dcb36d;
+  color: #e0b45e;
 }
 
 .details {
-  margin-top: 15px;
+  margin-top: 18px;
 
   display: flex;
   flex-wrap: wrap;
 
-  gap: 18px;
+  gap: 20px;
 }
 
 .details > div {
   display: flex;
   align-items: center;
-  gap: 7px;
 
-  color: #72aa9f;
+  gap: 8px;
+
+  color: #58b5a9;
+}
+
+.details > div svg {
+  color: #58b5a9;
 }
 
 .details span {
@@ -102,38 +124,42 @@
 }
 
 .details small {
-  color: #7f8a94;
+  color: #8f9dad;
 
   font-size: 11px;
 }
 
 .details strong {
-  margin-top: 2px;
+  margin-top: 3px;
 
-  color: #c5ccd2;
+  color: #dce4eb;
 
   font-size: 12px;
 }
 
 .action {
-  min-width: 165px;
+  min-width: 175px;
 
   display: flex;
   align-items: flex-end;
   flex-direction: column;
 
-  gap: 10px;
+  gap: 11px;
 }
 
 .status {
-  padding: 5px 7px;
+  padding: 6px 9px;
 
-  border-radius: 7px;
+  border:
+    1px solid
+    rgba(79, 168, 117, 0.18);
 
-  color: #8fc2b9;
+  border-radius: 8px;
+
+  color: #72c493;
 
   background:
-    rgba(95, 159, 148, 0.07);
+    rgba(79, 168, 117, 0.09);
 
   font-size: 11px;
   font-weight: 750;
@@ -142,53 +168,75 @@
 .action button {
   min-height: 42px;
 
-  padding: 0 16px;
+  padding: 0 17px;
 
   border:
-    1px solid rgba(245, 173, 61, 0.2);
+    1px solid
+    rgba(217, 164, 65, 0.28);
 
   border-radius: 10px;
 
-  color: #19120a;
+  color: #151009;
 
-  background:
-    linear-gradient(
-      135deg,
-      #f3b553,
-      #da9231
-    );
+  background: #d9a441;
 
   font-size: 13px;
   font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.action button:hover {
+  transform: translateY(-1px);
+
+  background: #e2af4e;
 }
 
 .completedMessage {
   display: flex;
   align-items: center;
 
-  gap: 6px;
+  gap: 7px;
 
-  color: #70cf98;
+  color: #69ba89;
 
   font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.completedMessage svg {
+  color: #69ba89;
 }
 
 .expiredMessage {
-  color: #d87a85;
+  color: #d9898c;
 
   font-size: 11px;
+
+  line-height: 1.5;
 }
 
 @media (max-width: 767px) {
   .card {
     grid-template-columns:
       auto 1fr;
+
+    padding: 23px;
+
+    align-items: flex-start;
   }
 
   .action {
     grid-column: 1 / -1;
 
     width: 100%;
+
+    margin-top: 4px;
 
     align-items: stretch;
   }
@@ -201,135 +249,16 @@
 @media (max-width: 480px) {
   .card {
     grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .decoration {
+    width: 48px;
+    height: 48px;
+  }
+
+  .details {
+    gap: 15px;
   }
 }
-
-/* Light winner reward theme */
-.card {
-  border: 1px solid rgba(201, 145, 50, 0.28);
-
-  background:
-    radial-gradient(
-      circle at 8% 20%,
-      rgba(201, 145, 50, 0.10),
-      transparent 22rem
-    ),
-    linear-gradient(
-      135deg,
-      #fff8e9 0%,
-      #fffdf8 48%,
-      #edf6f2 100%
-    );
-
-  box-shadow:
-    0 14px 36px
-    rgba(72, 61, 37, 0.08);
-}
-
-.card h2,
-.card h3,
-.card strong {
-  color: #182334;
-}
-
-.card p {
-  color: #5f6d7c;
-}
-
-.card svg {
-  color: #b77b1e;
-}
-
-.card {
-  border-color: #e0c68c;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffefc8 0%,
-      #fff8e8 48%,
-      #e5f4ed 100%
-    );
-
-  box-shadow:
-    0 12px 32px
-    rgba(120, 87, 27, 0.10);
-}
-
-.card h2,
-.card h3,
-.card strong {
-  color: #263449;
-}
-
-.card p {
-  color: #626756;
-}
-
-/* Strong contrast for light Winner Reward section */
-.card {
-  color: #14233a;
-}
-
-.card h1,
-.card h2,
-.card h3,
-.card h4,
-.card strong {
-  color: #14233a !important;
-}
-
-.card p,
-.card span,
-.card small {
-  color: #40566d;
-}
-
-/* Reward / metadata labels */
-.card [class*="label"],
-.card [class*="eyebrow"] {
-  color: #8a5c10 !important;
-  font-weight: 700;
-}
-
-/* Prize / winner details */
-.card [class*="value"],
-.card [class*="detail"] strong {
-  color: #18385b !important;
-}
-
-/* Icons */
-.card svg {
-  color: #9a650f !important;
-  stroke-width: 2.2;
-}
-
-/* Success / verified / submitted states */
-.card [class*="success"],
-.card [class*="verified"],
-.card [class*="submitted"] {
-  color: #1f6d4d !important;
-}
-
-/* Ensure secondary information is readable */
-.card [class*="meta"],
-.card [class*="description"] {
-  color: #4d6175 !important;
-}
-
-
-/* Dark emerald success states */
-.card [class*="success"],
-.card [class*="submitted"],
-.card [class*="verified"] {
-  color: #17613f !important;
-}
-
-.card [class*="success"] *,
-.card [class*="submitted"] *,
-.card [class*="verified"] * {
-  color: #17613f !important;
-}
-
-
-

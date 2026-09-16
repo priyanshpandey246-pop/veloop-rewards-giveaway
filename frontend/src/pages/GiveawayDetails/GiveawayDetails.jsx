@@ -9,8 +9,6 @@ import {
 } from "react-router-dom";
 
 import Navbar from "../../components/layout/Navbar";
-import Footer from "../../components/layout/Footer/Footer";
-
 import GiveawayLoader from "../../components/giveaway/GiveawayLoader/GiveawayLoader";
 import StateMessage from "../../components/giveaway/StateMessage/StateMessage";
 
@@ -173,8 +171,6 @@ function GiveawayDetails() {
             retry
           }
         />
-
-        <Footer />
       </>
     );
   }
@@ -188,8 +184,6 @@ function GiveawayDetails() {
           title="Giveaway not found"
           description="This giveaway is no longer available."
         />
-
-        <Footer />
       </>
     );
   }
@@ -219,8 +213,6 @@ function GiveawayDetails() {
             loadUserStatus
           }
         />
-
-        <Footer />
       </>
     );
   }
@@ -456,9 +448,6 @@ function GiveawayDetails() {
           }
         />
       </main>
-
-      <Footer />
-
       <JoinConfirmationModal
         giveaway={
           giveaway
@@ -487,5 +476,6 @@ function GiveawayDetails() {
 }
 
 export default GiveawayDetails;
+
 
 

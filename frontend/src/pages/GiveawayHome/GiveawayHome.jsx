@@ -3,8 +3,6 @@ import {
 } from "react";
 
 import Navbar from "../../components/layout/Navbar";
-import Footer from "../../components/layout/Footer/Footer";
-
 import GiveawayHero from "../../components/giveaway/GiveawayHero/GiveawayHero";
 import GiveawayStats from "../../components/giveaway/GiveawayStats/GiveawayStats";
 import FeaturedGiveaways from "../../components/giveaway/FeaturedGiveaways/FeaturedGiveaways";
@@ -77,8 +75,6 @@ function GiveawayHome() {
           }
           onRetry={retry}
         />
-
-        <Footer />
       </>
     );
   }
@@ -92,8 +88,6 @@ function GiveawayHome() {
           title="No active giveaway"
           description="The next VELOOP Rewards giveaway is being prepared."
         />
-
-        <Footer />
       </>
     );
   }
@@ -177,8 +171,6 @@ function GiveawayHome() {
         <GiveawayRules />
 
         <FAQ />
-
-        <Footer />
       </main>
 
       {myWinner && (
@@ -222,5 +214,6 @@ function GiveawayHome() {
 }
 
 export default GiveawayHome;
+
 
 

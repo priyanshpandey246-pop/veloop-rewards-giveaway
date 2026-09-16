@@ -1,41 +1,53 @@
 .timer {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
 }
 
 .timer > div {
-    min-width: 36px;
-    text-align: centre;
+  min-width: 36px;
+
+  text-align: center;
 }
 
 .timer strong {
-    display: block;
-    color: white;
-    font-size: 18px;
-    line-height: 1;
+  display: block;
+
+  color: #f2f5f7;
+
+  font-size: 18px;
+
+  line-height: 1;
 }
 
 .timer span {
-    display: block;
-    margin-top: 6px;
-    color: var(--text-muted);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+  display: block;
+
+  margin-top: 6px;
+
+  color: #8f9dad;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
 }
 
 .timer b {
-    margin-top: -2px;
-    color: #696678;
-    font-size: 17px;
-    font-weight: 500;
+  margin-top: -2px;
+
+  color: #718091;
+
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .ended {
-    color: #ef8290;
-    font-size: 14px;
-    font-weight: 700;
+  color: #d9898c;
+
+  font-size: 14px;
+  font-weight: 700;
 }
 
 @media (max-width: 575px) {
@@ -53,7 +65,8 @@
 
   .timer span {
     margin-top: 7px;
-    font-size: 13px;
+
+    font-size: 12px;
   }
 
   .timer b {
@@ -64,33 +77,3 @@
     font-size: 14px;
   }
 }
-
-/* Light theme readable countdown */
-.countdown {
-  color: #14233a;
-}
-
-.item,
-.timeItem {
-  color: #14233a;
-}
-
-.value,
-.number,
-.item strong,
-.timeItem strong {
-  color: #10233f !important;
-}
-
-.label,
-.item span,
-.timeItem span {
-  color: #53677e !important;
-}
-
-.separator {
-  color: #2f4663 !important;
-}
-
-
-

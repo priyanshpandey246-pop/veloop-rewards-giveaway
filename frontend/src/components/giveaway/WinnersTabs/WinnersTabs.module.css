@@ -1,6 +1,5 @@
 .section {
-  padding:
-    72px 0 112px;
+  padding: 68px 0 96px;
 }
 
 .header {
@@ -8,8 +7,7 @@
 
   display: flex;
   align-items: flex-end;
-  justify-content:
-    space-between;
+  justify-content: space-between;
 
   gap: 32px;
 }
@@ -19,21 +17,18 @@
 
   margin-bottom: 11px;
 
-  color:
-    var(--purple-light);
+  color: #58b5a9;
 
   font-size: 13px;
   font-weight: 800;
 
-  letter-spacing:
-    0.12em;
+  letter-spacing: 0.12em;
 }
 
 .header h2 {
   margin: 0;
 
-  color:
-    var(--text-primary);
+  color: #f2f5f7;
 
   font-size:
     clamp(
@@ -44,8 +39,7 @@
 
   font-weight: 780;
 
-  letter-spacing:
-    -0.035em;
+  letter-spacing: -0.035em;
 }
 
 .header p {
@@ -53,8 +47,7 @@
 
   margin: 14px 0 0;
 
-  color:
-    var(--text-secondary);
+  color: #a8b3c2;
 
   font-size: 13px;
 
@@ -64,8 +57,7 @@
 .privacy {
   max-width: 270px;
 
-  color:
-    var(--text-muted);
+  color: #8493a3;
 
   font-size: 12px;
 
@@ -77,28 +69,19 @@
 .panel {
   overflow: hidden;
 
-  border:
-    1px solid
-    var(--border);
-
+  border: 1px solid #293548;
   border-radius: 22px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(
-        24,
-        32,
-        41,
-        0.95
-      ),
-      rgba(
-        16,
-        22,
-        29,
-        0.97
-      )
+      #131c27,
+      #0f1720
     );
+
+  box-shadow:
+    0 14px 34px
+    rgba(0, 0, 0, 0.17);
 }
 
 .tabs {
@@ -112,8 +95,9 @@
   gap: 8px;
 
   border-bottom:
-    1px solid
-    var(--border);
+    1px solid #293548;
+
+  background: #111923;
 }
 
 .tabs button {
@@ -126,57 +110,49 @@
 
   gap: 9px;
 
-  border:
-    1px solid
-    transparent;
+  border: 1px solid transparent;
 
   border-radius: 11px;
 
-  color:
-    var(--text-muted);
+  color: #95a3b2;
 
-  background:
-    transparent;
+  background: transparent;
 
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
+
+  cursor: pointer;
+}
+
+.tabs button svg {
+  color: #7890a5;
 }
 
 .tabs button:hover {
-  color:
-    var(--text-primary);
+  color: #f1f5f9;
 
   background:
-    rgba(
-      255,
-      255,
-      255,
-      0.025
-    );
+    rgba(255, 255, 255, 0.035);
 }
 
 .tabs .activeTab {
   border-color:
-    rgba(
-      122,
-      184,
-      173,
-      0.18
-    );
+    rgba(88, 181, 169, 0.24);
 
-  color: #91c5bc;
+  color: #72c4b9;
 
   background:
-    rgba(
-      95,
-      159,
-      148,
-      0.075
-    );
+    rgba(42, 157, 143, 0.1);
+}
+
+.tabs .activeTab svg {
+  color: #72c4b9;
 }
 
 .tabContent {
   padding: 40px;
+
+  color: #f1f5f9;
 }
 
 .liveState {
@@ -200,28 +176,17 @@
 
   border:
     1px solid
-    rgba(
-      122,
-      184,
-      173,
-      0.16
-    );
+    rgba(88, 181, 169, 0.2);
 
   border-radius: 18px;
 
-  color: #80b8ae;
+  color: #58b5a9;
 
   background:
-    rgba(
-      95,
-      159,
-      148,
-      0.065
-    );
+    rgba(42, 157, 143, 0.09);
 }
 
-.liveState
-  > div:last-child {
+.liveState > div:last-child {
   max-width: 540px;
 }
 
@@ -237,23 +202,21 @@
 
   gap: 7px;
 
+  border:
+    1px solid
+    rgba(79, 168, 117, 0.16);
+
   border-radius: 999px;
 
-  color: #82c19a;
+  color: #69ba89;
 
   background:
-    rgba(
-      103,
-      173,
-      132,
-      0.07
-    );
+    rgba(79, 168, 117, 0.09);
 
   font-size: 11px;
   font-weight: 800;
 
-  letter-spacing:
-    0.09em;
+  letter-spacing: 0.09em;
 }
 
 .statusBadge span {
@@ -262,15 +225,13 @@
 
   border-radius: 50%;
 
-  background:
-    var(--green);
+  background: #59a979;
 }
 
 .liveState h3 {
   margin: 0;
 
-  color:
-    var(--text-primary);
+  color: #f2f5f7;
 
   font-size: 21px;
 
@@ -280,10 +241,9 @@
 .liveState p {
   margin: 12px 0 0;
 
-  color:
-    var(--text-secondary);
+  color: #a8b3c2;
 
-  font-size: 11px;
+  font-size: 12px;
 
   line-height: 1.75;
 }
@@ -302,43 +262,34 @@
 
   border:
     1px solid
-    rgba(
-      210,
-      164,
-      95,
-      0.13
-    );
+    rgba(217, 164, 65, 0.2);
 
   border-radius: 10px;
 
-  color: #c3a774;
+  color: #d5aa59;
 
   background:
-    rgba(
-      210,
-      164,
-      95,
-      0.035
-    );
+    rgba(217, 164, 65, 0.07);
 
   font-size: 12px;
+}
+
+.announcement svg {
+  color: #d9a441;
 }
 
 .previousHeader {
   margin-bottom: 28px;
 
   display: flex;
-  justify-content:
-    space-between;
-
+  justify-content: space-between;
   align-items: center;
 }
 
 .previousHeader h3 {
   margin: 0;
 
-  color:
-    var(--text-primary);
+  color: #f2f5f7;
 
   font-size: 17px;
 }
@@ -346,8 +297,7 @@
 .previousHeader p {
   margin: 6px 0 0;
 
-  color:
-    var(--text-muted);
+  color: #8f9dad;
 
   font-size: 13px;
 }
@@ -355,18 +305,12 @@
 .previousHeader > span {
   padding: 6px 9px;
 
+  border: 1px solid #293548;
   border-radius: 8px;
 
-  color:
-    var(--text-muted);
+  color: #8f9dad;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.025
-    );
+  background: #17212d;
 
   font-size: 11px;
 }
@@ -388,41 +332,24 @@
 
   padding: 22px;
 
-  border:
-    1px solid
-    var(--border);
-
+  border: 1px solid #293548;
   border-radius: 16px;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.015
-    );
+  background: #151f2b;
 
   transition:
     border-color 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .winnerCard:hover {
-  border-color:
-    rgba(
-      122,
-      184,
-      173,
-      0.16
-    );
+  transform: translateY(-2px);
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.023
-    );
+  border-color:
+    rgba(88, 181, 169, 0.26);
+
+  background: #182330;
 }
 
 .winnerTop {
@@ -441,41 +368,36 @@
 
   border-radius: 11px;
 
-  color: #ddb36e;
+  color: #d9a441;
 
   background:
-    rgba(
-      210,
-      164,
-      95,
-      0.075
-    );
+    rgba(217, 164, 65, 0.09);
 }
 
-.winnerTop
-  > div:nth-child(2) {
+.avatar svg {
+  color: #d9a441;
+}
+
+.winnerTop > div:nth-child(2) {
   display: flex;
   flex-direction: column;
 }
 
 .winnerTop span {
-  color:
-    var(--text-muted);
+  color: #8e9dad;
 
   font-size: 11px;
   font-weight: 800;
 
-  letter-spacing:
-    0.1em;
+  letter-spacing: 0.1em;
 }
 
 .winnerTop strong {
   margin-top: 3px;
 
-  color:
-    var(--text-secondary);
+  color: #dce4eb;
 
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .winnerTop .verified {
@@ -485,15 +407,10 @@
 
   border-radius: 7px;
 
-  color: #7ebe96;
+  color: #69ba89;
 
   background:
-    rgba(
-      103,
-      173,
-      132,
-      0.06
-    );
+    rgba(79, 168, 117, 0.09);
 
   font-size: 11px;
 }
@@ -506,26 +423,22 @@
   flex-direction: column;
 
   border-top:
-    1px solid
-    var(--border);
+    1px solid #293548;
 }
 
 .prize small {
-  color:
-    var(--text-muted);
+  color: #8291a1;
 
   font-size: 11px;
   font-weight: 800;
 
-  letter-spacing:
-    0.09em;
+  letter-spacing: 0.09em;
 }
 
 .prize strong {
   margin-top: 6px;
 
-  color:
-    var(--text-primary);
+  color: #f1f5f9;
 
   font-size: 13px;
 }
@@ -545,14 +458,13 @@
 
   gap: 6px;
 
-  color:
-    var(--text-muted);
+  color: #8f9dad;
 
   font-size: 11px;
 }
 
 .details svg {
-  color: #71aaa0;
+  color: #58b5a9;
 }
 
 .category {
@@ -561,8 +473,7 @@
   right: 17px;
   bottom: 17px;
 
-  color:
-    var(--text-muted);
+  color: #8f9dad;
 
   font-size: 11px;
 }
@@ -570,23 +481,18 @@
 .demoNote {
   margin: 13px 3px 0;
 
-  color:
-    var(--text-muted);
+  color: #7f8d9c;
 
   font-size: 11px;
 
   text-align: right;
 }
 
-@media (
-  max-width: 767px
-) {
+@media (max-width: 767px) {
   .header {
-    align-items:
-      flex-start;
+    align-items: flex-start;
 
-    flex-direction:
-      column;
+    flex-direction: column;
   }
 
   .privacy {
@@ -594,21 +500,23 @@
   }
 
   .winnerGrid {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
   }
 }
 
-@media (
-  max-width: 575px
-) {
+@media (max-width: 575px) {
   .section {
-    padding:
-      24px 0 74px;
+    padding: 28px 0 72px;
   }
 
   .tabs {
     overflow-x: auto;
+
+    scrollbar-width: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .tabs button {
@@ -616,18 +524,14 @@
   }
 
   .tabContent {
-    padding:
-      28px 21px;
+    padding: 28px 21px;
   }
 
   .liveState {
-    min-height: 290px;
+    min-height: 280px;
 
-    align-items:
-      flex-start;
-
-    flex-direction:
-      column;
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .winnerCard {
@@ -646,164 +550,3 @@
     text-align: left;
   }
 }
-
-/* Light winners & announcements theme */
-.section {
-  color: #182334;
-}
-
-.tabs,
-.panel,
-.content {
-  border-color: #dce4ec;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f1f6fc 0%,
-      #f8fafc 55%,
-      #fff9ee 100%
-    );
-
-  box-shadow:
-    0 12px 32px
-    rgba(31, 49, 72, 0.06);
-}
-
-.section h2,
-.section h3,
-.section strong {
-  color: #182334;
-}
-
-.section p {
-  color: #5f6d7c;
-}
-
-.section button {
-  color: #536477;
-}
-
-.section button:hover {
-  color: #245394;
-}
-
-/* Strong active winner colors */
-.section [class*="active"] {
-  color: #17613f !important;
-}
-
-.section [class*="active"] svg {
-  color: #17613f !important;
-}
-
-.section [class*="winner"] {
-  color: #24523f;
-}
-
-.section [class*="winner"] svg {
-  color: #17613f;
-}
-
-/* Final high-contrast light winners theme */
-.section {
-  color: #14233a;
-}
-
-.section h2,
-.section h3,
-.section h4,
-.section strong {
-  color: #10233f !important;
-}
-
-.section p,
-.section small {
-  color: #435b73 !important;
-}
-
-/* All regular icons */
-.section svg {
-  color: #245f8f;
-  stroke-width: 2.2;
-}
-
-/* Tabs */
-.section button {
-  color: #294761 !important;
-  font-weight: 700;
-}
-
-.section button svg {
-  color: #245f8f !important;
-}
-
-.section button[class*="active"],
-.section [class*="active"] {
-  color: #175d46 !important;
-  font-weight: 700;
-}
-
-.section button[class*="active"] svg,
-.section [class*="active"] svg {
-  color: #175d46 !important;
-}
-
-/* Live giveaway */
-.section [class*="live"] {
-  color: #17613f !important;
-  font-weight: 800;
-}
-
-.section [class*="live"] svg {
-  color: #17613f !important;
-}
-
-/* Winner information */
-.section [class*="winner"] {
-  color: #1c3f63;
-}
-
-.section [class*="winner"] strong {
-  color: #10233f !important;
-}
-
-/* Verified / claimed states */
-.section [class*="verified"],
-.section [class*="claimed"],
-.section [class*="status"] {
-  color: #17613f !important;
-  font-weight: 800;
-}
-
-/* Dates and metadata */
-.section [class*="meta"],
-.section [class*="date"] {
-  color: #425d76 !important;
-}
-
-.section [class*="meta"] svg,
-.section [class*="date"] svg {
-  color: #28766a !important;
-}
-
-/* Reward/trophy accents */
-.section [class*="reward"] {
-  color: #8a5a0c !important;
-}
-
-.section [class*="reward"] svg {
-  color: #9a650f !important;
-}
-
-/* Announcement information */
-.section [class*="announcement"] {
-  color: #805713 !important;
-}
-
-.section [class*="announcement"] svg {
-  color: #9a650f !important;
-}
-
-
-

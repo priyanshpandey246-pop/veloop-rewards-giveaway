@@ -1,11 +1,11 @@
 .section {
-  padding: 96px 0 112px;
+  padding: 78px 0 96px;
 
   overflow: hidden;
 }
 
 .header {
-  margin-bottom: 42px;
+  margin-bottom: 38px;
 
   display: flex;
   align-items: flex-end;
@@ -22,7 +22,7 @@
 
   gap: 8px;
 
-  color: var(--purple-light);
+  color: #58b5a9;
 
   font-size: 13px;
   font-weight: 800;
@@ -33,13 +33,14 @@
 .header h2 {
   margin: 0;
 
-  color: var(--text-primary);
+  color: #f2f5f7;
 
-  font-size: clamp(
-    1.9rem,
-    3vw,
-    2.5rem
-  );
+  font-size:
+    clamp(
+      1.9rem,
+      3vw,
+      2.5rem
+    );
 
   font-weight: 780;
 
@@ -51,14 +52,15 @@
 
   margin: 14px 0 0;
 
-  color: var(--text-secondary);
+  color: #a8b3c2;
 
   font-size: 14px;
+
   line-height: 1.75;
 }
 
 .notice {
-  max-width: 285px;
+  max-width: 295px;
 
   padding: 13px 15px;
 
@@ -67,28 +69,28 @@
 
   gap: 10px;
 
-  border: 1px solid
-    rgba(101, 185, 138, 0.12);
+  border:
+    1px solid
+    #29423d;
 
   border-radius: 12px;
 
-  color: #9eafa5;
+  color: #aebdb8;
 
-  background:
-    rgba(101, 185, 138, 0.035);
+  background: #11201d;
 
   font-size: 13px;
+
   line-height: 1.6;
 }
 
 .notice svg {
   flex-shrink: 0;
 
-  color: var(--green);
+  color: #58b5a9;
 }
 
 /* Auto horizontal carousel */
-
 .carousel {
   width: 100%;
 
@@ -103,7 +105,8 @@
   display: flex;
 
   animation:
-    giveawayScroll 38s linear infinite;
+    giveawayScroll
+    38s linear infinite;
 
   will-change: transform;
 }
@@ -117,20 +120,16 @@
 }
 
 .cardWrap {
-  width: min(
-    390px,
-    calc(100vw - 48px)
-  );
+  width:
+    min(
+      390px,
+      calc(100vw - 48px)
+    );
 
   flex: 0 0 auto;
 }
 
-/* Pause so user can interact with cards */
-
-.carousel:hover .track {
-  animation-play-state: paused;
-}
-
+.carousel:hover .track,
 .carousel:focus-within .track {
   animation-play-state: paused;
 }
@@ -145,18 +144,16 @@
   }
 }
 
-/* Tablet */
-
 @media (max-width: 991px) {
   .section {
-    padding: 70px 0 86px;
+    padding: 68px 0 84px;
   }
 
   .header {
+    margin-bottom: 32px;
+
     align-items: flex-start;
     flex-direction: column;
-
-    margin-bottom: 34px;
   }
 
   .group {
@@ -166,10 +163,11 @@
   }
 
   .cardWrap {
-    width: min(
-      360px,
-      calc(100vw - 44px)
-    );
+    width:
+      min(
+        360px,
+        calc(100vw - 44px)
+      );
   }
 
   .track {
@@ -177,15 +175,13 @@
   }
 }
 
-/* Mobile */
-
 @media (max-width: 575px) {
   .section {
-    padding: 58px 0 76px;
+    padding: 56px 0 72px;
   }
 
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 
     gap: 22px;
   }
@@ -194,7 +190,6 @@
     margin-top: 12px;
 
     font-size: 13px;
-    line-height: 1.75;
   }
 
   .notice {
@@ -231,8 +226,6 @@
   }
 }
 
-
-
 @media (
   prefers-reduced-motion:
     reduce
@@ -244,31 +237,4 @@
   .carousel {
     overflow-x: auto;
   }
-}
-
-/* Readable light-theme content */
-.header h2 {
-  color: #14233a;
-}
-
-.header p {
-  color: #425b73;
-}
-
-.eyebrow {
-  color: #2366ad;
-}
-
-.notice {
-  color: #3f655d;
-
-  border-color: #b9d7ce;
-
-  background: #e5f3ef;
-
-  font-weight: 500;
-}
-
-.notice svg {
-  color: #24795a;
 }

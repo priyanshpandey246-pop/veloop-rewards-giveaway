@@ -1,24 +1,24 @@
 .section {
-  padding: 72px 0 112px;
+  padding: 68px 0 96px;
 }
 
 .wrapper {
   padding: 42px;
 
-  border: 1px solid var(--border);
+  border: 1px solid #293548;
   border-radius: 24px;
 
   background:
     radial-gradient(
       circle at 100% 0%,
-      rgba(210, 164, 95, 0.04),
+      rgba(217, 164, 65, 0.055),
       transparent 27rem
     ),
-    linear-gradient(
-      145deg,
-      rgba(24, 32, 41, 0.95),
-      rgba(16, 22, 29, 0.97)
-    );
+    #101822;
+
+  box-shadow:
+    0 14px 34px
+    rgba(0, 0, 0, 0.17);
 }
 
 .header {
@@ -36,7 +36,7 @@
 
   margin-bottom: 11px;
 
-  color: var(--purple-light);
+  color: #d0a04d;
 
   font-size: 13px;
   font-weight: 800;
@@ -47,7 +47,7 @@
 .header h2 {
   margin: 0;
 
-  color: var(--text-primary);
+  color: #f2f5f7;
 
   font-size:
     clamp(
@@ -58,8 +58,7 @@
 
   font-weight: 780;
 
-  letter-spacing:
-    -0.035em;
+  letter-spacing: -0.035em;
 }
 
 .header p {
@@ -67,8 +66,7 @@
 
   margin: 13px 0 0;
 
-  color:
-    var(--text-secondary);
+  color: #a8b3c2;
 
   font-size: 13px;
 
@@ -87,14 +85,14 @@
 
   border:
     1px solid
-    rgba(210, 164, 95, 0.13);
+    rgba(217, 164, 65, 0.22);
 
   border-radius: 11px;
 
-  color: #baa078;
+  color: #c9af79;
 
   background:
-    rgba(210, 164, 95, 0.035);
+    rgba(217, 164, 65, 0.07);
 
   font-size: 12px;
 
@@ -104,7 +102,7 @@
 .notice svg {
   flex-shrink: 0;
 
-  color: var(--gold);
+  color: #d9a441;
 }
 
 .grid {
@@ -122,42 +120,30 @@
 .rule {
   padding: 22px;
 
-  border:
-    1px solid var(--border);
-
+  border: 1px solid #293548;
   border-radius: 15px;
 
-  background:
-    rgba(
-      255,
-      255,
-      255,
-      0.014
-    );
+  background: #151f2b;
 
   transition:
     border-color 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .rule:hover {
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 
   border-color:
-    rgba(
-      122,
-      184,
-      173,
-      0.16
-    );
+    rgba(217, 164, 65, 0.28);
+
+  background: #182330;
 }
 
 .ruleTop {
   display: flex;
   align-items: center;
-  justify-content:
-    space-between;
+  justify-content: space-between;
 }
 
 .icon {
@@ -167,22 +153,24 @@
   display: grid;
   place-items: center;
 
+  border:
+    1px solid
+    rgba(217, 164, 65, 0.17);
+
   border-radius: 11px;
 
-  color: #7db6ac;
+  color: #d9a441;
 
   background:
-    rgba(
-      95,
-      159,
-      148,
-      0.075
-    );
+    rgba(217, 164, 65, 0.09);
+}
+
+.icon svg {
+  color: #d9a441;
 }
 
 .ruleTop > span {
-  color:
-    var(--text-muted);
+  color: #72a5d1;
 
   font-size: 12px;
   font-weight: 800;
@@ -191,17 +179,17 @@
 .rule h3 {
   margin: 16px 0 0;
 
-  color:
-    var(--text-primary);
+  color: #f1f5f9;
 
-  font-size: 13px;
+  font-size: 14px;
+
+  line-height: 1.45;
 }
 
 .rule p {
   margin: 9px 0 0;
 
-  color:
-    var(--text-muted);
+  color: #9eabb9;
 
   font-size: 13px;
 
@@ -211,15 +199,14 @@
 .placeholder {
   margin: 18px 2px 0;
 
-  color:
-    var(--text-muted);
+  color: #7f8d9c;
 
   font-size: 11px;
+
+  line-height: 1.65;
 }
 
-@media (
-  max-width: 991px
-) {
+@media (max-width: 991px) {
   .grid {
     grid-template-columns:
       repeat(
@@ -229,15 +216,11 @@
   }
 }
 
-@media (
-  max-width: 767px
-) {
+@media (max-width: 767px) {
   .header {
-    align-items:
-      flex-start;
+    align-items: flex-start;
 
-    flex-direction:
-      column;
+    flex-direction: column;
   }
 
   .notice {
@@ -245,32 +228,30 @@
   }
 }
 
-@media (
-  max-width: 575px
-) {
+@media (max-width: 575px) {
   .section {
-    padding:
-      24px 0 72px;
+    padding: 28px 0 70px;
   }
 
   .wrapper {
-    padding:
-      30px 21px;
+    padding: 30px 21px;
+
+    border-radius: 20px;
+  }
+
+  .header {
+    margin-bottom: 30px;
   }
 
   .grid {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     gap: 15px;
   }
 
-  .eyebrow {
-    font-size: 13px;
-  }
-
   .header h2 {
     font-size: 28px;
+
     line-height: 1.18;
   }
 
@@ -279,7 +260,7 @@
   }
 
   .notice {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .rule {
@@ -291,139 +272,6 @@
   }
 
   .rule p {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
-
-/* Light rules & guidelines theme */
-.wrapper {
-  border: 1px solid #eadfca;
-
-  background:
-    radial-gradient(
-      circle at 90% 10%,
-      rgba(201, 145, 50, 0.09),
-      transparent 26rem
-    ),
-    linear-gradient(
-      135deg,
-      #fff8e9 0%,
-      #faf9f5 52%,
-      #f1f6fb 100%
-    );
-
-  box-shadow:
-    0 14px 36px
-    rgba(69, 60, 42, 0.065);
-}
-
-.wrapper h2,
-.wrapper h3,
-.wrapper strong {
-  color: #182334;
-}
-
-.wrapper p,
-.wrapper li {
-  color: #5f6d7c;
-}
-
-.wrapper svg {
-  color: #b77b1e;
-}
-
-.wrapper {
-  border-color: #dfc994;
-
-  background:
-    linear-gradient(
-      135deg,
-      #fff0c9 0%,
-      #fff8e9 48%,
-      #e8f1fa 100%
-    );
-
-  box-shadow:
-    0 12px 30px
-    rgba(104, 82, 38, 0.08);
-}
-
-.wrapper h2,
-.wrapper h3,
-.wrapper strong {
-  color: #28354a;
-}
-
-.wrapper p,
-.wrapper li {
-  color: #5c6570;
-}
-
-/* Final high-contrast Rules & Guidelines */
-.wrapper {
-  color: #14233a;
-}
-
-.wrapper h1,
-.wrapper h2,
-.wrapper h3,
-.wrapper h4,
-.wrapper strong {
-  color: #14233a !important;
-}
-
-/* Normal descriptions */
-.wrapper p,
-.wrapper li {
-  color: #40556b !important;
-  font-weight: 500;
-}
-
-/* Top eyebrow */
-.wrapper [class*="eyebrow"] {
-  color: #1e63ad !important;
-  font-weight: 800;
-}
-
-/* All icons */
-.wrapper svg {
-  color: #9a6108 !important;
-  stroke-width: 2.3;
-}
-
-/* Step numbers 01, 02, 03, 04 */
-.wrapper [class*="number"],
-.wrapper [class*="index"] {
-  color: #275c91 !important;
-  font-weight: 800;
-}
-
-/* Rule cards */
-.wrapper [class*="card"] {
-  color: #14233a;
-  border-color: #c5d5e3;
-}
-
-.wrapper [class*="card"] h3,
-.wrapper [class*="card"] strong {
-  color: #17324f !important;
-}
-
-.wrapper [class*="card"] p {
-  color: #40566c !important;
-}
-
-/* Important eligibility notice */
-.wrapper [class*="notice"],
-.wrapper [class*="alert"] {
-  color: #76500d !important;
-}
-
-.wrapper [class*="notice"] *,
-.wrapper [class*="alert"] * {
-  color: #76500d !important;
-}
-
-
-
-

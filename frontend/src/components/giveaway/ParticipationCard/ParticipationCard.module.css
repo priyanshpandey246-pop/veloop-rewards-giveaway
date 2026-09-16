@@ -4,28 +4,26 @@
 
   padding: 30px;
 
-  border: 1px solid var(--border);
+  border: 1px solid #293548;
   border-radius: 18px;
 
   background:
     radial-gradient(
       circle at 100% 0%,
-      rgba(95, 159, 148, 0.06),
+      rgba(42, 157, 143, 0.07),
       transparent 18rem
     ),
-    linear-gradient(
-      145deg,
-      rgba(24, 33, 42, 0.98),
-      rgba(15, 20, 26, 0.99)
-    );
+    #141d28;
 
   box-shadow:
-    0 20px 55px rgba(0, 0, 0, 0.16);
+    0 18px 46px
+    rgba(0, 0, 0, 0.2);
 }
 
 .heading {
   display: flex;
   align-items: center;
+
   gap: 16px;
 }
 
@@ -36,28 +34,37 @@
   display: grid;
   place-items: center;
 
+  border:
+    1px solid
+    rgba(88, 181, 169, 0.18);
+
   border-radius: 12px;
 
-  color: #7ab8ad;
+  color: #58b5a9;
 
   background:
-    rgba(95, 159, 148, 0.055);
+    rgba(42, 157, 143, 0.09);
+}
+
+.headingIcon svg {
+  color: #58b5a9;
 }
 
 .heading span {
-  color: #9aa6af;
+  color: #8f9dad;
 
   font-size: 11px;
   font-weight: 800;
+
   letter-spacing: 0.09em;
 }
 
 .heading h2 {
-  margin: 2px 0 0;
+  margin: 3px 0 0;
 
-  color: #eeebf2;
+  color: #f2f5f7;
 
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 720;
 }
 
@@ -65,18 +72,20 @@
   margin-top: 26px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap: 12px;
 }
 
 .balanceGrid > div {
   padding: 17px;
 
-  border: 1px solid var(--border);
+  border: 1px solid #293548;
   border-radius: 11px;
 
-  background:
-    rgba(255, 255, 255, 0.015);
+  background: #111923;
 }
 
 .balanceGrid span {
@@ -84,13 +93,14 @@
 
   margin-bottom: 8px;
 
-  color: #6f6b79;
+  color: #8b99a8;
 
   font-size: 11px;
 }
 
 .balanceGrid strong {
-  color: #e4e0e9;
+  color: #e5ebf0;
+
   font-size: 13px;
 }
 
@@ -98,49 +108,60 @@
 .insufficient,
 .joinedState {
   margin-top: 18px;
+
   padding: 16px;
 
   display: flex;
   align-items: flex-start;
+
   gap: 11px;
 
   border-radius: 10px;
 }
 
 .successState {
-  border: 1px solid
-    rgba(56, 199, 123, 0.12);
+  border:
+    1px solid
+    rgba(79, 168, 117, 0.22);
 
-  color: #65ce94;
+  color: #69ba89;
 
   background:
-    rgba(56, 199, 123, 0.04);
+    rgba(79, 168, 117, 0.08);
 }
 
 .insufficient {
-  border: 1px solid
-    rgba(239, 99, 115, 0.12);
+  border:
+    1px solid
+    rgba(201, 111, 114, 0.22);
 
-  color: #e77886;
+  color: #dc898c;
 
   background:
-    rgba(239, 99, 115, 0.04);
+    rgba(201, 111, 114, 0.08);
 }
 
 .joinedState {
-  border: 1px solid
-    rgba(122, 184, 173, 0.14);
+  border:
+    1px solid
+    rgba(88, 181, 169, 0.22);
 
-  color: #7ab8ad;
+  color: #72c4b9;
 
   background:
-    rgba(95, 159, 148, 0.035);
+    rgba(42, 157, 143, 0.08);
 }
 
-.successState svg,
-.insufficient svg,
+.successState svg {
+  color: #69ba89;
+}
+
+.insufficient svg {
+  color: #dc898c;
+}
+
 .joinedState svg {
-  flex-shrink: 0;
+  color: #72c4b9;
 }
 
 .successState strong,
@@ -148,73 +169,98 @@
 .joinedState strong {
   display: block;
 
+  color: currentColor;
+
   font-size: 12px;
 }
 
 .successState p,
 .insufficient p,
 .joinedState p {
-  margin: 3px 0 0;
+  margin: 4px 0 0;
 
-  color: #777382;
+  color: #9aa8b7;
 
   font-size: 11px;
-  line-height: 1.5;
+
+  line-height: 1.55;
 }
 
 .joinButton,
 .earnButton,
 .disabledButton {
   width: 100%;
-  min-height: 46px;
+  min-height: 48px;
 
   margin-top: 22px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 11px;
+
+  gap: 10px;
 
   border-radius: 11px;
 
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 750;
 }
 
 .joinButton {
-  border: 1px solid
-    rgba(93, 159, 148, 0.22);
+  border:
+    1px solid
+    rgba(88, 181, 169, 0.3);
 
-  color: white;
+  color: #ffffff;
 
-  background:
-    linear-gradient(
-      135deg,
-      #477e76,
-      #477e76
-    );
+  background: #2a8f84;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 9px 22px
+    rgba(24, 87, 79, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.joinButton:hover {
+  transform: translateY(-1px);
+
+  background: #327f77;
 }
 
 .earnButton {
-  border: 1px solid
-    rgba(245, 173, 61, 0.16);
+  border:
+    1px solid
+    rgba(217, 164, 65, 0.24);
 
-  color: #dcb46d;
+  color: #dda94c;
 
   background:
-    rgba(245, 173, 61, 0.06);
+    rgba(217, 164, 65, 0.08);
+
+  cursor: pointer;
+}
+
+.earnButton:hover {
+  background:
+    rgba(217, 164, 65, 0.13);
 }
 
 .disabledButton {
   cursor: default;
 
-  border: 1px solid
-    rgba(56, 199, 123, 0.13);
+  border:
+    1px solid
+    rgba(79, 168, 117, 0.18);
 
-  color: #69ce95;
+  color: #69ba89;
 
   background:
-    rgba(56, 199, 123, 0.045);
+    rgba(79, 168, 117, 0.07);
 }
 
 .security {
@@ -222,17 +268,22 @@
 
   display: flex;
   align-items: flex-start;
+
   gap: 8px;
 
-  color: #5f5b68;
+  color: #81909f;
 
   font-size: 11px;
-  line-height: 1.5;
+
+  line-height: 1.55;
 }
 
 .security svg {
   margin-top: 1px;
+
   flex-shrink: 0;
+
+  color: #58b5a9;
 }
 
 @media (max-width: 991px) {
@@ -243,15 +294,19 @@
 
 @media (max-width: 575px) {
   .card {
-    padding: 20px;
+    padding: 22px;
   }
 
   .heading span {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .heading h2 {
     font-size: 20px;
+  }
+
+  .balanceGrid {
+    gap: 10px;
   }
 
   .balanceGrid span {
@@ -272,111 +327,17 @@
   .insufficient p,
   .joinedState p {
     font-size: 12px;
-    line-height: 1.55;
   }
 
   .joinButton,
   .earnButton,
   .disabledButton {
-    min-height: 48px;
+    min-height: 50px;
+
     font-size: 14px;
   }
 
   .security {
     font-size: 11px;
-    line-height: 1.5;
   }
 }
-
-/* =====================================================
-   LIGHT PARTICIPATION CARD
-   ===================================================== */
-
-.card {
-  color: #0f172a;
-
-  border: 1px solid #cbd5e1;
-
-  background: #ffffff;
-
-  box-shadow:
-    0 12px 30px
-    rgba(15, 23, 42, 0.08);
-}
-
-.card h1,
-.card h2,
-.card h3,
-.card h4,
-.card strong {
-  color: #0f172a !important;
-}
-
-.card p,
-.card span,
-.card small,
-.card label {
-  color: #475569;
-}
-
-.card svg {
-  color: #0f766e;
-  stroke-width: 2.2;
-}
-
-/* Balance/details areas */
-.card [class*="balance"],
-.card [class*="detail"],
-.card [class*="info"] {
-  border-color: #cbd5e1;
-
-  color: #0f172a;
-}
-
-.card [class*="balance"] strong,
-.card [class*="detail"] strong {
-  color: #0f172a !important;
-}
-
-/* Positive states */
-.card [class*="success"],
-.card [class*="joined"] {
-  color: #0f766e !important;
-
-  border-color:
-    rgba(20, 184, 166, 0.28);
-
-  background:
-    rgba(20, 184, 166, 0.07);
-}
-
-/* Primary action */
-.card button:not(:disabled) {
-  border-color: #0f766e;
-
-  color: #ffffff;
-
-  background:
-    #0f766e;
-}
-
-.card button:not(:disabled):hover {
-  background: #115e59;
-}
-
-/* Disabled remains obvious */
-.card button:disabled {
-  color: #64748b;
-
-  border-color: #cbd5e1;
-
-  background: #e2e8f0;
-}
-
-
-
-
-
-
-
-

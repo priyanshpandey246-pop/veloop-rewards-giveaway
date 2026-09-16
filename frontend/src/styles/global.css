@@ -6,56 +6,76 @@
     Arial,
     sans-serif;
 
-  /* Page backgrounds */
-  --bg-primary: #f3f6fa;
-  --bg-secondary: #eaf0f6;
+  /* =========================
+     VELOOP DARK THEME
+     ========================= */
 
-  /* Cards / surfaces */
-  --surface: #ffffff;
-  --surface-light: #f9fbfd;
+  /* Main backgrounds */
+  --bg-primary: #080b12;
+  --bg-secondary: #0d121b;
 
-  /* Text */
-  --text-primary: #182334;
-  --text-secondary: #5f6d7c;
-  --text-muted: #7d8996;
-  --purple: #2f66b3;
-  --purple-light: #477bc2;
-  --purple-dark: #245394;
+  /* Surfaces */
+  --surface: #111923;
+  --surface-light: #17212d;
+  --surface-elevated: #1b2734;
 
-  /* Reward / premium */
-  --gold: #c99132;
+  /* Primary text */
+  --text-primary: #f1f5f9;
 
-  /* States */
-  --green: #3f8a68;
-  --blue: #4f7fba;
-  --red: #bc5f63;
+  /* Secondary readable text */
+  --text-secondary: #a8b3c2;
+  --text-muted: #778596;
+
+  /* Trust / primary actions */
+  --purple: #2a9d8f;
+  --purple-light: #58b5a9;
+  --purple-dark: #217d73;
+
+  /* Reward */
+  --gold: #d9a441;
+
+  /* Functional accents */
+  --green: #4fa875;
+  --blue: #5687b6;
+  --red: #c96f72;
+
+  /* Optional restrained reward purple */
+  --reward-purple: #8768ad;
 
   /* Borders */
-  --border: #dce4ec;
+  --border: #293548;
 
   --purple-border:
-    rgba(47, 102, 179, 0.2);
+    rgba(88, 181, 169, 0.24);
 
-  /* Soft accent backgrounds */
-  --trust-soft: #edf4fd;
-  --reward-soft: #fff6e5;
-  --success-soft: #edf8f2;
+  /* Accent surfaces */
+  --trust-soft:
+    rgba(42, 157, 143, 0.1);
+
+  --reward-soft:
+    rgba(217, 164, 65, 0.1);
+
+  --success-soft:
+    rgba(79, 168, 117, 0.1);
+
+  --blue-soft:
+    rgba(86, 135, 182, 0.1);
 
   /* Shadows */
   --shadow-sm:
-    0 4px 16px
-    rgba(31, 49, 72, 0.06);
+    0 5px 18px
+    rgba(0, 0, 0, 0.16);
 
   --shadow-md:
-    0 12px 34px
-    rgba(31, 49, 72, 0.09);
+    0 14px 36px
+    rgba(0, 0, 0, 0.2);
 
   --shadow-lg:
-    0 22px 54px
-    rgba(31, 49, 72, 0.11);
+    0 24px 58px
+    rgba(0, 0, 0, 0.24);
 
   /* Layout */
-  --section-space: 112px;
+  --section-space: 104px;
 
   --section-space-mobile:
     64px;
@@ -65,6 +85,10 @@
   --content-line-height:
     1.75;
 }
+
+/* =========================
+   BASE
+   ========================= */
 
 * {
   box-sizing: border-box;
@@ -95,15 +119,15 @@ body {
   background:
     radial-gradient(
       circle at 8% 0%,
-      rgba(47, 102, 179, 0.055),
+      rgba(42, 157, 143, 0.055),
       transparent 32rem
     ),
     radial-gradient(
-      circle at 94% 14%,
-      rgba(201, 145, 50, 0.04),
-      transparent 28rem
+      circle at 92% 18%,
+      rgba(86, 135, 182, 0.045),
+      transparent 30rem
     ),
-    var(--bg-primary);
+    #080b12;
 
   -webkit-font-smoothing:
     antialiased;
@@ -155,6 +179,10 @@ a {
     transform 0.2s ease;
 }
 
+/* =========================
+   ACCESSIBILITY
+   ========================= */
+
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
@@ -162,7 +190,7 @@ textarea:focus-visible,
 select:focus-visible {
   outline:
     3px solid
-    rgba(47, 102, 179, 0.26);
+    rgba(88, 181, 169, 0.38);
 
   outline-offset: 3px;
 }
@@ -170,8 +198,12 @@ select:focus-visible {
 ::selection {
   color: #ffffff;
 
-  background: #2f66b3;
+  background: #217d73;
 }
+
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (
   max-width: 767px
@@ -181,7 +213,11 @@ select:focus-visible {
   }
 }
 
-
+/*
+ * Keep this.
+ * It prevents the rendering corruption
+ * previously seen on Android/mobile.
+ */
 @media (
   max-width: 768px
 ) {
@@ -200,27 +236,4 @@ select:focus-visible {
     background-attachment:
       scroll !important;
   }
-}
-
-/* Premium light color system */
-:root {
-  --bg-primary: #eaf1f8;
-  --bg-secondary: #dfeaf5;
-
-  --surface: #f7faff;
-  --surface-light: #edf4fb;
-
-  --text-primary: #14233a;
-  --text-secondary: #4d6278;
-  --text-muted: #708399;
-
-  --purple: #2764b5;
-  --purple-light: #3478c9;
-  --purple-dark: #1f4f91;
-
-  --gold: #c28724;
-  --green: #27835f;
-  --blue: #3478c9;
-
-  --border: #cbd9e8;
 }
