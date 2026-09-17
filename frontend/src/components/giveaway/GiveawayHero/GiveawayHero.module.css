@@ -478,8 +478,9 @@
 @media (max-width: 575px) {
   .hero {
     height: 70vh;
-    min-height: 555px;
-    max-height: 620px;
+    min-height: 0;
+    max-height: none;
+    box-sizing: border-box;
     padding: 12px 0 16px;
   }
 
@@ -496,6 +497,7 @@
     padding: 0;
     border-radius: 18px;
     overflow: hidden;
+    box-sizing: border-box;
   }
 
   .content {
@@ -504,6 +506,7 @@
     width: 100%;
     height: 100%;
     padding: 22px 14px;
+    box-sizing: border-box;
   }
 
   .eyebrow {
@@ -555,15 +558,17 @@
     display: none;
   }
 
+  /* Mobile giveaway visual */
   .visual {
     position: absolute;
     z-index: 6;
     right: 8px;
-    top: 205px;
+    top: 50%;
     width: 145px;
     height: 180px;
     min-height: 0;
     display: block;
+    transform: translateY(-25%);
     pointer-events: none;
   }
 
@@ -587,12 +592,14 @@
   }
 
   .ticket {
+    position: absolute;
     right: -2px;
     bottom: 0;
     width: 52px;
   }
 
   .statusCard {
+    position: absolute;
     left: 0;
     right: auto;
     bottom: 10px;
@@ -617,6 +624,7 @@
     box-shadow: 0 0 0 3px rgba(89, 169, 121, 0.09);
   }
 }
+
 
 @media (max-width: 768px) {
   .hero,
