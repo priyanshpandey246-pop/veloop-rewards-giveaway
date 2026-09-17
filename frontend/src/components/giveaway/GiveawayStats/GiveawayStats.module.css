@@ -4,93 +4,58 @@
 
 .stats {
   min-height: 126px;
-
   padding: 27px 30px;
-
   display: grid;
-
-  grid-template-columns:
-    1fr auto
-    1fr auto
-    1fr auto
-    1.35fr;
-
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1.35fr;
   align-items: center;
-
   column-gap: 20px;
-
   border: 1px solid #293548;
   border-radius: 22px;
-
   color: #f1f5f9;
-
   background: #111923;
-
-  box-shadow:
-    0 14px 36px
-    rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.2);
 }
 
 .item {
   min-width: 0;
-
   display: flex;
   align-items: center;
-
   gap: 15px;
 }
 
 .icon {
   width: 46px;
   height: 46px;
-
   flex-shrink: 0;
-
   display: grid;
   place-items: center;
-
   border-radius: 14px;
 }
 
-/* Available prizes */
 .purple {
   color: #58b5a9;
-
-  background:
-    rgba(42, 157, 143, 0.11);
+  background: rgba(42, 157, 143, 0.11);
 }
 
-/* Winner slots */
 .green {
   color: #69ba89;
-
-  background:
-    rgba(79, 168, 117, 0.11);
+  background: rgba(79, 168, 117, 0.11);
 }
 
-/* Countdown */
 .gold {
   color: #dda94c;
-
-  background:
-    rgba(217, 164, 65, 0.11);
+  background: rgba(217, 164, 65, 0.11);
 }
 
-/* Participants */
 .blue {
   color: #72a5d1;
-
-  background:
-    rgba(86, 135, 182, 0.11);
+  background: rgba(86, 135, 182, 0.11);
 }
 
 .label {
   display: block;
-
   margin-bottom: 6px;
-
   color: #a8b3c2;
-
   font-size: 12px;
   font-weight: 600;
 }
@@ -98,22 +63,18 @@
 .valueRow {
   display: flex;
   align-items: baseline;
-
   gap: 8px;
 }
 
 .valueRow strong {
   color: #f2f5f7;
-
   font-size: 22px;
   font-weight: 750;
-
   line-height: 1.1;
 }
 
 .valueRow small {
   color: #58b5a9;
-
   font-size: 12px;
   font-weight: 700;
 }
@@ -121,13 +82,11 @@
 .divider {
   width: 1px;
   height: 42px;
-
   background: #293548;
 }
 
 .countdownItem {
   justify-content: flex-start;
-
   color: #a8b3c2;
 }
 
@@ -141,20 +100,14 @@
 
 .demoNotice {
   margin: 12px 5px 0;
-
   color: #778596;
-
   font-size: 11px;
-
   text-align: right;
 }
 
-/* Tablet */
 @media (max-width: 1199px) {
   .stats {
-    grid-template-columns:
-      1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
     gap: 30px;
   }
 
@@ -163,96 +116,66 @@
   }
 }
 
-
 @media (max-width: 575px) {
   .section {
-    padding-bottom: 60px;
+    padding: 0 0 44px;
   }
 
   .stats {
     min-height: 0;
-
     padding: 0;
-
+    display: grid;
     grid-template-columns: 1fr;
-
-    gap: 14px;
-
+    gap: 10px;
     border: 0;
     border-radius: 0;
-
     background: transparent;
-
     box-shadow: none;
   }
 
-  .item {
+  .item,
+  .countdownItem {
     width: 100%;
-    min-height: 96px;
-
-    padding: 20px;
-
-    flex-direction: row;
+    min-height: 82px;
+    padding: 15px 16px;
+    display: flex;
     align-items: center;
-
-    gap: 16px;
-
+    gap: 14px;
     border: 1px solid #293548;
-    border-radius: 16px;
-
+    border-radius: 15px;
     background: #111923;
-
-    box-shadow: none;
-
-    filter: none;
-    transform: none;
   }
 
   .icon {
-    width: 48px;
-    height: 48px;
-
-    flex: 0 0 48px;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
   }
 
   .label {
-    margin-bottom: 7px;
-
-    font-size: 13px;
-    line-height: 1.4;
+    margin-bottom: 4px;
+    font-size: 11px;
   }
 
   .valueRow {
-    gap: 8px;
+    gap: 7px;
   }
 
   .valueRow strong {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .valueRow small {
-    font-size: 13px;
+    font-size: 10px;
   }
 
   .divider {
     display: none;
   }
 
-  .countdownItem {
-    grid-column: auto;
-
-    padding: 20px;
-
-    display: flex;
-
-    border-top: 0;
-  }
-
   .demoNotice {
-    margin: 12px 0 0;
-
-    font-size: 12px;
-
+    margin: 8px 2px 0;
+    font-size: 9px;
     text-align: left;
   }
 }

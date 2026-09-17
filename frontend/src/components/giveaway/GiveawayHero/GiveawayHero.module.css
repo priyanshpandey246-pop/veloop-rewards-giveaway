@@ -23,12 +23,11 @@
 
   background-size: 64px 64px;
 
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black,
-      transparent 92%
-    );
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 92%
+  );
 }
 
 .glowLeft,
@@ -69,7 +68,6 @@
 
 .heroCard {
   position: relative;
-
   min-height: 500px;
 
   display: grid;
@@ -109,10 +107,8 @@
 .heroCard::before {
   content: "";
   position: absolute;
-
   top: 0;
   left: 10%;
-
   width: 280px;
   height: 1px;
 
@@ -138,7 +134,6 @@
   width: fit-content;
 
   margin-bottom: 24px;
-
   padding: 9px 14px;
 
   display: flex;
@@ -158,7 +153,6 @@
 
   font-size: 11px;
   font-weight: 800;
-
   letter-spacing: 0.1em;
 }
 
@@ -178,13 +172,11 @@
 
   font-weight: 800;
   line-height: 1.04;
-
   letter-spacing: -0.05em;
 }
 
 .title span {
   display: block;
-
   padding-bottom: 8px;
 
   color: transparent;
@@ -287,7 +279,6 @@
   margin-top: 30px;
 
   display: none;
-
   align-items: center;
   flex-wrap: wrap;
 
@@ -391,7 +382,9 @@
 
   gap: 12px;
 
-  border: 1px solid #30463f;
+  border:
+    1px solid #30463f;
+
   border-radius: 14px;
 
   color: #dbe5e3;
@@ -413,7 +406,6 @@
 
   font-size: 12px;
   font-weight: 700;
-
   letter-spacing: 0.07em;
 }
 
@@ -440,9 +432,6 @@
 }
 
 
-/* =========================================
-   TABLET / SMALL DESKTOP
-   ========================================= */
 
 @media (max-width: 1199px) {
   .heroCard {
@@ -460,9 +449,6 @@
 }
 
 
-/* =========================================
-   TABLET
-   ========================================= */
 
 @media (max-width: 991px) {
   .hero {
@@ -495,80 +481,43 @@
   }
 }
 
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
 @media (max-width: 575px) {
-
-  /* EXACT MOBILE HERO HEIGHT */
   .hero {
-    height: 70vh;
+    height: auto;
     min-height: 0;
     max-height: none;
-
-    padding: 12px 0 16px;
-
-    box-sizing: border-box;
-
-    overflow: hidden;
+    padding: 12px 0 18px;
   }
 
-  /*
-    IMPORTANT:
-    Only the actual Bootstrap/container wrapper
-    gets 100% height.
-  */
-  .hero > .container {
-    height: 100%;
+  .hero > div {
+    height: auto;
   }
 
   .heroCard {
     position: relative;
-
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
-
+    height: auto;
     min-height: 0;
-
-    display: block;
-
-    padding: 0;
-
-    box-sizing: border-box;
-
-    overflow: hidden;
-
+    padding: 22px 14px 16px;
     border-radius: 18px;
+    overflow: hidden;
   }
-
-  /* -----------------------------------------
-     CONTENT
-     ----------------------------------------- */
 
   .content {
     position: relative;
-
     z-index: 5;
-
     width: 100%;
-    height: 100%;
-
-    padding: 22px 14px;
-
-    box-sizing: border-box;
+    height: auto;
+    padding: 0;
   }
 
   .eyebrow {
     width: fit-content;
-
     margin: 0 0 11px;
-
     padding: 6px 9px;
-
     gap: 6px;
-
     font-size: 7px;
   }
 
@@ -578,14 +527,10 @@
   }
 
   .title {
-    max-width: 185px;
-
+    max-width: 210px;
     margin: 0;
-
     font-size: 29px;
-
     line-height: 0.98;
-
     letter-spacing: -1px;
   }
 
@@ -594,138 +539,96 @@
   }
 
   .description {
-    max-width: 180px;
-
+    max-width: 220px;
     margin: 15px 0 0;
-
     font-size: 9px;
-
-    line-height: 1.45;
+    line-height: 1.5;
   }
-
-  /* -----------------------------------------
-     BUTTON
-     ----------------------------------------- */
 
   .actions {
     margin-top: 14px;
-
     display: flex;
-
-    gap: 0;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
-  .primaryButton {
+  .primaryButton,
+  .secondaryButton {
     min-height: 38px;
-
-    padding: 0 14px;
-
-    gap: 8px;
-
+    padding: 0 12px;
     border-radius: 9px;
-
     font-size: 9px;
   }
 
-  .primaryButton svg {
-    width: 13px;
-    height: 13px;
+  .primaryButton {
+    gap: 7px;
   }
 
-  .secondaryButton,
+  .primaryButton svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .trustRow {
     display: none;
   }
 
-
-  /* -----------------------------------------
-     VISUAL AREA
-
-     Gift + ticket + status card are grouped
-     together near the bottom of the hero.
-     ----------------------------------------- */
-
   .visual {
-    position: absolute;
-
-    z-index: 6;
-
-    right: 5px;
-    bottom: 20px;
-
-    top: auto;
-
-    width: 155px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
     height: 190px;
-
-    min-height: 0;
-
-    display: block;
-
-    transform: none;
-
+    min-height: 190px;
+    margin: 8px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     pointer-events: none;
   }
 
   .productGlow {
     position: absolute;
-
-    top: 0;
-    right: 0;
-
-    width: 155px;
-    height: 155px;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    transform: translate(-50%, -50%);
   }
 
   .gift {
-    position: absolute;
-
+    position: relative;
     z-index: 2;
-
-    top: 0;
-    right: 0;
-
-    width: 145px;
-    height: 145px;
-
+    width: 170px;
+    height: 170px;
     max-height: none;
-
     object-fit: contain;
   }
 
   .ticket {
-    position: absolute;
-
-    z-index: 4;
-
-    right: -2px;
+    right: 5px;
     bottom: 0;
-
-    width: 52px;
+    width: 56px;
   }
 
   .statusCard {
-    position: absolute;
-
-    z-index: 5;
-
-    left: 0;
+    left: 4px;
     right: auto;
-
-    bottom: 10px;
-
-    min-width: 102px;
-
+    bottom: 12px;
+    min-width: 105px;
     padding: 6px 8px;
-
     gap: 6px;
-
     border-radius: 9px;
   }
 
   .statusCard small {
     margin-bottom: 1px;
-
     font-size: 6px;
   }
 
@@ -736,12 +639,64 @@
   .liveDot {
     width: 6px;
     height: 6px;
-
-    box-shadow:
-      0 0 0 3px
-      rgba(89, 169, 121, 0.09);
+    box-shadow: 0 0 0 3px rgba(89, 169, 121, 0.09);
   }
 }
+
+
+
+
+@media (max-width: 390px) {
+
+  .hero {
+    padding:
+      10px 0 14px;
+  }
+
+  .content {
+    padding:
+      20px 12px;
+  }
+
+  .title {
+    max-width: 175px;
+    font-size: 27px;
+  }
+
+  .description {
+    max-width: 175px;
+    font-size: 8.5px;
+  }
+
+  .visual {
+    right: 4px;
+    top: 29%;
+
+    width: 140px;
+    height: 175px;
+  }
+
+  .productGlow {
+    width: 140px;
+    height: 140px;
+  }
+
+  .gift {
+    width: 140px;
+    height: 140px;
+  }
+
+  .ticket {
+    width: 50px;
+  }
+
+  .statusCard {
+    min-width: 100px;
+  }
+}
+
+
+
 
 @media (max-width: 768px) {
   .hero,
@@ -749,7 +704,6 @@
   .hero::before,
   .hero::after {
     filter: none !important;
-
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
