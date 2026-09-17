@@ -78,6 +78,7 @@
     minmax(390px, 0.92fr);
 
   align-items: center;
+
   overflow: hidden;
 
   border: 1px solid #293548;
@@ -137,6 +138,7 @@
   width: fit-content;
 
   margin-bottom: 24px;
+
   padding: 9px 14px;
 
   display: flex;
@@ -156,11 +158,13 @@
 
   font-size: 11px;
   font-weight: 800;
+
   letter-spacing: 0.1em;
 }
 
 .title {
   max-width: 680px;
+
   margin: 0;
 
   color: #f2f5f7;
@@ -174,11 +178,13 @@
 
   font-weight: 800;
   line-height: 1.04;
+
   letter-spacing: -0.05em;
 }
 
 .title span {
   display: block;
+
   padding-bottom: 8px;
 
   color: transparent;
@@ -237,6 +243,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   gap: 10px;
 
   border:
@@ -280,6 +287,7 @@
   margin-top: 30px;
 
   display: none;
+
   align-items: center;
   flex-wrap: wrap;
 
@@ -380,6 +388,7 @@
 
   display: flex;
   align-items: center;
+
   gap: 12px;
 
   border: 1px solid #30463f;
@@ -404,6 +413,7 @@
 
   font-size: 12px;
   font-weight: 700;
+
   letter-spacing: 0.07em;
 }
 
@@ -429,6 +439,11 @@
     rgba(89, 169, 121, 0.09);
 }
 
+
+/* =========================================
+   TABLET / SMALL DESKTOP
+   ========================================= */
+
 @media (max-width: 1199px) {
   .heroCard {
     grid-template-columns:
@@ -443,6 +458,11 @@
     width: 165px;
   }
 }
+
+
+/* =========================================
+   TABLET
+   ========================================= */
 
 @media (max-width: 991px) {
   .hero {
@@ -475,52 +495,97 @@
   }
 }
 
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
 @media (max-width: 575px) {
+
+  /* EXACT MOBILE HERO HEIGHT */
   .hero {
     height: 70vh;
     min-height: 0;
     max-height: none;
-    box-sizing: border-box;
+
     padding: 12px 0 16px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
   }
 
-  .hero > div {
+  /*
+    IMPORTANT:
+    Only the actual Bootstrap/container wrapper
+    gets 100% height.
+  */
+  .hero > .container {
     height: 100%;
   }
 
   .heroCard {
     position: relative;
-    display: block;
+
     width: 100%;
     height: 100%;
+
     min-height: 0;
+
+    display: block;
+
     padding: 0;
-    border-radius: 18px;
-    overflow: hidden;
+
     box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-radius: 18px;
   }
+
+  /* -----------------------------------------
+     CONTENT
+     ----------------------------------------- */
 
   .content {
     position: relative;
+
     z-index: 5;
+
     width: 100%;
     height: 100%;
+
     padding: 22px 14px;
+
     box-sizing: border-box;
   }
 
   .eyebrow {
+    width: fit-content;
+
     margin: 0 0 11px;
+
     padding: 6px 9px;
+
     gap: 6px;
+
     font-size: 7px;
+  }
+
+  .eyebrow svg {
+    width: 12px;
+    height: 12px;
   }
 
   .title {
     max-width: 185px;
+
     margin: 0;
+
     font-size: 29px;
+
     line-height: 0.98;
+
     letter-spacing: -1px;
   }
 
@@ -530,21 +595,35 @@
 
   .description {
     max-width: 180px;
+
     margin: 15px 0 0;
+
     font-size: 9px;
+
     line-height: 1.45;
   }
 
+  /* -----------------------------------------
+     BUTTON
+     ----------------------------------------- */
+
   .actions {
     margin-top: 14px;
+
+    display: flex;
+
     gap: 0;
   }
 
   .primaryButton {
     min-height: 38px;
+
     padding: 0 14px;
+
     gap: 8px;
+
     border-radius: 9px;
+
     font-size: 9px;
   }
 
@@ -558,59 +637,95 @@
     display: none;
   }
 
-  /* Mobile giveaway visual */
+
+  /* -----------------------------------------
+     VISUAL AREA
+
+     Gift + ticket + status card are grouped
+     together near the bottom of the hero.
+     ----------------------------------------- */
+
   .visual {
     position: absolute;
+
     z-index: 6;
-    right: 8px;
-    top: 50%;
-    width: 145px;
-    height: 180px;
+
+    right: 5px;
+    bottom: 20px;
+
+    top: auto;
+
+    width: 155px;
+    height: 190px;
+
     min-height: 0;
+
     display: block;
-    transform: translateY(-25%);
+
+    transform: none;
+
     pointer-events: none;
   }
 
   .productGlow {
     position: absolute;
+
     top: 0;
     right: 0;
-    width: 145px;
-    height: 145px;
+
+    width: 155px;
+    height: 155px;
   }
 
   .gift {
     position: absolute;
+
     z-index: 2;
+
     top: 0;
     right: 0;
+
     width: 145px;
     height: 145px;
+
     max-height: none;
+
     object-fit: contain;
   }
 
   .ticket {
     position: absolute;
+
+    z-index: 4;
+
     right: -2px;
     bottom: 0;
+
     width: 52px;
   }
 
   .statusCard {
     position: absolute;
+
+    z-index: 5;
+
     left: 0;
     right: auto;
+
     bottom: 10px;
+
     min-width: 102px;
+
     padding: 6px 8px;
+
     gap: 6px;
+
     border-radius: 9px;
   }
 
   .statusCard small {
     margin-bottom: 1px;
+
     font-size: 6px;
   }
 
@@ -621,10 +736,12 @@
   .liveDot {
     width: 6px;
     height: 6px;
-    box-shadow: 0 0 0 3px rgba(89, 169, 121, 0.09);
+
+    box-shadow:
+      0 0 0 3px
+      rgba(89, 169, 121, 0.09);
   }
 }
-
 
 @media (max-width: 768px) {
   .hero,
@@ -632,6 +749,7 @@
   .hero::before,
   .hero::after {
     filter: none !important;
+
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
