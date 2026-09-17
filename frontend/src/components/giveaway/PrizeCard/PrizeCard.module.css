@@ -6,7 +6,8 @@
 
   display: flex;
   flex-direction: column;
-
+  --accent: #3f9c91;
+  --accent-rgb: 63, 156, 145;
   border: 1px solid #293548;
   border-radius: 22px;
 
@@ -27,6 +28,36 @@
     transform 0.25s ease,
     border-color 0.25s ease,
     box-shadow 0.25s ease;
+}
+
+.indigo {
+  --accent: #8b4dcc;
+  --accent-rgb: 139, 77, 204;
+}
+
+.blue {
+  --accent: #2778c7;
+  --accent-rgb: 39, 120, 199;
+}
+
+.green {
+  --accent: #31965f;
+  --accent-rgb: 49, 150, 95;
+}
+
+.amber {
+  --accent: #d67824;
+  --accent-rgb: 214, 120, 36;
+}
+
+.copper {
+  --accent: #c96d30;
+  --accent-rgb: 201, 109, 48;
+}
+
+.teal {
+  --accent: #348f85;
+  --accent-rgb: 52, 143, 133;
 }
 
 .card:hover {
@@ -52,12 +83,12 @@
   justify-content: center;
 
   background:
-    radial-gradient(
-      circle at 50% 55%,
-      rgba(86, 135, 182, 0.1),
-      transparent 54%
-    ),
-    #131d28;
+  radial-gradient(
+    circle at 50% 55%,
+    rgba(var(--accent-rgb), 0.13),
+    transparent 54%
+  ),
+  #131d28;
 }
 
 .visual::after {
@@ -126,17 +157,17 @@
 
   border-radius: 9px;
 
-  color: #dda94c;
+  color: var(--accent);
 
   background:
-    rgba(217, 164, 65, 0.09);
+  rgba(var(--accent-rgb), 0.1);
 
   font-size: 13px;
   font-weight: 750;
 }
 
 .position svg {
-  color: #dda94c;
+  color: var(--accent);
 }
 
 .status {
@@ -296,11 +327,11 @@
 }
 
 .entry svg {
-  color: #58b5a9;
+  color: var(--accent);
 }
 
 .entry strong {
-  color: #72c4b9;
+  color: var(--accent);
 
   font-size: 13px;
 }
@@ -324,7 +355,7 @@
 
   color: #ffffff;
 
-  background: #2a8f84;
+  background: var(--accent);
 
   font-size: 13px;
   font-weight: 700;

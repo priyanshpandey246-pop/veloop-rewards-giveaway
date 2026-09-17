@@ -279,7 +279,7 @@
 .trustRow {
   margin-top: 30px;
 
-  display: flex;
+  display: none;
   align-items: center;
   flex-wrap: wrap;
 
@@ -477,86 +477,146 @@
 
 @media (max-width: 575px) {
   .hero {
-    padding: 28px 0 40px;
+    height: 70vh;
+    min-height: 555px;
+    max-height: 620px;
+    padding: 12px 0 16px;
+  }
+
+  .hero > div {
+    height: 100%;
   }
 
   .heroCard {
-    border-radius: 22px;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 0;
+    border-radius: 18px;
+    overflow: hidden;
   }
 
   .content {
-    padding: 38px 24px 8px;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    padding: 22px 14px;
   }
 
   .eyebrow {
-    margin-bottom: 22px;
+    margin: 0 0 11px;
+    padding: 6px 9px;
+    gap: 6px;
+    font-size: 7px;
   }
 
   .title {
-    font-size:
-      clamp(
-        2.25rem,
-        12vw,
-        3rem
-      );
+    max-width: 185px;
+    margin: 0;
+    font-size: 29px;
+    line-height: 0.98;
+    letter-spacing: -1px;
+  }
 
-    line-height: 1.07;
+  .title span {
+    padding-bottom: 3px;
   }
 
   .description {
-    margin-top: 22px;
-
-    font-size: 14px;
-    line-height: 1.75;
+    max-width: 180px;
+    margin: 15px 0 0;
+    font-size: 9px;
+    line-height: 1.45;
   }
 
   .actions {
-    margin-top: 28px;
-
-    align-items: stretch;
-
-    gap: 12px;
+    margin-top: 14px;
+    gap: 0;
   }
 
-  .primaryButton,
-  .secondaryButton {
-    width: 100%;
+  .primaryButton {
+    min-height: 38px;
+    padding: 0 14px;
+    gap: 8px;
+    border-radius: 9px;
+    font-size: 9px;
   }
 
-  .divider {
+  .primaryButton svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .secondaryButton,
+  .trustRow {
     display: none;
   }
 
-  .trustRow {
-    margin-top: 26px;
-
-    align-items: flex-start;
-    flex-direction: column;
-
-    gap: 12px;
+  .visual {
+    position: absolute;
+    z-index: 6;
+    right: 8px;
+    top: 205px;
+    width: 145px;
+    height: 180px;
+    min-height: 0;
+    display: block;
+    pointer-events: none;
   }
 
-  .visual {
-    min-height: 340px;
+  .productGlow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 145px;
+    height: 145px;
   }
 
   .gift {
-    width: 270px;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 145px;
+    height: 145px;
+    max-height: none;
+    object-fit: contain;
   }
 
   .ticket {
-    right: 1%;
-    bottom: 5%;
-
-    width: 120px;
+    right: -2px;
+    bottom: 0;
+    width: 52px;
   }
 
   .statusCard {
-    left: 5%;
-    bottom: 7%;
+    left: 0;
+    right: auto;
+    bottom: 10px;
+    min-width: 102px;
+    padding: 6px 8px;
+    gap: 6px;
+    border-radius: 9px;
+  }
+
+  .statusCard small {
+    margin-bottom: 1px;
+    font-size: 6px;
+  }
+
+  .statusCard strong {
+    font-size: 7px;
+  }
+
+  .liveDot {
+    width: 6px;
+    height: 6px;
+    box-shadow: 0 0 0 3px rgba(89, 169, 121, 0.09);
   }
 }
-
 
 @media (max-width: 768px) {
   .hero,

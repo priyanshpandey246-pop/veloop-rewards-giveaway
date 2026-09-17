@@ -6,25 +6,23 @@
     Arial,
     sans-serif;
 
-  /* =========================
-     VELOOP DARK THEME
-     ========================= */
+  
 
   /* Main backgrounds */
-  --bg-primary: #080b12;
-  --bg-secondary: #0d121b;
+  --bg-primary: #05070f;
+  --bg-secondary: #090c16;
 
   /* Surfaces */
-  --surface: #111923;
-  --surface-light: #17212d;
-  --surface-elevated: #1b2734;
+  --surface: #0d111d;
+  --surface-light: #121827;
+  --surface-elevated: #171e30;
 
   /* Primary text */
-  --text-primary: #f1f5f9;
+  --text-primary: #f6f7fb;
 
   /* Secondary readable text */
-  --text-secondary: #a8b3c2;
-  --text-muted: #778596;
+  --text-secondary: #b0b6c4;
+  --text-muted: #747d90;
 
   /* Trust / primary actions */
   --purple: #2a9d8f;
@@ -43,7 +41,7 @@
   --reward-purple: #8768ad;
 
   /* Borders */
-  --border: #293548;
+  --border: #252b3d;
 
   --purple-border:
     rgba(88, 181, 169, 0.24);
@@ -86,9 +84,7 @@
     1.75;
 }
 
-/* =========================
-   BASE
-   ========================= */
+
 
 * {
   box-sizing: border-box;
@@ -179,9 +175,7 @@ a {
     transform 0.2s ease;
 }
 
-/* =========================
-   ACCESSIBILITY
-   ========================= */
+
 
 button:focus-visible,
 a:focus-visible,
@@ -201,9 +195,6 @@ select:focus-visible {
   background: #217d73;
 }
 
-/* =========================
-   MOBILE
-   ========================= */
 
 @media (
   max-width: 767px
@@ -213,11 +204,7 @@ select:focus-visible {
   }
 }
 
-/*
- * Keep this.
- * It prevents the rendering corruption
- * previously seen on Android/mobile.
- */
+
 @media (
   max-width: 768px
 ) {
