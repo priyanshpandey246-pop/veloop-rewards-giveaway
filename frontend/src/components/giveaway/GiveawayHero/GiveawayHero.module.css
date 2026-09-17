@@ -486,7 +486,7 @@
     height: auto;
     min-height: 0;
     max-height: none;
-    padding: 12px 0 18px;
+    padding: 16px 0 24px;
   }
 
   .hero > div {
@@ -500,8 +500,8 @@
     width: 100%;
     height: auto;
     min-height: 0;
-    padding: 22px 14px 16px;
-    border-radius: 18px;
+    padding: 26px 20px 18px;
+    border-radius: 20px;
     overflow: hidden;
   }
 
@@ -515,59 +515,60 @@
 
   .eyebrow {
     width: fit-content;
-    margin: 0 0 11px;
-    padding: 6px 9px;
-    gap: 6px;
-    font-size: 7px;
+    margin: 0 0 16px;
+    padding: 7px 10px;
+    gap: 7px;
+    font-size: 8px;
+    letter-spacing: 0.08em;
   }
 
   .eyebrow svg {
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
   }
 
   .title {
-    max-width: 210px;
+    max-width: 275px;
     margin: 0;
-    font-size: 29px;
+    font-size: clamp(34px, 10.5vw, 42px);
     line-height: 0.98;
-    letter-spacing: -1px;
+    letter-spacing: -1.4px;
   }
 
   .title span {
-    padding-bottom: 3px;
+    padding-bottom: 5px;
   }
 
   .description {
-    max-width: 220px;
-    margin: 15px 0 0;
-    font-size: 9px;
-    line-height: 1.5;
+    max-width: 285px;
+    margin: 19px 0 0;
+    font-size: 12px;
+    line-height: 1.6;
   }
 
   .actions {
-    margin-top: 14px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
   }
 
   .primaryButton,
   .secondaryButton {
-    min-height: 38px;
-    padding: 0 12px;
-    border-radius: 9px;
-    font-size: 9px;
+    min-height: 44px;
+    padding: 0 15px;
+    border-radius: 10px;
+    font-size: 11px;
   }
 
   .primaryButton {
-    gap: 7px;
+    gap: 8px;
   }
 
   .primaryButton svg {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
   }
 
   .secondaryButton {
@@ -584,9 +585,9 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    height: 190px;
-    min-height: 190px;
-    margin: 8px 0 0;
+    height: 255px;
+    min-height: 255px;
+    margin: 12px 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -597,105 +598,51 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 180px;
-    height: 180px;
+    width: 235px;
+    height: 235px;
     transform: translate(-50%, -50%);
   }
 
   .gift {
     position: relative;
     z-index: 2;
-    width: 170px;
-    height: 170px;
-    max-height: none;
+    width: min(245px, 82vw);
+    height: 235px;
+    max-height: 235px;
     object-fit: contain;
   }
 
   .ticket {
-    right: 5px;
-    bottom: 0;
-    width: 56px;
+    right: 0;
+    bottom: 8px;
+    width: 75px;
   }
 
   .statusCard {
-    left: 4px;
+    left: 2px;
     right: auto;
-    bottom: 12px;
-    min-width: 105px;
-    padding: 6px 8px;
-    gap: 6px;
-    border-radius: 9px;
+    bottom: 22px;
+    min-width: 120px;
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: 10px;
   }
 
   .statusCard small {
-    margin-bottom: 1px;
-    font-size: 6px;
-  }
-
-  .statusCard strong {
+    margin-bottom: 2px;
     font-size: 7px;
   }
 
+  .statusCard strong {
+    font-size: 9px;
+  }
+
   .liveDot {
-    width: 6px;
-    height: 6px;
-    box-shadow: 0 0 0 3px rgba(89, 169, 121, 0.09);
+    width: 7px;
+    height: 7px;
+    box-shadow: 0 0 0 4px rgba(89, 169, 121, 0.09);
   }
 }
-
-
-
-
-@media (max-width: 390px) {
-
-  .hero {
-    padding:
-      10px 0 14px;
-  }
-
-  .content {
-    padding:
-      20px 12px;
-  }
-
-  .title {
-    max-width: 175px;
-    font-size: 27px;
-  }
-
-  .description {
-    max-width: 175px;
-    font-size: 8.5px;
-  }
-
-  .visual {
-    right: 4px;
-    top: 29%;
-
-    width: 140px;
-    height: 175px;
-  }
-
-  .productGlow {
-    width: 140px;
-    height: 140px;
-  }
-
-  .gift {
-    width: 140px;
-    height: 140px;
-  }
-
-  .ticket {
-    width: 50px;
-  }
-
-  .statusCard {
-    min-width: 100px;
-  }
-}
-
-
 
 
 @media (max-width: 768px) {
